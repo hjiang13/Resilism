@@ -1,0 +1,604 @@
+Pin: pin-3.5-97503-ac534ca30
+Copyright (c) 2003-2017, Intel Corporation. All rights reserved.
+ Invalid RTN mov rcx, qword ptr [rip+0x34c2e1]
+ Invalid RTN lea rax, ptr [rip+0x1c722]
+ Invalid RTN mov edx, dword ptr [rcx+0xb4]
+ Invalid RTN test edx, 0x80000
+ Invalid RTN jnz 0x7f4d61c93be5
+ Invalid RTN mov eax, edx
+ Invalid RTN and eax, 0x101000
+ Invalid RTN cmp eax, 0x1000
+ Invalid RTN jz 0x7f4d61c93bf0
+ Invalid RTN test dh, 0x8
+ Invalid RTN jnz 0x7f4d61c93c20
+ Invalid RTN test byte ptr [rcx+0x85], 0x2
+ Invalid RTN lea rdx, ptr [rip+0xefde2]
+ Invalid RTN lea rax, ptr [rip+0xefd7b]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34cfd1]
+ Invalid RTN lea rax, ptr [rip+0x18ac2]
+ Invalid RTN test byte ptr [rdx+0xb4], 0x10
+ Invalid RTN jnz 0x7f4d61c92ead
+ Invalid RTN test byte ptr [rdx+0x79], 0x2
+ Invalid RTN lea rax, ptr [rip+0xa91e]
+ Invalid RTN lea rdx, ptr [rip+0xdf197]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34c001]
+ Invalid RTN lea rax, ptr [rip+0xec062]
+ Invalid RTN mov ecx, dword ptr [rdx+0xb4]
+ Invalid RTN test cl, 0x40
+ Invalid RTN jnz 0x7f4d61c93e95
+ Invalid RTN mov edx, dword ptr [rdx+0x78]
+ Invalid RTN test edx, 0x100000
+ Invalid RTN jz 0x7f4d61c93e80
+ Invalid RTN and ch, 0x2
+ Invalid RTN lea rax, ptr [rip+0xe75b2]
+ Invalid RTN jz 0x7f4d61c93e95
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34d581]
+ Invalid RTN lea rax, ptr [rip+0x1ba32]
+ Invalid RTN test byte ptr [rdx+0xb4], 0x10
+ Invalid RTN jnz 0x7f4d61c928fd
+ Invalid RTN test byte ptr [rdx+0x79], 0x2
+ Invalid RTN lea rax, ptr [rip+0x1b85e]
+ Invalid RTN lea rdx, ptr [rip+0x13ec7]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34cfa1]
+ Invalid RTN lea rdx, ptr [rip+0xf0442]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x1323b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN lea rax, ptr [rip+0xe0f91]
+ Invalid RTN sub rsp, 0x28
+ Invalid RTN lea rcx, ptr [rip+0xe0f8b]
+ Invalid RTN mov edx, 0x5f
+ Invalid RTN mov qword ptr [rsp], rax
+ Invalid RTN mov rax, 0x103ae75f6
+ Invalid RTN mov qword ptr [rsp+0x8], rax
+ Invalid RTN mov eax, 0x50e3a8
+ Invalid RTN shl rax, 0x4
+ Invalid RTN add rcx, 0x1
+ Invalid RTN add rax, rdx
+ Invalid RTN mov rdx, rax
+ Invalid RTN shr rdx, 0x18
+ Invalid RTN and edx, 0xf0
+ Invalid RTN xor rax, rdx
+ Invalid RTN movzx edx, byte ptr [rcx]
+ Invalid RTN test dl, dl
+ Invalid RTN jnz 0x7f4d61cc777f
+ Invalid RTN and eax, 0xfffffff
+ Invalid RTN cmp rax, 0x3ae75f6
+ Invalid RTN jnz 0x7f4d61cc77d9
+ Invalid RTN lea rdi, ptr [rip+0xe2993]
+ Invalid RTN mov rsi, rsp
+ Invalid RTN mov qword ptr [rsp+0x10], 0x0
+ Invalid RTN call 0x7f4d61d5c2c0
+ Invalid RTN shl rax, 0x4
+ Invalid RTN add rcx, 0x1
+ Invalid RTN add rax, rdx
+ Invalid RTN mov rdx, rax
+ Invalid RTN shr rdx, 0x18
+ Invalid RTN and edx, 0xf0
+ Invalid RTN xor rax, rdx
+ Invalid RTN movzx edx, byte ptr [rcx]
+ Invalid RTN test dl, dl
+ Invalid RTN jnz 0x7f4d61cc777f
+ Invalid RTN and eax, 0xfffffff
+ Invalid RTN cmp rax, 0x3ae75f6
+ Invalid RTN jnz 0x7f4d61cc77d9
+ Invalid RTN lea rdi, ptr [rip+0xe2993]
+ Invalid RTN mov rsi, rsp
+ Invalid RTN mov qword ptr [rsp+0x10], 0x0
+ Invalid RTN call 0x7f4d61d5c2c0
+ Invalid RTN sub rsp, 0x38
+ Invalid RTN mov r8, rsi
+ Invalid RTN mov rax, qword ptr fs:[0x28]
+ Invalid RTN mov qword ptr [rsp+0x28], rax
+ Invalid RTN xor eax, eax
+ Invalid RTN mov rax, qword ptr [rip+0x283b7a]
+ Invalid RTN mov rsi, qword ptr [rax+0x158]
+ Invalid RTN test rsi, rsi
+ Invalid RTN jz 0x7f4d61d5c360
+ Invalid RTN pxor xmm0, xmm0
+ Invalid RTN lea rdx, ptr [rsp+0x10]
+ Invalid RTN mov qword ptr [rsp+0x20], 0x0
+ Invalid RTN lea rcx, ptr [rsi+0x388]
+ Invalid RTN xor r9d, r9d
+ Invalid RTN mov qword ptr [rsp+0x8], rdx
+ Invalid RTN lea rdx, ptr [rsp+0x8]
+ Invalid RTN movaps xmmword ptr [rsp+0x10], xmm0
+ Invalid RTN mov byte ptr [rsp+0x14], 0x20
+ Invalid RTN push 0x0
+ Invalid RTN push 0x0
+ Invalid RTN call qword ptr [rax+0x178]
+ Invalid RTN mov rcx, qword ptr [rsp+0x18]
+ Invalid RTN pop rdx
+ Invalid RTN xor edx, edx
+ Invalid RTN test rcx, rcx
+ Invalid RTN pop rsi
+ Invalid RTN jz 0x7f4d61d5c33e
+ Invalid RTN test rax, rax
+ Invalid RTN jz 0x7f4d61d5c33a
+ Invalid RTN mov rdx, qword ptr [rax]
+ Invalid RTN add rdx, qword ptr [rcx+0x8]
+ Invalid RTN mov rdi, qword ptr [rsp+0x28]
+ Invalid RTN xor rdi, qword ptr fs:[0x28]
+ Invalid RTN mov rax, rdx
+ Invalid RTN jnz 0x7f4d61d5c364
+ Invalid RTN add rsp, 0x38
+ Invalid RTN ret 
+ Invalid RTN lea rdx, ptr [rip-0x8d]
+ Invalid RTN test rax, rax
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN add rsp, 0x28
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34a8b1]
+ Invalid RTN lea rdx, ptr [rip+0xea082]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0xb4bb]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x32dc61]
+ Invalid RTN lea rdx, ptr [rip+0xd2112]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x12cfb]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rcx, qword ptr [rip+0x34c171]
+ Invalid RTN lea rax, ptr [rip+0x1c592]
+ Invalid RTN mov edx, dword ptr [rcx+0xb4]
+ Invalid RTN test edx, 0x80000
+ Invalid RTN jnz 0x7f4d61c93d55
+ Invalid RTN mov eax, edx
+ Invalid RTN and eax, 0x101000
+ Invalid RTN cmp eax, 0x1000
+ Invalid RTN jz 0x7f4d61c93d60
+ Invalid RTN test dh, 0x8
+ Invalid RTN jnz 0x7f4d61c93d90
+ Invalid RTN test byte ptr [rcx+0x85], 0x2
+ Invalid RTN lea rdx, ptr [rip+0xefc52]
+ Invalid RTN lea rax, ptr [rip+0xefbeb]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34c341]
+ Invalid RTN mov ecx, dword ptr [rax+0xb4]
+ Invalid RTN mov edx, dword ptr [rax+0x78]
+ Invalid RTN mov eax, ecx
+ Invalid RTN and eax, 0x20400
+ Invalid RTN cmp eax, 0x400
+ Invalid RTN jz 0x7f4d61c93b58
+ Invalid RTN test edx, 0x80000
+ Invalid RTN lea rax, ptr [rip+0xf13c5]
+ Invalid RTN jnz 0x7f4d61c93b52
+ Invalid RTN and dh, 0x2
+ Invalid RTN lea rax, ptr [rip+0xd509]
+ Invalid RTN lea rdx, ptr [rip+0xf4ce2]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN test edx, 0x400000
+ Invalid RTN jz 0x7f4d61c93b2e
+ Invalid RTN and ch, 0x8
+ Invalid RTN lea rax, ptr [rip+0xebf76]
+ Invalid RTN jz 0x7f4d61c93b2e
+ Invalid RTN ret 
+ Invalid RTN mov rcx, qword ptr [rip+0x34d011]
+ Invalid RTN mov edx, dword ptr [rcx+0x78]
+ Invalid RTN test edx, 0x100000
+ Invalid RTN jz 0x7f4d61c92e62
+ Invalid RTN test byte ptr [rcx+0xb5], 0x2
+ Invalid RTN lea rax, ptr [rip+0xe75f0]
+ Invalid RTN jz 0x7f4d61c92e77
+ Invalid RTN and dh, 0x2
+ Invalid RTN lea rax, ptr [rip+0xc094]
+ Invalid RTN lea rdx, ptr [rip+0xcd08d]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34d511]
+ Invalid RTN lea rax, ptr [rip+0xc302]
+ Invalid RTN test byte ptr [rdx+0xb4], 0x10
+ Invalid RTN jnz 0x7f4d61c9296d
+ Invalid RTN test byte ptr [rdx+0x79], 0x2
+ Invalid RTN lea rax, ptr [rip+0xaeae]
+ Invalid RTN lea rdx, ptr [rip+0xcc337]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rcx, qword ptr [rip+0x34c211]
+ Invalid RTN lea rax, ptr [rip+0x1ca42]
+ Invalid RTN mov edx, dword ptr [rcx+0xb4]
+ Invalid RTN test edx, 0x80000
+ Invalid RTN jnz 0x7f4d61c93ca4
+ Invalid RTN mov eax, edx
+ Invalid RTN and eax, 0x101000
+ Invalid RTN cmp eax, 0x1000
+ Invalid RTN jz 0x7f4d61c93cb0
+ Invalid RTN mov eax, dword ptr [rcx+0x84]
+ Invalid RTN and eax, 0x200
+ Invalid RTN and dh, 0x4
+ Invalid RTN jz 0x7f4d61c93c90
+ Invalid RTN test eax, eax
+ Invalid RTN lea rdx, ptr [rip+0xf020d]
+ Invalid RTN lea rax, ptr [rip+0xf01a6]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x32ef81]
+ Invalid RTN lea rdx, ptr [rip+0xd3702]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x1437b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34d071]
+ Invalid RTN lea rdx, ptr [rip+0xf0872]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x1379b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34d4a1]
+ Invalid RTN lea rdx, ptr [rip+0xec5f2]
+ Invalid RTN test byte ptr [rax+0x7a], 0x10
+ Invalid RTN lea rax, ptr [rip+0x1d667]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34bfb1]
+ Invalid RTN lea rax, ptr [rip+0xed682]
+ Invalid RTN mov ecx, dword ptr [rdx+0xb4]
+ Invalid RTN test cl, 0x40
+ Invalid RTN jnz 0x7f4d61c93ee5
+ Invalid RTN mov edx, dword ptr [rdx+0x78]
+ Invalid RTN test edx, 0x100000
+ Invalid RTN jz 0x7f4d61c93ed0
+ Invalid RTN and ch, 0x2
+ Invalid RTN lea rax, ptr [rip+0xe9112]
+ Invalid RTN jz 0x7f4d61c93ee5
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34d4d1]
+ Invalid RTN lea rax, ptr [rip+0x18992]
+ Invalid RTN test byte ptr [rdx+0xb4], 0x10
+ Invalid RTN jnz 0x7f4d61c929ad
+ Invalid RTN test byte ptr [rdx+0x79], 0x2
+ Invalid RTN lea rax, ptr [rip+0x187be]
+ Invalid RTN lea rdx, ptr [rip+0xddee7]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rcx, qword ptr [rip+0x34be71]
+ Invalid RTN lea rax, ptr [rip+0x1c2b2]
+ Invalid RTN mov edx, dword ptr [rcx+0xb4]
+ Invalid RTN test edx, 0x80000
+ Invalid RTN jnz 0x7f4d61c94055
+ Invalid RTN mov eax, edx
+ Invalid RTN and eax, 0x101000
+ Invalid RTN cmp eax, 0x1000
+ Invalid RTN jz 0x7f4d61c94060
+ Invalid RTN test dh, 0x8
+ Invalid RTN jnz 0x7f4d61c94090
+ Invalid RTN test byte ptr [rcx+0x85], 0x2
+ Invalid RTN lea rdx, ptr [rip+0xef972]
+ Invalid RTN lea rax, ptr [rip+0xef90b]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rcx, qword ptr [rip+0x32c9b1]
+ Invalid RTN lea rax, ptr [rip+0xd1702]
+ Invalid RTN mov edx, dword ptr [rcx+0xb4]
+ Invalid RTN and edx, 0x20c00
+ Invalid RTN cmp edx, 0xc00
+ Invalid RTN jz 0x7f4d61cb34d8
+ Invalid RTN test byte ptr [rcx+0x7a], 0x8
+ Invalid RTN lea rax, ptr [rip+0x12463]
+ Invalid RTN lea rdx, ptr [rip+0x1223c]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x32dbb1]
+ Invalid RTN mov edx, dword ptr [rax+0xb4]
+ Invalid RTN lea rax, ptr [rip-0x1c94]
+ Invalid RTN mov ecx, edx
+ Invalid RTN and ecx, 0x20c00
+ Invalid RTN cmp ecx, 0xc00
+ Invalid RTN jz 0x7f4d61cb22d0
+ Invalid RTN ret 
+ Invalid RTN and edx, 0x101000
+ Invalid RTN lea rax, ptr [rip+0xd1b23]
+ Invalid RTN cmp edx, 0x1000
+ Invalid RTN lea rdx, ptr [rip+0xd6026]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34cf71]
+ Invalid RTN lea rdx, ptr [rip+0xec202]
+ Invalid RTN test byte ptr [rax+0x7a], 0x10
+ Invalid RTN lea rax, ptr [rip+0x1d1d7]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34d551]
+ Invalid RTN mov edx, dword ptr [rax+0xb4]
+ Invalid RTN lea rax, ptr [rip+0xf05cc]
+ Invalid RTN mov ecx, edx
+ Invalid RTN and ecx, 0x20c00
+ Invalid RTN cmp ecx, 0xc00
+ Invalid RTN jz 0x7f4d61c92939
+ Invalid RTN and edx, 0x4
+ Invalid RTN lea rax, ptr [rip+0x133b2]
+ Invalid RTN lea rdx, ptr [rip+0xf5bdb]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34d0a1]
+ Invalid RTN lea rdx, ptr [rip+0xf0712]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x1362b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x3429b1]
+ Invalid RTN lea rdx, ptr [rip+0xe22c2]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x37bb]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34bf61]
+ Invalid RTN lea rax, ptr [rip+0xebfd2]
+ Invalid RTN mov ecx, dword ptr [rdx+0xb4]
+ Invalid RTN test cl, 0x40
+ Invalid RTN jnz 0x7f4d61c93f35
+ Invalid RTN mov edx, dword ptr [rdx+0x78]
+ Invalid RTN test edx, 0x100000
+ Invalid RTN jz 0x7f4d61c93f20
+ Invalid RTN and ch, 0x2
+ Invalid RTN lea rax, ptr [rip+0xe7522]
+ Invalid RTN jz 0x7f4d61c93f35
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34c371]
+ Invalid RTN lea rdx, ptr [rip+0xeb872]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0xcc4b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x32e1c1]
+ Invalid RTN lea rdx, ptr [rip+0xd2d62]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x13d1b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34ccc1]
+ Invalid RTN lea rdx, ptr [rip+0xec0a2]
+ Invalid RTN test byte ptr [rax+0x7a], 0x10
+ Invalid RTN lea rax, ptr [rip+0x1cfc7]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34c031]
+ Invalid RTN lea rax, ptr [rip+0x191b2]
+ Invalid RTN test byte ptr [rdx+0xb4], 0x10
+ Invalid RTN jnz 0x7f4d61c93e4d
+ Invalid RTN test byte ptr [rdx+0x79], 0x2
+ Invalid RTN lea rax, ptr [rip+0x991e]
+ Invalid RTN lea rdx, ptr [rip+0xe2587]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34c061]
+ Invalid RTN lea rax, ptr [rip+0x18b32]
+ Invalid RTN test byte ptr [rdx+0xb4], 0x10
+ Invalid RTN jnz 0x7f4d61c93e1d
+ Invalid RTN test byte ptr [rdx+0x79], 0x2
+ Invalid RTN lea rax, ptr [rip+0x1742e]
+ Invalid RTN lea rdx, ptr [rip+0xe0da7]
+ Invalid RTN cmovnz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN ret 
+ Invalid RTN mov rax, qword ptr [rip+0x34a881]
+ Invalid RTN lea rdx, ptr [rip+0xedb32]
+ Invalid RTN mov eax, dword ptr [rax+0xb4]
+ Invalid RTN and eax, 0x20c00
+ Invalid RTN cmp eax, 0xc00
+ Invalid RTN lea rax, ptr [rip+0x1090b]
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN ret 
+ Invalid RTN mov rdx, qword ptr [rip+0x34bf11]
+ Invalid RTN lea rax, ptr [rip+0xed5f2]
+ Invalid RTN mov ecx, dword ptr [rdx+0xb4]
+ Invalid RTN test cl, 0x40
+ Invalid RTN jnz 0x7f4d61c93f85
+ Invalid RTN mov edx, dword ptr [rdx+0x78]
+ Invalid RTN test edx, 0x100000
+ Invalid RTN jz 0x7f4d61c93f70
+ Invalid RTN and ch, 0x2
+ Invalid RTN lea rax, ptr [rip+0xe9082]
+ Invalid RTN jz 0x7f4d61c93f85
+ Invalid RTN ret 
+ Invalid RTN lea rax, ptr [rip+0xe0eb1]
+ Invalid RTN sub rsp, 0x28
+ Invalid RTN lea rcx, ptr [rip+0xe0eab]
+ Invalid RTN mov edx, 0x5f
+ Invalid RTN mov qword ptr [rsp], rax
+ Invalid RTN mov rax, 0x103ae75f6
+ Invalid RTN mov qword ptr [rsp+0x8], rax
+ Invalid RTN mov eax, 0x50e3a8
+ Invalid RTN shl rax, 0x4
+ Invalid RTN add rcx, 0x1
+ Invalid RTN add rax, rdx
+ Invalid RTN mov rdx, rax
+ Invalid RTN shr rdx, 0x18
+ Invalid RTN and edx, 0xf0
+ Invalid RTN xor rax, rdx
+ Invalid RTN movzx edx, byte ptr [rcx]
+ Invalid RTN test dl, dl
+ Invalid RTN jnz 0x7f4d61cc785f
+ Invalid RTN and eax, 0xfffffff
+ Invalid RTN cmp rax, 0x3ae75f6
+ Invalid RTN jnz 0x7f4d61cc78b9
+ Invalid RTN lea rdi, ptr [rip+0xe28bf]
+ Invalid RTN mov rsi, rsp
+ Invalid RTN mov qword ptr [rsp+0x10], 0x0
+ Invalid RTN call 0x7f4d61d5c2c0
+ Invalid RTN shl rax, 0x4
+ Invalid RTN add rcx, 0x1
+ Invalid RTN add rax, rdx
+ Invalid RTN mov rdx, rax
+ Invalid RTN shr rdx, 0x18
+ Invalid RTN and edx, 0xf0
+ Invalid RTN xor rax, rdx
+ Invalid RTN movzx edx, byte ptr [rcx]
+ Invalid RTN test dl, dl
+ Invalid RTN jnz 0x7f4d61cc785f
+ Invalid RTN and eax, 0xfffffff
+ Invalid RTN cmp rax, 0x3ae75f6
+ Invalid RTN jnz 0x7f4d61cc78b9
+ Invalid RTN lea rdi, ptr [rip+0xe28bf]
+ Invalid RTN mov rsi, rsp
+ Invalid RTN mov qword ptr [rsp+0x10], 0x0
+ Invalid RTN call 0x7f4d61d5c2c0
+ Invalid RTN lea rdx, ptr [rip-0xad]
+ Invalid RTN test rax, rax
+ Invalid RTN cmovz rax, rdx
+ Invalid RTN add rsp, 0x28
+ Invalid RTN ret 
+ Invalid RTN mov rcx, qword ptr [rip+0x34c2e1]
+ Invalid RTN lea rax, ptr [rip+0x1c722]
+ Invalid RTN mov edx, dword ptr [rcx+0xb4]
+ Invalid RTN test edx, 0x80000
+ Invalid RTN jnz 0x7f4d61c93be5
+ Invalid RTN mov eax, edx
+ Invalid RTN and eax, 0x101000
+ Invalid RTN cmp eax, 0x1000
+ Invalid RTN jz 0x7f4d61c93bf0
+ Invalid RTN test dh, 0x8
+ Invalid RTN jnz 0x7f4d61c93c20
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ instcount: branch/ret inst: jz 0x4004a8
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ instcount: branch/ret inst: jz 0x4004a8
+ Exe register_tm_clones
+ Exe register_tm_clones
+ Exe register_tm_clones
+ instcount: branch/ret inst: jmp rax
+ Exe register_tm_clones
+ Exe register_tm_clones
+ instcount: branch/ret inst: ret 
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jmp 0x400534
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x4004f8
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: call 0x4003f0
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jmp 0x40052a
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x400501
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x4004f8
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: call 0x4003f0
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jnle 0x400526
+ Exe main
+ instcount: branch/ret inst: jmp 0x40051d
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x400513
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x400501
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x4004f8
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x400513
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x400501
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: jle 0x4004f8
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: call 0x4003f0
+ Exe main
+ Exe main
+ Exe main
+ instcount: branch/ret inst: ret 
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ instcount: branch/ret inst: jz 0x400468
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ instcount: branch/ret inst: jz 0x400468
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ instcount: branch/ret inst: jmp rax
+ Exe deregister_tm_clones
+ Exe deregister_tm_clones
+ instcount: branch/ret inst: ret 
