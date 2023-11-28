@@ -1,2 +1,4 @@
 # ResilienceAnalysis
-A tool designed to analyze the resilience of HPC programs
+####
+Resilism: To explore Resilience Mechanism of HPC applications to soft errors
+####
