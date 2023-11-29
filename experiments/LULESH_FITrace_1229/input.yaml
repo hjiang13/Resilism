@@ -1,0 +1,30 @@
+compileOption:
+    instSelMethod:
+      - insttype:
+          include: 
+            - icmp
+          exclude:
+            - ret
+
+    regSelMethod: regloc
+    regloc: dstreg
+
+    includeInjectionTrace: 
+        #- forward
+        - backward
+
+    tracingPropagation: False # trace dynamic instruction values.
+
+    tracingPropagationOption:
+        maxTrace: 250 # max number of instructions to trace during fault injection run
+        debugTrace: False
+        generateCDFG: False
+
+runOption:
+    - run:
+        numOfRuns: 3000
+        fi_type: bitflip
+
+    #- run:
+    #    numOfRuns: 3
+    #    fi_type: stuck_at_0
