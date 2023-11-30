@@ -2,7 +2,7 @@ compileOption:
     instSelMethod:
       - insttype:
           include: 
-            - icmp
+            - all
           exclude:
             - ret
 

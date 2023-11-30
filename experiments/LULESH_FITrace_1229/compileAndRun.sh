@@ -21,11 +21,11 @@ echo "Done llvm-link"
 opt  "$fname.ll" -O3 --disable-inlining -time-passes -S -o "$fname.ll"
 # opt  "$fname.ll" -S -o "$fname.ll"
 # Instrument it
-#$LLFI_BUILD_ROOT/bin/instrument -lstdc++ --readable "$fname.ll"
+$LLFI_BUILD_ROOT/bin/instrument -lstdc++ --readable "$fname.ll"
 
 # Call the profiling script
 #shift
-#$LLFI_BUILD_ROOT/bin/profile ./llfi/"$fname-profiling.exe" 30 $@
+$LLFI_BUILD_ROOT/bin/profile ./llfi/"$fname-profiling.exe" 10 $@
 
 # Inject the faults
 #$LLFI_BUILD_ROOT/bin/injectfault ./llfi/"$fname-faultinjection.exe" 30 $@
