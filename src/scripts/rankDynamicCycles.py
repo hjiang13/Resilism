@@ -7,6 +7,7 @@ import sys
 import itertools
 inFile = sys.argv[1]
 outFile = sys.argv[2]
+N = int(sys.argv[3]) # The top N innstructions targeted
 
 #read the input file and store all the data in a dictionary
 
@@ -32,8 +33,6 @@ sorted_instCycles = sorted(instCycles, key=instCycles.get, reverse=True)
 print(sorted_instCycles)
 #Using islice() + items()
 # To get the first N items in dictionary
-
-N = 1000
 
 topNInst = sorted_instCycles[:N]
 
