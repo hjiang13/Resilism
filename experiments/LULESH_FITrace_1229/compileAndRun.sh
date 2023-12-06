@@ -27,7 +27,33 @@ $LLFI_BUILD_ROOT/bin/instrument -lstdc++ --readable "$fname.ll"
 #shift
 $LLFI_BUILD_ROOT/bin/profile ./llfi/"$fname-profiling.exe" 10 $@
 
-# Inject the faults
-#$LLFI_BUILD_ROOT/bin/injectfault ./llfi/"$fname-faultinjection.exe" 30 $@
+#To get the top K instructions
+python3 /home/hjiang/Resilism/src/scripts/rankDynamicCycles.py ./llfi.stat.prof.txt ./topInst.txt 1000
+
+#configure input.yaml file
+file="./topInst.txt"
+while read -r line; do
+    rm -rf ./llfi*
+    fi_index=${line}
+    echo -e "$line\n"
+    # Config input.yaml
+    python3 ../../src/scripts/genInputYaml.py ${fi_index}
+    # Instrument it
+    $LLFI_BUILD_ROOT/bin/instrument -lstdc++ --readable "$fname.ll"
+
+    # Call the profiling script
+    shift
+    $LLFI_BUILD_ROOT/bin/profile ./llfi/"$fname-profiling.exe" 10 $@
+
+    # Inject the faults
+    $LLFI_BUILD_ROOT/bin/injectfault ./llfi/"$fname-faultinjection.exe" 10 $@
+
+    # Backup data
+    rm -rf ../../data/LULESH_FITrace_1229/lulesh-${line}
+    mkdir ../../data/LULESH_FITrace_1229/lulesh-${line}
+    cp -r ./llfi/ ../../data/LULESH_FITrace_1229/lulesh-${line}/
+    echo "Done injecting fault into ${fi_index}"
+done <$file
+echo "Done injecting faults"
 
 #echo "Done injecting faults"

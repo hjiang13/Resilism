@@ -1,4 +1,4 @@
 failure_class=HardwareFault
-failure_mode=SpecifiedInstructionTypes
+failure_mode=SpecifiedLLFIIndex
 targets=<include list in yaml>
 injector=<fi_type>
