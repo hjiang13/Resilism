@@ -702,7 +702,6 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
 
 10:                                               ; preds = %10, %8
   %11 = phi i64 [ 0, %8 ], [ %21, %10 ], !llfi_index !415
-  call void @doProfiling(i32 55, i32 402)
   %12 = getelementptr inbounds double, double* %5, i64 %11, !llfi_index !416
   %13 = load double, double* %12, align 8, !tbaa !345, !llfi_index !417
   %14 = fneg double %13, !llfi_index !418

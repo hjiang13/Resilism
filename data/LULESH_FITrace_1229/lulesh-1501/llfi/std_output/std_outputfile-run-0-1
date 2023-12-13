@@ -1,13 +1,13 @@
 
 
-Elapsed time = 6.143550e-01
+Elapsed time = 5.636830e-01
 
 Run completed:  
    Problem size        =  10 
    Iteration count     =  593 
    Final Origin Energy = 5.174622e+05 
    Testing Plane 0 of Energy Array:
-        MaxAbsDiff   = 3.599273e-06
-        TotalAbsDiff = 2.688781e-05
-        MaxRelDiff   = 7.394914e-10
+        MaxAbsDiff   = 3.742753e-08
+        TotalAbsDiff = 8.212049e-08
+        MaxRelDiff   = 5.935617e-13
 

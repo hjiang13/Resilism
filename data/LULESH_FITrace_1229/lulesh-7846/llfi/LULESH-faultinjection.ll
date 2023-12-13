@@ -51,7 +51,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
 @phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -9790,14 +9789,13 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   br label %156, !llfi_index !8046
 
 156:                                              ; preds = %156, %151
-  %157 = phi i64 [ 0, %151 ], [ %fi1, %156 ], !llfi_index !8047
+  %157 = phi i64 [ 0, %151 ], [ %160, %156 ], !llfi_index !8047
   %fi = call i64 @injectFault0(i64 7846, i64 %157, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !8048
   %158 = getelementptr double, double* %148, i64 %fi, !llfi_index !8049
   %159 = bitcast double* %158 to <2 x double>*, !llfi_index !8050
   store <2 x double> %155, <2 x double>* %159, align 8, !tbaa !345, !llfi_index !8051
   %160 = add nuw i64 %fi, 2, !llfi_index !8052
-  %fi1 = call i64 @injectFault0(i64 7850, i64 %160, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !8048
-  %161 = icmp eq i64 %fi1, %152, !llfi_index !8053
+  %161 = icmp eq i64 %160, %152, !llfi_index !8053
   br i1 %161, label %162, label %156, !llvm.loop !8054, !llfi_index !8055
 
 162:                                              ; preds = %156

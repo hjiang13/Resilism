@@ -3937,95 +3937,50 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind readonly uwtable willreturn
 define dso_local double @_Z14CalcElemVolumePKdS0_S0_(double* nocapture readonly %0, double* nocapture readonly %1, double* nocapture readonly %2) local_unnamed_addr #17 {
   %4 = load double, double* %0, align 8, !tbaa !345, !llfi_index !3428
-  call void @doProfiling(i32 32, i32 3387)
   %5 = getelementptr inbounds double, double* %0, i64 1, !llfi_index !3429
-  call void @doProfiling(i32 34, i32 3388)
   %6 = load double, double* %5, align 8, !tbaa !345, !llfi_index !3430
-  call void @doProfiling(i32 32, i32 3389)
   %7 = getelementptr inbounds double, double* %0, i64 2, !llfi_index !3431
-  call void @doProfiling(i32 34, i32 3390)
   %8 = load double, double* %7, align 8, !tbaa !345, !llfi_index !3432
-  call void @doProfiling(i32 32, i32 3391)
   %9 = getelementptr inbounds double, double* %0, i64 3, !llfi_index !3433
-  call void @doProfiling(i32 34, i32 3392)
   %10 = load double, double* %9, align 8, !tbaa !345, !llfi_index !3434
-  call void @doProfiling(i32 32, i32 3393)
   %11 = getelementptr inbounds double, double* %0, i64 4, !llfi_index !3435
-  call void @doProfiling(i32 34, i32 3394)
   %12 = load double, double* %11, align 8, !tbaa !345, !llfi_index !3436
-  call void @doProfiling(i32 32, i32 3395)
   %13 = getelementptr inbounds double, double* %0, i64 5, !llfi_index !3437
-  call void @doProfiling(i32 34, i32 3396)
   %14 = load double, double* %13, align 8, !tbaa !345, !llfi_index !3438
-  call void @doProfiling(i32 32, i32 3397)
   %15 = getelementptr inbounds double, double* %0, i64 6, !llfi_index !3439
-  call void @doProfiling(i32 34, i32 3398)
   %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !3440
-  call void @doProfiling(i32 32, i32 3399)
   %17 = getelementptr inbounds double, double* %0, i64 7, !llfi_index !3441
-  call void @doProfiling(i32 34, i32 3400)
   %18 = load double, double* %17, align 8, !tbaa !345, !llfi_index !3442
-  call void @doProfiling(i32 32, i32 3401)
   %19 = load double, double* %1, align 8, !tbaa !345, !llfi_index !3443
-  call void @doProfiling(i32 32, i32 3402)
   %20 = getelementptr inbounds double, double* %1, i64 1, !llfi_index !3444
-  call void @doProfiling(i32 34, i32 3403)
   %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !3445
-  call void @doProfiling(i32 32, i32 3404)
   %22 = getelementptr inbounds double, double* %1, i64 2, !llfi_index !3446
-  call void @doProfiling(i32 34, i32 3405)
   %23 = load double, double* %22, align 8, !tbaa !345, !llfi_index !3447
-  call void @doProfiling(i32 32, i32 3406)
   %24 = getelementptr inbounds double, double* %1, i64 3, !llfi_index !3448
-  call void @doProfiling(i32 34, i32 3407)
   %25 = load double, double* %24, align 8, !tbaa !345, !llfi_index !3449
-  call void @doProfiling(i32 32, i32 3408)
   %26 = getelementptr inbounds double, double* %1, i64 4, !llfi_index !3450
-  call void @doProfiling(i32 34, i32 3409)
   %27 = load double, double* %26, align 8, !tbaa !345, !llfi_index !3451
-  call void @doProfiling(i32 32, i32 3410)
   %28 = getelementptr inbounds double, double* %1, i64 5, !llfi_index !3452
-  call void @doProfiling(i32 34, i32 3411)
   %29 = load double, double* %28, align 8, !tbaa !345, !llfi_index !3453
-  call void @doProfiling(i32 32, i32 3412)
   %30 = getelementptr inbounds double, double* %1, i64 6, !llfi_index !3454
-  call void @doProfiling(i32 34, i32 3413)
   %31 = load double, double* %30, align 8, !tbaa !345, !llfi_index !3455
-  call void @doProfiling(i32 32, i32 3414)
   %32 = getelementptr inbounds double, double* %1, i64 7, !llfi_index !3456
-  call void @doProfiling(i32 34, i32 3415)
   %33 = load double, double* %32, align 8, !tbaa !345, !llfi_index !3457
-  call void @doProfiling(i32 32, i32 3416)
   %34 = load double, double* %2, align 8, !tbaa !345, !llfi_index !3458
-  call void @doProfiling(i32 32, i32 3417)
   %35 = getelementptr inbounds double, double* %2, i64 1, !llfi_index !3459
-  call void @doProfiling(i32 34, i32 3418)
   %36 = load double, double* %35, align 8, !tbaa !345, !llfi_index !3460
-  call void @doProfiling(i32 32, i32 3419)
   %37 = getelementptr inbounds double, double* %2, i64 2, !llfi_index !3461
-  call void @doProfiling(i32 34, i32 3420)
   %38 = load double, double* %37, align 8, !tbaa !345, !llfi_index !3462
-  call void @doProfiling(i32 32, i32 3421)
   %39 = getelementptr inbounds double, double* %2, i64 3, !llfi_index !3463
-  call void @doProfiling(i32 34, i32 3422)
   %40 = load double, double* %39, align 8, !tbaa !345, !llfi_index !3464
-  call void @doProfiling(i32 32, i32 3423)
   %41 = getelementptr inbounds double, double* %2, i64 4, !llfi_index !3465
-  call void @doProfiling(i32 34, i32 3424)
   %42 = load double, double* %41, align 8, !tbaa !345, !llfi_index !3466
-  call void @doProfiling(i32 32, i32 3425)
   %43 = getelementptr inbounds double, double* %2, i64 5, !llfi_index !3467
-  call void @doProfiling(i32 34, i32 3426)
   %44 = load double, double* %43, align 8, !tbaa !345, !llfi_index !3468
-  call void @doProfiling(i32 32, i32 3427)
   %45 = getelementptr inbounds double, double* %2, i64 6, !llfi_index !3469
-  call void @doProfiling(i32 34, i32 3428)
   %46 = load double, double* %45, align 8, !tbaa !345, !llfi_index !3470
-  call void @doProfiling(i32 32, i32 3429)
   %47 = getelementptr inbounds double, double* %2, i64 7, !llfi_index !3471
-  call void @doProfiling(i32 34, i32 3430)
   %48 = load double, double* %47, align 8, !tbaa !345, !llfi_index !3472
-  call void @doProfiling(i32 32, i32 3431)
   %49 = tail call double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %4, double %6, double %8, double %10, double %12, double %14, double %16, double %18, double %19, double %21, double %23, double %25, double %27, double %29, double %31, double %33, double %34, double %36, double %38, double %40, double %42, double %44, double %46, double %48), !llfi_index !3473
   call void @doProfiling(i32 56, i32 3432)
   ret double %49, !llfi_index !3474

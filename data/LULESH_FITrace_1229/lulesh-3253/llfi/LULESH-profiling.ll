@@ -3766,7 +3766,6 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   %3 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 3, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3272
   %4 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 0, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3273
   %5 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 4, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3274
-  call void @doProfiling(i32 32, i32 3234)
   %6 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 1, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3275
   %7 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 5, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3276
   %8 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 2, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3277
@@ -3782,7 +3781,6 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
 
 12:                                               ; preds = %12, %10
   %13 = phi i64 [ 0, %10 ], [ %32, %12 ], !llfi_index !3283
-  call void @doProfiling(i32 55, i32 3243)
   %14 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3284
   %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3285
   %16 = fmul double %15, %0, !llfi_index !3286
@@ -3791,9 +3789,7 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   %19 = fadd double %16, %18, !llfi_index !3289
   store double %19, double* %17, align 8, !tbaa !345, !llfi_index !3290
   %20 = getelementptr inbounds double, double* %5, i64 %13, !llfi_index !3291
-  call void @doProfiling(i32 34, i32 3251)
   %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !3292
-  call void @doProfiling(i32 32, i32 3252)
   %22 = fmul double %21, %0, !llfi_index !3293
   call void @doProfiling(i32 18, i32 3253)
   %23 = getelementptr inbounds double, double* %6, i64 %13, !llfi_index !3294
@@ -3808,7 +3804,6 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   %31 = fadd double %28, %30, !llfi_index !3303
   store double %31, double* %29, align 8, !tbaa !345, !llfi_index !3304
   %32 = add nuw nsw i64 %13, 1, !llfi_index !3305
-  call void @doProfiling(i32 13, i32 3265)
   %33 = icmp eq i64 %32, %11, !llfi_index !3306
   br i1 %33, label %.loopexit, label %12, !llvm.loop !3307, !llfi_index !3308
 }

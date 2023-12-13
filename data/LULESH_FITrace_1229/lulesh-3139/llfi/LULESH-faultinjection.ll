@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@phi_namestr = internal constant [4 x i8] c"phi\00"
 @add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
@@ -3617,30 +3616,29 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
   ret void, !llfi_index !3153
 
 12:                                               ; preds = %12, %10
-  %13 = phi i64 [ 0, %10 ], [ %fi1, %12 ], !llfi_index !3154
-  %fi = call i64 @injectFault0(i64 3119, i64 %13, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !3155
-  %14 = getelementptr inbounds double, double* %2, i64 %fi, !llfi_index !3156
-  %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3157
-  %16 = getelementptr inbounds double, double* %3, i64 %fi, !llfi_index !3158
-  %17 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3159
-  %18 = fdiv double %15, %17, !llfi_index !3160
-  %19 = getelementptr inbounds double, double* %4, i64 %fi, !llfi_index !3161
-  store double %18, double* %19, align 8, !tbaa !345, !llfi_index !3162
-  %20 = getelementptr inbounds double, double* %5, i64 %fi, !llfi_index !3163
-  %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !3164
-  %22 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3165
-  %23 = fdiv double %21, %22, !llfi_index !3166
-  %24 = getelementptr inbounds double, double* %6, i64 %fi, !llfi_index !3167
-  store double %23, double* %24, align 8, !tbaa !345, !llfi_index !3168
-  %25 = getelementptr inbounds double, double* %7, i64 %fi, !llfi_index !3169
-  %26 = load double, double* %25, align 8, !tbaa !345, !llfi_index !3170
-  %27 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3171
-  %28 = fdiv double %26, %27, !llfi_index !3172
-  %29 = getelementptr inbounds double, double* %8, i64 %fi, !llfi_index !3173
-  store double %28, double* %29, align 8, !tbaa !345, !llfi_index !3174
-  %30 = add nuw nsw i64 %fi, 1, !llfi_index !3175
-  %fi1 = call i64 @injectFault0(i64 3139, i64 %30, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !3155
-  %31 = icmp eq i64 %fi1, %11, !llfi_index !3176
+  %13 = phi i64 [ 0, %10 ], [ %fi, %12 ], !llfi_index !3154
+  %14 = getelementptr inbounds double, double* %2, i64 %13, !llfi_index !3155
+  %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3156
+  %16 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3157
+  %17 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3158
+  %18 = fdiv double %15, %17, !llfi_index !3159
+  %19 = getelementptr inbounds double, double* %4, i64 %13, !llfi_index !3160
+  store double %18, double* %19, align 8, !tbaa !345, !llfi_index !3161
+  %20 = getelementptr inbounds double, double* %5, i64 %13, !llfi_index !3162
+  %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !3163
+  %22 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3164
+  %23 = fdiv double %21, %22, !llfi_index !3165
+  %24 = getelementptr inbounds double, double* %6, i64 %13, !llfi_index !3166
+  store double %23, double* %24, align 8, !tbaa !345, !llfi_index !3167
+  %25 = getelementptr inbounds double, double* %7, i64 %13, !llfi_index !3168
+  %26 = load double, double* %25, align 8, !tbaa !345, !llfi_index !3169
+  %27 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3170
+  %28 = fdiv double %26, %27, !llfi_index !3171
+  %29 = getelementptr inbounds double, double* %8, i64 %13, !llfi_index !3172
+  store double %28, double* %29, align 8, !tbaa !345, !llfi_index !3173
+  %30 = add nuw nsw i64 %13, 1, !llfi_index !3174
+  %fi = call i64 @injectFault0(i64 3139, i64 %30, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !3175
+  %31 = icmp eq i64 %fi, %11, !llfi_index !3176
   br i1 %31, label %.loopexit, label %12, !llvm.loop !3177, !llfi_index !3178
 }
 
@@ -13089,27 +13087,27 @@ attributes #34 = { allocsize(0) }
 !3152 = !{i64 3117}
 !3153 = !{i64 3118}
 !3154 = !{i64 3119}
-!3155 = !{!"after"}
-!3156 = !{i64 3120}
-!3157 = !{i64 3121}
-!3158 = !{i64 3122}
-!3159 = !{i64 3123}
-!3160 = !{i64 3124}
-!3161 = !{i64 3125}
-!3162 = !{i64 3126}
-!3163 = !{i64 3127}
-!3164 = !{i64 3128}
-!3165 = !{i64 3129}
-!3166 = !{i64 3130}
-!3167 = !{i64 3131}
-!3168 = !{i64 3132}
-!3169 = !{i64 3133}
-!3170 = !{i64 3134}
-!3171 = !{i64 3135}
-!3172 = !{i64 3136}
-!3173 = !{i64 3137}
-!3174 = !{i64 3138}
-!3175 = !{i64 3139}
+!3155 = !{i64 3120}
+!3156 = !{i64 3121}
+!3157 = !{i64 3122}
+!3158 = !{i64 3123}
+!3159 = !{i64 3124}
+!3160 = !{i64 3125}
+!3161 = !{i64 3126}
+!3162 = !{i64 3127}
+!3163 = !{i64 3128}
+!3164 = !{i64 3129}
+!3165 = !{i64 3130}
+!3166 = !{i64 3131}
+!3167 = !{i64 3132}
+!3168 = !{i64 3133}
+!3169 = !{i64 3134}
+!3170 = !{i64 3135}
+!3171 = !{i64 3136}
+!3172 = !{i64 3137}
+!3173 = !{i64 3138}
+!3174 = !{i64 3139}
+!3175 = !{!"after"}
 !3176 = !{i64 3140}
 !3177 = distinct !{!3177, !431, !432}
 !3178 = !{i64 3141}

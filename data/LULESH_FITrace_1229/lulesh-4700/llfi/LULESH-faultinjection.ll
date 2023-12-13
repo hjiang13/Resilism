@@ -51,7 +51,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
 @phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -5448,7 +5447,7 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br label %71, !llfi_index !4757
 
 71:                                               ; preds = %106, %63
-  %72 = phi i64 [ 0, %63 ], [ %fi1, %106 ], !llfi_index !4758
+  %72 = phi i64 [ 0, %63 ], [ %107, %106 ], !llfi_index !4758
   %fi = call i64 @injectFault0(i64 4700, i64 %72, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !4759
   %73 = getelementptr inbounds double, double* %1, i64 %fi, !llfi_index !4760
   %74 = bitcast double* %73 to <2 x double>*, !llfi_index !4761
@@ -5496,8 +5495,7 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 106:                                              ; preds = %100, %98
   %107 = add nuw i64 %fi, 2, !llfi_index !4807
-  %fi1 = call i64 @injectFault0(i64 4738, i64 %107, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4759
-  %108 = icmp eq i64 %fi1, %64, !llfi_index !4808
+  %108 = icmp eq i64 %107, %64, !llfi_index !4808
   br i1 %108, label %109, label %71, !llvm.loop !4809, !llfi_index !4810
 
 109:                                              ; preds = %106

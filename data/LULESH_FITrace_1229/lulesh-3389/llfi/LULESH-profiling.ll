@@ -3938,7 +3938,6 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
 define dso_local double @_Z14CalcElemVolumePKdS0_S0_(double* nocapture readonly %0, double* nocapture readonly %1, double* nocapture readonly %2) local_unnamed_addr #17 {
   %4 = load double, double* %0, align 8, !tbaa !345, !llfi_index !3428
   %5 = getelementptr inbounds double, double* %0, i64 1, !llfi_index !3429
-  call void @doProfiling(i32 34, i32 3388)
   %6 = load double, double* %5, align 8, !tbaa !345, !llfi_index !3430
   call void @doProfiling(i32 32, i32 3389)
   %7 = getelementptr inbounds double, double* %0, i64 2, !llfi_index !3431

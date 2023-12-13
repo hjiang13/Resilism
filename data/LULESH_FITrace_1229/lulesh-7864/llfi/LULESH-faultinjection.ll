@@ -50,10 +50,7 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 @icmp_namestr = internal constant [5 x i8] c"icmp\00"
-@and_namestr = internal constant [4 x i8] c"and\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -9787,42 +9784,38 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 151:                                              ; preds = %146
   %152 = and i64 %2, -2, !llfi_index !8042
   %153 = and i64 %2, 1, !llfi_index !8043
-  %fi3 = call i64 @injectFault0(i64 7842, i64 %153, i32 28, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @and_namestr, i32 0, i32 0)), !llfi_injectfault !8044
-  %154 = insertelement <2 x double> poison, double %149, i32 0, !llfi_index !8045
-  %155 = shufflevector <2 x double> %154, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !8046
-  br label %156, !llfi_index !8047
+  %154 = insertelement <2 x double> poison, double %149, i32 0, !llfi_index !8044
+  %155 = shufflevector <2 x double> %154, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !8045
+  br label %156, !llfi_index !8046
 
 156:                                              ; preds = %156, %151
-  %157 = phi i64 [ 0, %151 ], [ %160, %156 ], !llfi_index !8048
-  %158 = getelementptr double, double* %148, i64 %157, !llfi_index !8049
-  %159 = bitcast double* %158 to <2 x double>*, !llfi_index !8050
-  store <2 x double> %155, <2 x double>* %159, align 8, !tbaa !345, !llfi_index !8051
-  %160 = add nuw i64 %157, 2, !llfi_index !8052
-  %161 = icmp eq i64 %160, %152, !llfi_index !8053
-  br i1 %161, label %162, label %156, !llvm.loop !8054, !llfi_index !8055
+  %157 = phi i64 [ 0, %151 ], [ %160, %156 ], !llfi_index !8047
+  %158 = getelementptr double, double* %148, i64 %157, !llfi_index !8048
+  %159 = bitcast double* %158 to <2 x double>*, !llfi_index !8049
+  store <2 x double> %155, <2 x double>* %159, align 8, !tbaa !345, !llfi_index !8050
+  %160 = add nuw i64 %157, 2, !llfi_index !8051
+  %161 = icmp eq i64 %160, %152, !llfi_index !8052
+  br i1 %161, label %162, label %156, !llvm.loop !8053, !llfi_index !8054
 
 162:                                              ; preds = %156
-  %163 = getelementptr double, double* %148, i64 %152, !llfi_index !8056
-  %164 = icmp eq i64 %152, %2, !llfi_index !8057
-  br i1 %164, label %.loopexit, label %.preheader, !llfi_index !8058
+  %163 = getelementptr double, double* %148, i64 %152, !llfi_index !8055
+  %164 = icmp eq i64 %152, %2, !llfi_index !8056
+  br i1 %164, label %.loopexit, label %.preheader, !llfi_index !8057
 
 .preheader:                                       ; preds = %162, %146
-  %.ph = phi i64 [ %fi3, %162 ], [ 1, %146 ], !llfi_index !8059
-  %.ph22 = phi double* [ %163, %162 ], [ %148, %146 ], !llfi_index !8060
-  %fi4 = call i64 @injectFault0(i64 7856, i64 %.ph, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !8044
-  br label %165, !llfi_index !8061
+  %.ph = phi i64 [ %153, %162 ], [ 1, %146 ], !llfi_index !8058
+  %.ph22 = phi double* [ %163, %162 ], [ %148, %146 ], !llfi_index !8059
+  br label %165, !llfi_index !8060
 
 165:                                              ; preds = %165, %.preheader
-  %166 = phi i64 [ %fi1, %165 ], [ %fi4, %.preheader ], !llfi_index !8062
-  %167 = phi double* [ %169, %165 ], [ %.ph22, %.preheader ], !llfi_index !8063
-  %fi = call i64 @injectFault0(i64 7859, i64 %166, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !8044
-  store double %149, double* %167, align 8, !tbaa !345, !llfi_index !8064
-  %168 = add i64 %fi, -1, !llfi_index !8065
-  %fi1 = call i64 @injectFault0(i64 7862, i64 %168, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !8044
-  %169 = getelementptr inbounds double, double* %167, i64 1, !llfi_index !8066
-  %170 = icmp eq i64 %fi1, 0, !llfi_index !8067
-  %fi2 = call i1 @injectFault1(i64 7864, i1 %170, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !8044
-  br i1 %fi2, label %.loopexit, label %165, !llvm.loop !8068, !llfi_index !8069
+  %166 = phi i64 [ %168, %165 ], [ %.ph, %.preheader ], !llfi_index !8061
+  %167 = phi double* [ %169, %165 ], [ %.ph22, %.preheader ], !llfi_index !8062
+  store double %149, double* %167, align 8, !tbaa !345, !llfi_index !8063
+  %168 = add i64 %166, -1, !llfi_index !8064
+  %169 = getelementptr inbounds double, double* %167, i64 1, !llfi_index !8065
+  %170 = icmp eq i64 %168, 0, !llfi_index !8066
+  %fi = call i1 @injectFault0(i64 7864, i1 %170, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !8067
+  br i1 %fi, label %.loopexit, label %165, !llvm.loop !8068, !llfi_index !8069
 
 .loopexit:                                        ; preds = %165, %162
   %171 = load double*, double** %122, align 8, !tbaa !9, !llfi_index !8070
@@ -9875,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define i64 @injectFault0(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca i64, align 8
-  store i64 %1, i64* %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast i64* %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load i64, i64* %tmploc, align 8
-  ret i64 %updateval
-}
-
-define i1 @injectFault1(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define i1 @injectFault0(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca i1, align 1
   store i1 %1, i1* %tmploc, align 1
@@ -18000,30 +17976,30 @@ attributes #34 = { allocsize(0) }
 !8041 = !{i64 7840}
 !8042 = !{i64 7841}
 !8043 = !{i64 7842}
-!8044 = !{!"after"}
-!8045 = !{i64 7843}
-!8046 = !{i64 7844}
-!8047 = !{i64 7845}
-!8048 = !{i64 7846}
-!8049 = !{i64 7847}
-!8050 = !{i64 7848}
-!8051 = !{i64 7849}
-!8052 = !{i64 7850}
-!8053 = !{i64 7851}
-!8054 = distinct !{!8054, !431, !432, !2670}
-!8055 = !{i64 7852}
-!8056 = !{i64 7853}
-!8057 = !{i64 7854}
-!8058 = !{i64 7855}
-!8059 = !{i64 7856}
-!8060 = !{i64 7857}
-!8061 = !{i64 7858}
-!8062 = !{i64 7859}
-!8063 = !{i64 7860}
-!8064 = !{i64 7861}
-!8065 = !{i64 7862}
-!8066 = !{i64 7863}
-!8067 = !{i64 7864}
+!8044 = !{i64 7843}
+!8045 = !{i64 7844}
+!8046 = !{i64 7845}
+!8047 = !{i64 7846}
+!8048 = !{i64 7847}
+!8049 = !{i64 7848}
+!8050 = !{i64 7849}
+!8051 = !{i64 7850}
+!8052 = !{i64 7851}
+!8053 = distinct !{!8053, !431, !432, !2670}
+!8054 = !{i64 7852}
+!8055 = !{i64 7853}
+!8056 = !{i64 7854}
+!8057 = !{i64 7855}
+!8058 = !{i64 7856}
+!8059 = !{i64 7857}
+!8060 = !{i64 7858}
+!8061 = !{i64 7859}
+!8062 = !{i64 7860}
+!8063 = !{i64 7861}
+!8064 = !{i64 7862}
+!8065 = !{i64 7863}
+!8066 = !{i64 7864}
+!8067 = !{!"after"}
 !8068 = distinct !{!8068, !431, !432, !2670}
 !8069 = !{i64 7865}
 !8070 = !{i64 7866}

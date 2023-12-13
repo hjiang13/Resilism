@@ -1195,7 +1195,6 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable willreturn
 define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x double]* nocapture readonly %0, double %1, double %2, double %3, double* nocapture %4, double* nocapture %5, double* nocapture %6) local_unnamed_addr #5 {
   %8 = bitcast [8 x double]* %0 to <2 x double>*, !llfi_index !892
-  call void @doProfiling(i32 49, i32 875)
   %9 = load <2 x double>, <2 x double>* %8, align 8, !tbaa !345, !llfi_index !893
   call void @doProfiling(i32 32, i32 876)
   %10 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 0, i64 2, !llfi_index !894

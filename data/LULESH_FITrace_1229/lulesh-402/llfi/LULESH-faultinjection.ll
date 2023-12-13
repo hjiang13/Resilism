@@ -51,7 +51,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
 @phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -703,7 +702,7 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
   ret void, !llfi_index !414
 
 10:                                               ; preds = %10, %8
-  %11 = phi i64 [ 0, %8 ], [ %fi1, %10 ], !llfi_index !415
+  %11 = phi i64 [ 0, %8 ], [ %21, %10 ], !llfi_index !415
   %fi = call i64 @injectFault0(i64 402, i64 %11, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !416
   %12 = getelementptr inbounds double, double* %5, i64 %fi, !llfi_index !417
   %13 = load double, double* %12, align 8, !tbaa !345, !llfi_index !418
@@ -718,8 +717,7 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
   %20 = getelementptr inbounds double, double* %1, i64 %fi, !llfi_index !427
   store double %17, double* %20, align 8, !tbaa !345, !llfi_index !428
   %21 = add nuw nsw i64 %fi, 1, !llfi_index !429
-  %fi1 = call i64 @injectFault0(i64 415, i64 %21, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !416
-  %22 = icmp eq i64 %fi1, %9, !llfi_index !430
+  %22 = icmp eq i64 %21, %9, !llfi_index !430
   br i1 %22, label %.loopexit, label %10, !llvm.loop !431, !llfi_index !434
 }
 

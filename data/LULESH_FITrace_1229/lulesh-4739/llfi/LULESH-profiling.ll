@@ -5361,7 +5361,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 12:                                               ; preds = %10
   %13 = zext i32 %9 to i64, !llfi_index !4683
-  call void @doProfiling(i32 39, i32 4634)
   %14 = icmp eq i32 %9, 1, !llfi_index !4684
   br i1 %14, label %.preheader6, label %15, !llfi_index !4685
 
@@ -5438,7 +5437,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 63:                                               ; preds = %47
   %64 = and i64 %13, 4294967294, !llfi_index !4750
-  call void @doProfiling(i32 28, i32 4692)
   %65 = insertelement <2 x double> poison, double %7, i32 0, !llfi_index !4751
   %66 = shufflevector <2 x double> %65, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !4752
   %67 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !4753
@@ -5449,7 +5447,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 71:                                               ; preds = %106, %63
   %72 = phi i64 [ 0, %63 ], [ %107, %106 ], !llfi_index !4758
-  call void @doProfiling(i32 55, i32 4700)
   %73 = getelementptr inbounds double, double* %1, i64 %72, !llfi_index !4759
   %74 = bitcast double* %73 to <2 x double>*, !llfi_index !4760
   %75 = load <2 x double>, <2 x double>* %74, align 8, !tbaa !345, !alias.scope !4761, !llfi_index !4764
@@ -5496,7 +5493,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 106:                                              ; preds = %100, %98
   %107 = add nuw i64 %72, 2, !llfi_index !4806
-  call void @doProfiling(i32 13, i32 4738)
   %108 = icmp eq i64 %107, %64, !llfi_index !4807
   call void @doProfiling(i32 53, i32 4739)
   br i1 %108, label %109, label %71, !llvm.loop !4808, !llfi_index !4809

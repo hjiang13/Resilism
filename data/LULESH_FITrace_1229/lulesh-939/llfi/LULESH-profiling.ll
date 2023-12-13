@@ -1209,11 +1209,8 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %20 = bitcast double* %19 to <2 x double>*, !llfi_index !904
   %21 = load <2 x double>, <2 x double>* %20, align 8, !tbaa !345, !llfi_index !905
   %22 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 1, i64 2, !llfi_index !906
-  call void @doProfiling(i32 34, i32 889)
   %23 = bitcast double* %22 to <2 x double>*, !llfi_index !907
-  call void @doProfiling(i32 49, i32 890)
   %24 = load <2 x double>, <2 x double>* %23, align 8, !tbaa !345, !llfi_index !908
-  call void @doProfiling(i32 32, i32 891)
   %25 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 1, i64 4, !llfi_index !909
   %26 = bitcast double* %25 to <2 x double>*, !llfi_index !910
   %27 = load <2 x double>, <2 x double>* %26, align 8, !tbaa !345, !llfi_index !911
@@ -1255,15 +1252,12 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   store <2 x double> %58, <2 x double>* %59, align 8, !tbaa !345, !llfi_index !947
   %60 = fneg <2 x double> %21, !llfi_index !948
   %61 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !949
-  call void @doProfiling(i32 62, i32 932)
   %62 = shufflevector <2 x double> %61, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !950
-  call void @doProfiling(i32 63, i32 933)
   %63 = fmul <2 x double> %62, %60, !llfi_index !951
   %64 = bitcast double* %5 to <2 x double>*, !llfi_index !952
   store <2 x double> %63, <2 x double>* %64, align 8, !tbaa !345, !llfi_index !953
   %65 = getelementptr inbounds double, double* %5, i64 2, !llfi_index !954
   %66 = fneg <2 x double> %24, !llfi_index !955
-  call void @doProfiling(i32 12, i32 938)
   %67 = fmul <2 x double> %62, %66, !llfi_index !956
   call void @doProfiling(i32 18, i32 939)
   %68 = bitcast double* %65 to <2 x double>*, !llfi_index !957

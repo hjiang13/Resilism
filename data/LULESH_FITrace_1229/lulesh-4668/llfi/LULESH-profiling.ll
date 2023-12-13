@@ -5391,7 +5391,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 32:                                               ; preds = %32, %30
   %33 = phi i64 [ 0, %30 ], [ %43, %32 ], !llfi_index !4705
-  call void @doProfiling(i32 55, i32 4656)
   %34 = getelementptr inbounds double, double* %4, i64 %33, !llfi_index !4706
   %35 = bitcast double* %34 to <2 x double>*, !llfi_index !4707
   %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4708, !llfi_index !4711

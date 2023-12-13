@@ -3833,15 +3833,10 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %34 = insertelement <2 x double> %33, double %3, i32 1, !llfi_index !3326
   %35 = fsub <2 x double> %32, %34, !llfi_index !3327
   %36 = insertelement <2 x double> poison, double %14, i32 0, !llfi_index !3328
-  call void @doProfiling(i32 62, i32 3287)
   %37 = shufflevector <2 x double> %36, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3329
-  call void @doProfiling(i32 63, i32 3288)
   %38 = insertelement <2 x double> poison, double %9, i32 0, !llfi_index !3330
-  call void @doProfiling(i32 62, i32 3289)
   %39 = insertelement <2 x double> %38, double %11, i32 1, !llfi_index !3331
-  call void @doProfiling(i32 62, i32 3290)
   %40 = fsub <2 x double> %37, %39, !llfi_index !3332
-  call void @doProfiling(i32 16, i32 3291)
   %41 = insertelement <2 x double> poison, double %22, i32 0, !llfi_index !3333
   %42 = shufflevector <2 x double> %41, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3334
   %43 = insertelement <2 x double> poison, double %17, i32 0, !llfi_index !3335
@@ -3857,15 +3852,10 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %53 = shufflevector <2 x double> %28, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3345
   %54 = fsub <2 x double> %52, %53, !llfi_index !3346
   %55 = insertelement <2 x double> poison, double %21, i32 0, !llfi_index !3347
-  call void @doProfiling(i32 62, i32 3306)
   %56 = insertelement <2 x double> %55, double %18, i32 1, !llfi_index !3348
-  call void @doProfiling(i32 62, i32 3307)
   %57 = insertelement <2 x double> poison, double %16, i32 0, !llfi_index !3349
-  call void @doProfiling(i32 62, i32 3308)
   %58 = shufflevector <2 x double> %57, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3350
-  call void @doProfiling(i32 63, i32 3309)
   %59 = fsub <2 x double> %56, %58, !llfi_index !3351
-  call void @doProfiling(i32 16, i32 3310)
   %60 = insertelement <2 x double> %31, double %14, i32 1, !llfi_index !3352
   %61 = insertelement <2 x double> poison, double %4, i32 0, !llfi_index !3353
   %62 = insertelement <2 x double> %61, double %12, i32 1, !llfi_index !3354

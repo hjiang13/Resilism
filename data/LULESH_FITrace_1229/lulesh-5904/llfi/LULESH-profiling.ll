@@ -6785,7 +6785,6 @@ define dso_local void @_Z16LagrangeLeapFrogv() local_unnamed_addr #10 {
 ; Function Attrs: mustprogress noinline norecurse uwtable
 define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_addr #21 {
   %3 = alloca [8 x double], align 16, !llfi_index !5809
-  call void @doProfiling(i32 31, i32 5686)
   %4 = alloca [8 x double], align 16, !llfi_index !5810
   %5 = alloca [8 x double], align 16, !llfi_index !5811
   %6 = alloca %struct.timeval, align 8, !llfi_index !5812
@@ -7048,7 +7047,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
 
 163:                                              ; preds = %163, %154
   %164 = phi i64 [ 0, %154 ], [ %177, %163 ], !llfi_index !6030
-  call void @doProfiling(i32 55, i32 5898)
   %165 = getelementptr inbounds i32, i32* %157, i64 %164, !llfi_index !6031
   %166 = load i32, i32* %165, align 4, !tbaa !404, !llfi_index !6032
   %167 = sext i32 %166 to i64, !llfi_index !6033
@@ -7066,7 +7064,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   %176 = getelementptr inbounds [8 x double], [8 x double]* %5, i64 0, i64 %164, !llfi_index !6044
   store double %175, double* %176, align 8, !tbaa !345, !llfi_index !6045
   %177 = add nuw nsw i64 %164, 1, !llfi_index !6046
-  call void @doProfiling(i32 13, i32 5914)
   %178 = icmp eq i64 %177, 8, !llfi_index !6047
   br i1 %178, label %158, label %163, !llvm.loop !6048, !llfi_index !6049
 

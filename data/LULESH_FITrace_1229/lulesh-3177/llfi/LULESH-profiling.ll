@@ -3672,7 +3672,6 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
 
 20:                                               ; preds = %23
   %21 = load i32*, i32** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 15, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3200
-  call void @doProfiling(i32 32, i32 3163)
   %22 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 8, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3201
   br label %31, !llfi_index !3202
 
@@ -3692,7 +3691,6 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
 
 31:                                               ; preds = %31, %20
   %32 = phi i64 [ 0, %20 ], [ %37, %31 ], !llfi_index !3214
-  call void @doProfiling(i32 55, i32 3176)
   %33 = getelementptr inbounds i32, i32* %21, i64 %32, !llfi_index !3215
   call void @doProfiling(i32 34, i32 3177)
   %34 = load i32, i32* %33, align 4, !tbaa !404, !llfi_index !3216
@@ -3700,7 +3698,6 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
   %36 = getelementptr inbounds double, double* %22, i64 %35, !llfi_index !3218
   store double 0.000000e+00, double* %36, align 8, !tbaa !345, !llfi_index !3219
   %37 = add nuw nsw i64 %32, 1, !llfi_index !3220
-  call void @doProfiling(i32 13, i32 3182)
   %38 = icmp eq i64 %37, %8, !llfi_index !3221
   br i1 %38, label %.loopexit, label %31, !llvm.loop !3222, !llfi_index !3223
 }

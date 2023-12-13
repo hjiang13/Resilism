@@ -50,13 +50,7 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@fneg_namestr = internal constant [5 x i8] c"fneg\00"
-@insertelement_namestr = internal constant [14 x i8] c"insertelement\00"
-@shufflevector_namestr = internal constant [14 x i8] c"shufflevector\00"
 @fmul_namestr = internal constant [5 x i8] c"fmul\00"
-@getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
-@bitcast_namestr = internal constant [8 x i8] c"bitcast\00"
-@load_namestr = internal constant [5 x i8] c"load\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -1224,86 +1218,80 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %28 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 1, i64 6, !llfi_index !912
   %29 = bitcast double* %28 to <2 x double>*, !llfi_index !913
   %30 = load <2 x double>, <2 x double>* %29, align 8, !tbaa !345, !llfi_index !914
-  %31 = getelementptr [8 x double], [8 x double]* %0, i64 2, i64 0, !llfi_index !915
-  %fi4 = call double* @injectFault1(i64 898, double* %31, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !916
-  %32 = bitcast double* %fi4 to <2 x double>*, !llfi_index !917
-  %fi5 = call <2 x double>* @injectFault2(i64 899, <2 x double>* %32, i32 49, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([8 x i8], [8 x i8]* @bitcast_namestr, i32 0, i32 0)), !llfi_injectfault !916
-  %33 = load <2 x double>, <2 x double>* %fi5, align 8, !tbaa !345, !llfi_index !918
-  %fi6 = call <2 x double> @injectFault0(i64 900, <2 x double> %33, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !916
-  %34 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 2, !llfi_index !919
-  %35 = bitcast double* %34 to <2 x double>*, !llfi_index !920
-  %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !llfi_index !921
-  %37 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 4, !llfi_index !922
-  %38 = bitcast double* %37 to <2 x double>*, !llfi_index !923
-  %39 = load <2 x double>, <2 x double>* %38, align 8, !tbaa !345, !llfi_index !924
-  %40 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 6, !llfi_index !925
-  %41 = bitcast double* %40 to <2 x double>*, !llfi_index !926
-  %42 = load <2 x double>, <2 x double>* %41, align 8, !tbaa !345, !llfi_index !927
-  %43 = fneg <2 x double> %9, !llfi_index !928
-  %44 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !929
-  %45 = shufflevector <2 x double> %44, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !930
-  %46 = fmul <2 x double> %45, %43, !llfi_index !931
-  %47 = bitcast double* %4 to <2 x double>*, !llfi_index !932
-  store <2 x double> %46, <2 x double>* %47, align 8, !tbaa !345, !llfi_index !933
-  %48 = getelementptr inbounds double, double* %4, i64 2, !llfi_index !934
-  %49 = fneg <2 x double> %12, !llfi_index !935
-  %50 = fmul <2 x double> %45, %49, !llfi_index !936
-  %51 = bitcast double* %48 to <2 x double>*, !llfi_index !937
-  store <2 x double> %50, <2 x double>* %51, align 8, !tbaa !345, !llfi_index !938
-  %52 = getelementptr inbounds double, double* %4, i64 4, !llfi_index !939
-  %53 = fneg <2 x double> %15, !llfi_index !940
-  %54 = fmul <2 x double> %45, %53, !llfi_index !941
-  %55 = bitcast double* %52 to <2 x double>*, !llfi_index !942
-  store <2 x double> %54, <2 x double>* %55, align 8, !tbaa !345, !llfi_index !943
-  %56 = getelementptr inbounds double, double* %4, i64 6, !llfi_index !944
-  %57 = fneg <2 x double> %18, !llfi_index !945
-  %58 = fmul <2 x double> %45, %57, !llfi_index !946
-  %59 = bitcast double* %56 to <2 x double>*, !llfi_index !947
-  store <2 x double> %58, <2 x double>* %59, align 8, !tbaa !345, !llfi_index !948
-  %60 = fneg <2 x double> %21, !llfi_index !949
-  %61 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !950
-  %62 = shufflevector <2 x double> %61, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !951
-  %63 = fmul <2 x double> %62, %60, !llfi_index !952
-  %64 = bitcast double* %5 to <2 x double>*, !llfi_index !953
-  store <2 x double> %63, <2 x double>* %64, align 8, !tbaa !345, !llfi_index !954
-  %65 = getelementptr inbounds double, double* %5, i64 2, !llfi_index !955
-  %66 = fneg <2 x double> %24, !llfi_index !956
-  %67 = fmul <2 x double> %62, %66, !llfi_index !957
-  %68 = bitcast double* %65 to <2 x double>*, !llfi_index !958
-  store <2 x double> %67, <2 x double>* %68, align 8, !tbaa !345, !llfi_index !959
-  %69 = getelementptr inbounds double, double* %5, i64 4, !llfi_index !960
-  %70 = fneg <2 x double> %27, !llfi_index !961
-  %71 = fmul <2 x double> %62, %70, !llfi_index !962
-  %72 = bitcast double* %69 to <2 x double>*, !llfi_index !963
-  store <2 x double> %71, <2 x double>* %72, align 8, !tbaa !345, !llfi_index !964
-  %73 = getelementptr inbounds double, double* %5, i64 6, !llfi_index !965
-  %74 = fneg <2 x double> %30, !llfi_index !966
-  %75 = fmul <2 x double> %62, %74, !llfi_index !967
-  %76 = bitcast double* %73 to <2 x double>*, !llfi_index !968
-  store <2 x double> %75, <2 x double>* %76, align 8, !tbaa !345, !llfi_index !969
-  %77 = fneg <2 x double> %fi6, !llfi_index !970
-  %fi = call <2 x double> @injectFault0(i64 952, <2 x double> %77, i32 12, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fneg_namestr, i32 0, i32 0)), !llfi_injectfault !916
-  %78 = insertelement <2 x double> poison, double %3, i32 0, !llfi_index !971
-  %fi1 = call <2 x double> @injectFault0(i64 953, <2 x double> %78, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !916
-  %79 = shufflevector <2 x double> %fi1, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !972
-  %fi2 = call <2 x double> @injectFault0(i64 954, <2 x double> %79, i32 63, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @shufflevector_namestr, i32 0, i32 0)), !llfi_injectfault !916
-  %80 = fmul <2 x double> %fi2, %fi, !llfi_index !973
-  %fi3 = call <2 x double> @injectFault0(i64 955, <2 x double> %80, i32 18, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !916
+  %31 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 0, !llfi_index !915
+  %32 = bitcast double* %31 to <2 x double>*, !llfi_index !916
+  %33 = load <2 x double>, <2 x double>* %32, align 8, !tbaa !345, !llfi_index !917
+  %34 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 2, !llfi_index !918
+  %35 = bitcast double* %34 to <2 x double>*, !llfi_index !919
+  %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !llfi_index !920
+  %37 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 4, !llfi_index !921
+  %38 = bitcast double* %37 to <2 x double>*, !llfi_index !922
+  %39 = load <2 x double>, <2 x double>* %38, align 8, !tbaa !345, !llfi_index !923
+  %40 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 6, !llfi_index !924
+  %41 = bitcast double* %40 to <2 x double>*, !llfi_index !925
+  %42 = load <2 x double>, <2 x double>* %41, align 8, !tbaa !345, !llfi_index !926
+  %43 = fneg <2 x double> %9, !llfi_index !927
+  %44 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !928
+  %45 = shufflevector <2 x double> %44, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !929
+  %46 = fmul <2 x double> %45, %43, !llfi_index !930
+  %47 = bitcast double* %4 to <2 x double>*, !llfi_index !931
+  store <2 x double> %46, <2 x double>* %47, align 8, !tbaa !345, !llfi_index !932
+  %48 = getelementptr inbounds double, double* %4, i64 2, !llfi_index !933
+  %49 = fneg <2 x double> %12, !llfi_index !934
+  %50 = fmul <2 x double> %45, %49, !llfi_index !935
+  %51 = bitcast double* %48 to <2 x double>*, !llfi_index !936
+  store <2 x double> %50, <2 x double>* %51, align 8, !tbaa !345, !llfi_index !937
+  %52 = getelementptr inbounds double, double* %4, i64 4, !llfi_index !938
+  %53 = fneg <2 x double> %15, !llfi_index !939
+  %54 = fmul <2 x double> %45, %53, !llfi_index !940
+  %55 = bitcast double* %52 to <2 x double>*, !llfi_index !941
+  store <2 x double> %54, <2 x double>* %55, align 8, !tbaa !345, !llfi_index !942
+  %56 = getelementptr inbounds double, double* %4, i64 6, !llfi_index !943
+  %57 = fneg <2 x double> %18, !llfi_index !944
+  %58 = fmul <2 x double> %45, %57, !llfi_index !945
+  %59 = bitcast double* %56 to <2 x double>*, !llfi_index !946
+  store <2 x double> %58, <2 x double>* %59, align 8, !tbaa !345, !llfi_index !947
+  %60 = fneg <2 x double> %21, !llfi_index !948
+  %61 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !949
+  %62 = shufflevector <2 x double> %61, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !950
+  %63 = fmul <2 x double> %62, %60, !llfi_index !951
+  %64 = bitcast double* %5 to <2 x double>*, !llfi_index !952
+  store <2 x double> %63, <2 x double>* %64, align 8, !tbaa !345, !llfi_index !953
+  %65 = getelementptr inbounds double, double* %5, i64 2, !llfi_index !954
+  %66 = fneg <2 x double> %24, !llfi_index !955
+  %67 = fmul <2 x double> %62, %66, !llfi_index !956
+  %68 = bitcast double* %65 to <2 x double>*, !llfi_index !957
+  store <2 x double> %67, <2 x double>* %68, align 8, !tbaa !345, !llfi_index !958
+  %69 = getelementptr inbounds double, double* %5, i64 4, !llfi_index !959
+  %70 = fneg <2 x double> %27, !llfi_index !960
+  %71 = fmul <2 x double> %62, %70, !llfi_index !961
+  %72 = bitcast double* %69 to <2 x double>*, !llfi_index !962
+  store <2 x double> %71, <2 x double>* %72, align 8, !tbaa !345, !llfi_index !963
+  %73 = getelementptr inbounds double, double* %5, i64 6, !llfi_index !964
+  %74 = fneg <2 x double> %30, !llfi_index !965
+  %75 = fmul <2 x double> %62, %74, !llfi_index !966
+  %76 = bitcast double* %73 to <2 x double>*, !llfi_index !967
+  store <2 x double> %75, <2 x double>* %76, align 8, !tbaa !345, !llfi_index !968
+  %77 = fneg <2 x double> %33, !llfi_index !969
+  %78 = insertelement <2 x double> poison, double %3, i32 0, !llfi_index !970
+  %79 = shufflevector <2 x double> %78, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !971
+  %80 = fmul <2 x double> %79, %77, !llfi_index !972
+  %fi = call <2 x double> @injectFault0(i64 955, <2 x double> %80, i32 18, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !973
   %81 = bitcast double* %6 to <2 x double>*, !llfi_index !974
-  store <2 x double> %fi3, <2 x double>* %81, align 8, !tbaa !345, !llfi_index !975
+  store <2 x double> %fi, <2 x double>* %81, align 8, !tbaa !345, !llfi_index !975
   %82 = getelementptr inbounds double, double* %6, i64 2, !llfi_index !976
   %83 = fneg <2 x double> %36, !llfi_index !977
-  %84 = fmul <2 x double> %fi2, %83, !llfi_index !978
+  %84 = fmul <2 x double> %79, %83, !llfi_index !978
   %85 = bitcast double* %82 to <2 x double>*, !llfi_index !979
   store <2 x double> %84, <2 x double>* %85, align 8, !tbaa !345, !llfi_index !980
   %86 = getelementptr inbounds double, double* %6, i64 4, !llfi_index !981
   %87 = fneg <2 x double> %39, !llfi_index !982
-  %88 = fmul <2 x double> %fi2, %87, !llfi_index !983
+  %88 = fmul <2 x double> %79, %87, !llfi_index !983
   %89 = bitcast double* %86 to <2 x double>*, !llfi_index !984
   store <2 x double> %88, <2 x double>* %89, align 8, !tbaa !345, !llfi_index !985
   %90 = getelementptr inbounds double, double* %6, i64 6, !llfi_index !986
   %91 = fneg <2 x double> %42, !llfi_index !987
-  %92 = fmul <2 x double> %fi2, %91, !llfi_index !988
+  %92 = fmul <2 x double> %79, %91, !llfi_index !988
   %93 = bitcast double* %90 to <2 x double>*, !llfi_index !989
   store <2 x double> %92, <2 x double>* %93, align 8, !tbaa !345, !llfi_index !990
   ret void, !llfi_index !991
@@ -9897,40 +9885,6 @@ exit:                                             ; preds = %inject, %entry
   ret <2 x double> %updateval
 }
 
-define double* @injectFault1(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca double*, align 8
-  store double* %1, double** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast double** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load double*, double** %tmploc, align 8
-  ret double* %updateval
-}
-
-define <2 x double>* @injectFault2(i64 %0, <2 x double>* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca <2 x double>*, align 8
-  store <2 x double>* %1, <2 x double>** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast <2 x double>** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load <2 x double>*, <2 x double>** %tmploc, align 8
-  ret <2 x double>* %updateval
-}
-
 declare void @initInjections()
 
 declare void @postInjections()
@@ -10894,64 +10848,64 @@ attributes #34 = { allocsize(0) }
 !913 = !{i64 896}
 !914 = !{i64 897}
 !915 = !{i64 898}
-!916 = !{!"after"}
-!917 = !{i64 899}
-!918 = !{i64 900}
-!919 = !{i64 901}
-!920 = !{i64 902}
-!921 = !{i64 903}
-!922 = !{i64 904}
-!923 = !{i64 905}
-!924 = !{i64 906}
-!925 = !{i64 907}
-!926 = !{i64 908}
-!927 = !{i64 909}
-!928 = !{i64 910}
-!929 = !{i64 911}
-!930 = !{i64 912}
-!931 = !{i64 913}
-!932 = !{i64 914}
-!933 = !{i64 915}
-!934 = !{i64 916}
-!935 = !{i64 917}
-!936 = !{i64 918}
-!937 = !{i64 919}
-!938 = !{i64 920}
-!939 = !{i64 921}
-!940 = !{i64 922}
-!941 = !{i64 923}
-!942 = !{i64 924}
-!943 = !{i64 925}
-!944 = !{i64 926}
-!945 = !{i64 927}
-!946 = !{i64 928}
-!947 = !{i64 929}
-!948 = !{i64 930}
-!949 = !{i64 931}
-!950 = !{i64 932}
-!951 = !{i64 933}
-!952 = !{i64 934}
-!953 = !{i64 935}
-!954 = !{i64 936}
-!955 = !{i64 937}
-!956 = !{i64 938}
-!957 = !{i64 939}
-!958 = !{i64 940}
-!959 = !{i64 941}
-!960 = !{i64 942}
-!961 = !{i64 943}
-!962 = !{i64 944}
-!963 = !{i64 945}
-!964 = !{i64 946}
-!965 = !{i64 947}
-!966 = !{i64 948}
-!967 = !{i64 949}
-!968 = !{i64 950}
-!969 = !{i64 951}
-!970 = !{i64 952}
-!971 = !{i64 953}
-!972 = !{i64 954}
-!973 = !{i64 955}
+!916 = !{i64 899}
+!917 = !{i64 900}
+!918 = !{i64 901}
+!919 = !{i64 902}
+!920 = !{i64 903}
+!921 = !{i64 904}
+!922 = !{i64 905}
+!923 = !{i64 906}
+!924 = !{i64 907}
+!925 = !{i64 908}
+!926 = !{i64 909}
+!927 = !{i64 910}
+!928 = !{i64 911}
+!929 = !{i64 912}
+!930 = !{i64 913}
+!931 = !{i64 914}
+!932 = !{i64 915}
+!933 = !{i64 916}
+!934 = !{i64 917}
+!935 = !{i64 918}
+!936 = !{i64 919}
+!937 = !{i64 920}
+!938 = !{i64 921}
+!939 = !{i64 922}
+!940 = !{i64 923}
+!941 = !{i64 924}
+!942 = !{i64 925}
+!943 = !{i64 926}
+!944 = !{i64 927}
+!945 = !{i64 928}
+!946 = !{i64 929}
+!947 = !{i64 930}
+!948 = !{i64 931}
+!949 = !{i64 932}
+!950 = !{i64 933}
+!951 = !{i64 934}
+!952 = !{i64 935}
+!953 = !{i64 936}
+!954 = !{i64 937}
+!955 = !{i64 938}
+!956 = !{i64 939}
+!957 = !{i64 940}
+!958 = !{i64 941}
+!959 = !{i64 942}
+!960 = !{i64 943}
+!961 = !{i64 944}
+!962 = !{i64 945}
+!963 = !{i64 946}
+!964 = !{i64 947}
+!965 = !{i64 948}
+!966 = !{i64 949}
+!967 = !{i64 950}
+!968 = !{i64 951}
+!969 = !{i64 952}
+!970 = !{i64 953}
+!971 = !{i64 954}
+!972 = !{i64 955}
+!973 = !{!"after"}
 !974 = !{i64 956}
 !975 = !{i64 957}
 !976 = !{i64 958}

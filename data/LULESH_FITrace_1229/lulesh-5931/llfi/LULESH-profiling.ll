@@ -7076,7 +7076,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
 
 182:                                              ; preds = %182, %158
   %183 = phi i64 [ 0, %158 ], [ %190, %182 ], !llfi_index !6057
-  call void @doProfiling(i32 55, i32 5923)
   %184 = getelementptr inbounds i32, i32* %157, i64 %183, !llfi_index !6058
   %185 = load i32, i32* %184, align 4, !tbaa !404, !llfi_index !6059
   %186 = sext i32 %185 to i64, !llfi_index !6060

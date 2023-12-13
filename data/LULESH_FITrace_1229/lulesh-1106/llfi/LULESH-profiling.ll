@@ -1435,9 +1435,7 @@ declare void @llvm.lifetime.end.p0i8(i64 immarg, i8* nocapture) #8
 define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocapture readonly %0, double* nocapture %1, double* nocapture %2, double* nocapture %3) local_unnamed_addr #5 {
   %5 = load i32, i32* %0, align 4, !tbaa !404, !llfi_index !1106
   %6 = getelementptr inbounds i32, i32* %0, i64 1, !llfi_index !1107
-  call void @doProfiling(i32 34, i32 1087)
   %7 = load i32, i32* %6, align 4, !tbaa !404, !llfi_index !1108
-  call void @doProfiling(i32 32, i32 1088)
   %8 = getelementptr inbounds i32, i32* %0, i64 2, !llfi_index !1109
   %9 = load i32, i32* %8, align 4, !tbaa !404, !llfi_index !1110
   %10 = getelementptr inbounds i32, i32* %0, i64 3, !llfi_index !1111

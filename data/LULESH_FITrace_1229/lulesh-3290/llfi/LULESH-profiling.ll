@@ -3835,7 +3835,6 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %36 = insertelement <2 x double> poison, double %14, i32 0, !llfi_index !3328
   %37 = shufflevector <2 x double> %36, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3329
   %38 = insertelement <2 x double> poison, double %9, i32 0, !llfi_index !3330
-  call void @doProfiling(i32 62, i32 3289)
   %39 = insertelement <2 x double> %38, double %11, i32 1, !llfi_index !3331
   call void @doProfiling(i32 62, i32 3290)
   %40 = fsub <2 x double> %37, %39, !llfi_index !3332

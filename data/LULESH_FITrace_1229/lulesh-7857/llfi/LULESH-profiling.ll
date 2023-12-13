@@ -9550,12 +9550,9 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   %7 = getelementptr inbounds %"class.std::vector", %"class.std::vector"* %0, i64 0, i32 0, i32 0, i32 0, i32 2, !llfi_index !7870
   %8 = load double*, double** %7, align 8, !tbaa !7803, !llfi_index !7871
   %9 = getelementptr inbounds %"class.std::vector", %"class.std::vector"* %0, i64 0, i32 0, i32 0, i32 0, i32 1, !llfi_index !7872
-  call void @doProfiling(i32 34, i32 7677)
   %10 = load double*, double** %9, align 8, !tbaa !6871, !llfi_index !7873
-  call void @doProfiling(i32 32, i32 7678)
   %11 = ptrtoint double* %8 to i64, !llfi_index !7874
   %12 = ptrtoint double* %10 to i64, !llfi_index !7875
-  call void @doProfiling(i32 47, i32 7680)
   %13 = sub i64 %11, %12, !llfi_index !7876
   %14 = ashr exact i64 %13, 3, !llfi_index !7877
   %15 = icmp ult i64 %14, %2, !llfi_index !7878
@@ -9743,15 +9740,10 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 
 121:                                              ; preds = %6
   %122 = getelementptr inbounds %"class.std::vector", %"class.std::vector"* %0, i64 0, i32 0, i32 0, i32 0, i32 0, !llfi_index !8011
-  call void @doProfiling(i32 34, i32 7810)
   %123 = load double*, double** %122, align 8, !tbaa !9, !llfi_index !8012
-  call void @doProfiling(i32 32, i32 7811)
   %124 = ptrtoint double* %123 to i64, !llfi_index !8013
-  call void @doProfiling(i32 47, i32 7812)
   %125 = sub i64 %12, %124, !llfi_index !8014
-  call void @doProfiling(i32 15, i32 7813)
   %126 = ashr exact i64 %125, 3, !llfi_index !8015
-  call void @doProfiling(i32 27, i32 7814)
   %127 = sub nsw i64 1152921504606846975, %126, !llfi_index !8016
   %128 = icmp ult i64 %127, %2, !llfi_index !8017
   br i1 %128, label %129, label %130, !llfi_index !8018
@@ -9762,49 +9754,33 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 
 130:                                              ; preds = %121
   %131 = icmp ult i64 %126, %2, !llfi_index !8021
-  call void @doProfiling(i32 53, i32 7820)
   %132 = select i1 %131, i64 %2, i64 %126, !llfi_index !8022
-  call void @doProfiling(i32 57, i32 7821)
   %133 = add i64 %132, %126, !llfi_index !8023
-  call void @doProfiling(i32 13, i32 7822)
   %134 = icmp ult i64 %133, %126, !llfi_index !8024
-  call void @doProfiling(i32 53, i32 7823)
   %135 = icmp ugt i64 %133, 1152921504606846975, !llfi_index !8025
-  call void @doProfiling(i32 53, i32 7824)
   %136 = or i1 %134, %135, !llfi_index !8026
-  call void @doProfiling(i32 29, i32 7825)
   %137 = select i1 %136, i64 1152921504606846975, i64 %133, !llfi_index !8027
-  call void @doProfiling(i32 57, i32 7826)
   %138 = ptrtoint double* %1 to i64, !llfi_index !8028
-  call void @doProfiling(i32 47, i32 7827)
   %139 = sub i64 %138, %124, !llfi_index !8029
-  call void @doProfiling(i32 15, i32 7828)
   %140 = ashr exact i64 %139, 3, !llfi_index !8030
-  call void @doProfiling(i32 27, i32 7829)
   %141 = icmp eq i64 %137, 0, !llfi_index !8031
   br i1 %141, label %146, label %142, !llfi_index !8032
 
 142:                                              ; preds = %130
   %143 = shl nuw nsw i64 %137, 3, !llfi_index !8033
-  call void @doProfiling(i32 25, i32 7832)
   %144 = tail call noalias nonnull i8* @_Znwm(i64 %143) #34, !llfi_index !8034
-  call void @doProfiling(i32 56, i32 7833)
   %145 = bitcast i8* %144 to double*, !llfi_index !8035
-  call void @doProfiling(i32 49, i32 7834)
   br label %146, !llfi_index !8036
 
 146:                                              ; preds = %142, %130
   %147 = phi double* [ %145, %142 ], [ null, %130 ], !llfi_index !8037
-  call void @doProfiling(i32 55, i32 7836)
   %148 = getelementptr inbounds double, double* %147, i64 %140, !llfi_index !8038
-  call void @doProfiling(i32 34, i32 7837)
   %149 = load double, double* %3, align 8, !tbaa !345, !llfi_index !8039
   %150 = icmp ult i64 %2, 2, !llfi_index !8040
   br i1 %150, label %.preheader, label %151, !llfi_index !8041
 
 151:                                              ; preds = %146
   %152 = and i64 %2, -2, !llfi_index !8042
-  call void @doProfiling(i32 28, i32 7841)
   %153 = and i64 %2, 1, !llfi_index !8043
   %154 = insertelement <2 x double> poison, double %149, i32 0, !llfi_index !8044
   %155 = shufflevector <2 x double> %154, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !8045
@@ -9821,7 +9797,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 
 162:                                              ; preds = %156
   %163 = getelementptr double, double* %148, i64 %152, !llfi_index !8055
-  call void @doProfiling(i32 34, i32 7853)
   %164 = icmp eq i64 %152, %2, !llfi_index !8056
   br i1 %164, label %.loopexit, label %.preheader, !llfi_index !8057
 

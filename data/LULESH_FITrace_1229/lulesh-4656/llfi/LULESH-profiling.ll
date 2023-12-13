@@ -5404,7 +5404,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4722
   store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4723, !noalias !4708, !llfi_index !4724
   %43 = add nuw i64 %33, 2, !llfi_index !4725
-  call void @doProfiling(i32 13, i32 4668)
   %44 = icmp eq i64 %43, %31, !llfi_index !4726
   br i1 %44, label %45, label %32, !llvm.loop !4727, !llfi_index !4728
 

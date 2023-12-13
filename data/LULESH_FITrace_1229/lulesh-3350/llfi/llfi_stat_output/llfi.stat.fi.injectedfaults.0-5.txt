@@ -1,1 +1,1 @@
-FI stat: fi_type=bitflip, fi_max_multiple=-1, fi_index=3319, fi_cycle=200468, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=128, fi_bit=119, opcode=insertelement
+FI stat: fi_type=bitflip, fi_max_multiple=-1, fi_index=3350, fi_cycle=337701, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=128, fi_bit=69, opcode=fadd

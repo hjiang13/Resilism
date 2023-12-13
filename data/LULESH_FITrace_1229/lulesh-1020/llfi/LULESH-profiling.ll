@@ -1347,11 +1347,8 @@ define dso_local void @_Z23IntegrateStressForElemsiPdS_S_S_(i32 %0, double* noca
 
 33:                                               ; preds = %68, %31
   %34 = phi i64 [ 0, %31 ], [ %69, %68 ], !llfi_index !1034
-  call void @doProfiling(i32 55, i32 1017)
   %35 = shl nsw i64 %34, 3, !llfi_index !1035
-  call void @doProfiling(i32 25, i32 1018)
   %36 = load i32*, i32** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 17, i32 0, i32 0, i32 0, i32 0), align 8, !tbaa !168, !llfi_index !1036
-  call void @doProfiling(i32 32, i32 1019)
   %37 = getelementptr inbounds i32, i32* %36, i64 %35, !llfi_index !1037
   call void @doProfiling(i32 34, i32 1020)
   %38 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 0, i32 0, i32 0, i32 0, i32 0), align 8, !tbaa !9, !llfi_index !1038
@@ -1398,7 +1395,6 @@ define dso_local void @_Z23IntegrateStressForElemsiPdS_S_S_(i32 %0, double* noca
 
 68:                                               ; preds = %71
   %69 = add nuw nsw i64 %34, 1, !llfi_index !1076
-  call void @doProfiling(i32 13, i32 1058)
   %70 = icmp eq i64 %69, %32, !llfi_index !1077
   br i1 %70, label %.loopexit, label %33, !llvm.loop !1078, !llfi_index !1079
 

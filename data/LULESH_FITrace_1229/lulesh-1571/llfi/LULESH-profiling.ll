@@ -1826,13 +1826,10 @@ define dso_local void @_Z24CalcElemVolumeDerivativePdS_S_PKdS1_S1_(double* nocap
 define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_(double* nocapture readonly %0, double* nocapture readonly %1, double* nocapture readonly %2, double* nocapture readonly %3, double* nocapture readonly %4, double* nocapture readonly %5, double* nocapture readonly %6, double* nocapture readonly %7, double* nocapture readonly %8, double* nocapture readonly %9, double* nocapture readonly %10, double %11, double* nocapture %12, double* nocapture %13, double* nocapture %14) local_unnamed_addr #5 {
   %16 = load double, double* %3, align 8, !tbaa !345, !llfi_index !1485
   %17 = load double, double* %0, align 8, !tbaa !345, !llfi_index !1486
-  call void @doProfiling(i32 32, i32 1466)
   %18 = fmul double %16, %17, !llfi_index !1487
   %19 = load double, double* %4, align 8, !tbaa !345, !llfi_index !1488
   %20 = getelementptr inbounds double, double* %0, i64 1, !llfi_index !1489
-  call void @doProfiling(i32 34, i32 1469)
   %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !1490
-  call void @doProfiling(i32 32, i32 1470)
   %22 = fmul double %19, %21, !llfi_index !1491
   %23 = fadd double %18, %22, !llfi_index !1492
   %24 = load double, double* %5, align 8, !tbaa !345, !llfi_index !1493
@@ -1928,17 +1925,11 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %114 = fmul double %51, %113, !llfi_index !1583
   %115 = fadd double %111, %114, !llfi_index !1584
   %116 = getelementptr inbounds double, double* %3, i64 3, !llfi_index !1585
-  call void @doProfiling(i32 34, i32 1565)
   %117 = load double, double* %116, align 8, !tbaa !345, !llfi_index !1586
-  call void @doProfiling(i32 32, i32 1566)
   %118 = fmul double %17, %117, !llfi_index !1587
-  call void @doProfiling(i32 18, i32 1567)
   %119 = getelementptr inbounds double, double* %4, i64 3, !llfi_index !1588
-  call void @doProfiling(i32 34, i32 1568)
   %120 = load double, double* %119, align 8, !tbaa !345, !llfi_index !1589
-  call void @doProfiling(i32 32, i32 1569)
   %121 = fmul double %21, %120, !llfi_index !1590
-  call void @doProfiling(i32 18, i32 1570)
   %122 = fadd double %118, %121, !llfi_index !1591
   call void @doProfiling(i32 14, i32 1571)
   %123 = getelementptr inbounds double, double* %5, i64 3, !llfi_index !1592

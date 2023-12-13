@@ -50,9 +50,7 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@phi_namestr = internal constant [4 x i8] c"phi\00"
 @getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -5393,23 +5391,21 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br label %32, !llfi_index !4704
 
 32:                                               ; preds = %32, %30
-  %33 = phi i64 [ 0, %30 ], [ %fi2, %32 ], !llfi_index !4705
-  %fi = call i64 @injectFault0(i64 4656, i64 %33, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !4706
-  %34 = getelementptr double, double* %4, i64 %fi, !llfi_index !4707
-  %fi1 = call double* @injectFault1(i64 4657, double* %34, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !4706
-  %35 = bitcast double* %fi1 to <2 x double>*, !llfi_index !4708
+  %33 = phi i64 [ 0, %30 ], [ %43, %32 ], !llfi_index !4705
+  %34 = getelementptr double, double* %4, i64 %33, !llfi_index !4706
+  %fi = call double* @injectFault0(i64 4657, double* %34, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !4707
+  %35 = bitcast double* %fi to <2 x double>*, !llfi_index !4708
   %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4709, !llfi_index !4712
   %37 = fadd <2 x double> %36, <double 1.000000e+00, double 1.000000e+00>, !llfi_index !4713
   %38 = fmul <2 x double> %37, <double 0x3FE5555555555555, double 0x3FE5555555555555>, !llfi_index !4714
-  %39 = getelementptr inbounds double, double* %1, i64 %fi, !llfi_index !4715
+  %39 = getelementptr inbounds double, double* %1, i64 %33, !llfi_index !4715
   %40 = bitcast double* %39 to <2 x double>*, !llfi_index !4716
   store <2 x double> %38, <2 x double>* %40, align 8, !tbaa !345, !alias.scope !4717, !noalias !4719, !llfi_index !4721
-  %41 = getelementptr inbounds double, double* %2, i64 %fi, !llfi_index !4722
+  %41 = getelementptr inbounds double, double* %2, i64 %33, !llfi_index !4722
   %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4723
   store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4724, !noalias !4709, !llfi_index !4725
-  %43 = add nuw i64 %fi, 2, !llfi_index !4726
-  %fi2 = call i64 @injectFault0(i64 4668, i64 %43, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4706
-  %44 = icmp eq i64 %fi2, %31, !llfi_index !4727
+  %43 = add nuw i64 %33, 2, !llfi_index !4726
+  %44 = icmp eq i64 %43, %31, !llfi_index !4727
   br i1 %44, label %45, label %32, !llvm.loop !4728, !llfi_index !4729
 
 45:                                               ; preds = %32
@@ -9872,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define i64 @injectFault0(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca i64, align 8
-  store i64 %1, i64* %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast i64* %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load i64, i64* %tmploc, align 8
-  ret i64 %updateval
-}
-
-define double* @injectFault1(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define double* @injectFault0(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca double*, align 8
   store double* %1, double** %tmploc, align 8
@@ -14659,8 +14638,8 @@ attributes #34 = { allocsize(0) }
 !4703 = !{i64 4654}
 !4704 = !{i64 4655}
 !4705 = !{i64 4656}
-!4706 = !{!"after"}
-!4707 = !{i64 4657}
+!4706 = !{i64 4657}
+!4707 = !{!"after"}
 !4708 = !{i64 4658}
 !4709 = !{!4710}
 !4710 = distinct !{!4710, !4711}

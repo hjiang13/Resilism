@@ -1197,7 +1197,6 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %8 = bitcast [8 x double]* %0 to <2 x double>*, !llfi_index !892
   %9 = load <2 x double>, <2 x double>* %8, align 8, !tbaa !345, !llfi_index !893
   %10 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 0, i64 2, !llfi_index !894
-  call void @doProfiling(i32 34, i32 877)
   %11 = bitcast double* %10 to <2 x double>*, !llfi_index !895
   call void @doProfiling(i32 49, i32 878)
   %12 = load <2 x double>, <2 x double>* %11, align 8, !tbaa !345, !llfi_index !896

@@ -1,0 +1,60 @@
+# To count the error rates of fault injection results
+# Results are classified to SDC/crash/benign
+import sys
+import json
+import os
+import difflib
+
+# Load data from /home/hjiang/Resilism/experiments/LULESH_FITrace_1229/topInst.txt
+
+topInstFile = '/home/hjiang/Resilism/experiments/LULESH_FITrace_1229/topInst.txt'
+
+#Store infomation into json format
+errorInfo = {}
+with open(topInstFile, 'r') as ifile:
+    mylist = ifile.read().splitlines() 
+    for line in mylist:
+        fiindex = line
+        resultPath = "/home/hjiang/Resilism/data/LULESH_FITrace_1229/lulesh-" + fiindex
+        goldenFile = resultPath + "/llfi/baseline/element.prof.dat"
+        llfiStatInfo = resultPath + "/llfi/llfi_stat_output/llfi.stat.fi.injectedfaults.0-0.txt"
+        progOutputPath = resultPath + "/llfi/prog_output/"
+        #parse llfiStatInfo
+        with open(llfiStatInfo, 'r') as sf:
+            for line_ in sf:
+                fi_cycle = ''.join(line_.split("fi_cycle=")[1].split(',')[0])
+                fi_opcode = ''.join(line_.split("opcode=")[1].split('\n')[0])
+        
+        errorInfo[fiindex] = {}
+        errorInfo[fiindex]['fi_cycle'] = fi_cycle
+        errorInfo[fiindex]['fi_opcode'] = fi_opcode
+
+        #Count error rate:
+        lst = os.listdir(progOutputPath)
+        number_uncrash = len(lst)
+        number_crash = 30 - number_uncrash
+        number_benign = number_uncrash
+        for file in os.listdir(progOutputPath):
+            outputFile = progOutputPath + file 
+            with open(goldenFile, 'r') as file1, open(outputFile, 'r') as file2:
+                file1_contents = file1.readlines()
+                file2_contents = file2.readlines()
+                # compute the differences using the unified_diff method from difflib
+                differences = list(difflib.unified_diff(file1_contents, file2_contents))
+                # print the differences 
+                if differences:
+                    number_benign = number_benign - 1   
+        
+        errorInfo[fiindex]['crash'] = number_crash/30
+        errorInfo[fiindex]['benign'] = number_benign /30
+        errorInfo[fiindex]['SDC'] = 1- number_benign /30 - number_crash/30 
+
+
+
+
+    
+
+#convert to json
+#errorInfo = json.dump(errorInfo)
+
+print(errorInfo)

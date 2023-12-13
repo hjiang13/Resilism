@@ -1125,7 +1125,6 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
   %71 = getelementptr inbounds double, double* %3, i64 6, !llfi_index !825
   %72 = load double, double* %71, align 8, !tbaa !345, !llfi_index !826
   %73 = getelementptr inbounds double, double* %4, i64 6, !llfi_index !827
-  call void @doProfiling(i32 34, i32 811)
   %74 = load double, double* %73, align 8, !tbaa !345, !llfi_index !828
   call void @doProfiling(i32 32, i32 812)
   %75 = getelementptr inbounds double, double* %5, i64 6, !llfi_index !829

@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@insertelement_namestr = internal constant [14 x i8] c"insertelement\00"
 @fsub_namestr = internal constant [5 x i8] c"fsub\00"
 
 ; Function Attrs: nounwind uwtable
@@ -3825,15 +3824,11 @@ define dso_local void @_Z13LagrangeNodalv() local_unnamed_addr #10 {
 define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, double %1, double %2, double %3, double %4, double %5, double %6, double %7, double %8, double %9, double %10, double %11, double %12, double %13, double %14, double %15, double %16, double %17, double %18, double %19, double %20, double %21, double %22, double %23) local_unnamed_addr #16 {
   %25 = fsub double %7, %0, !llfi_index !3317
   %26 = insertelement <2 x double> poison, double %15, i32 0, !llfi_index !3318
-  %fi = call <2 x double> @injectFault0(i64 3277, <2 x double> %26, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3319
-  %27 = insertelement <2 x double> %fi, double %23, i32 1, !llfi_index !3320
-  %fi1 = call <2 x double> @injectFault0(i64 3278, <2 x double> %27, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3319
-  %28 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !3321
-  %fi2 = call <2 x double> @injectFault0(i64 3279, <2 x double> %28, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3319
-  %29 = insertelement <2 x double> %fi2, double %16, i32 1, !llfi_index !3322
-  %fi3 = call <2 x double> @injectFault0(i64 3280, <2 x double> %29, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3319
-  %30 = fsub <2 x double> %fi1, %fi3, !llfi_index !3323
-  %fi4 = call <2 x double> @injectFault0(i64 3281, <2 x double> %30, i32 16, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fsub_namestr, i32 0, i32 0)), !llfi_injectfault !3319
+  %27 = insertelement <2 x double> %26, double %23, i32 1, !llfi_index !3319
+  %28 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !3320
+  %29 = insertelement <2 x double> %28, double %16, i32 1, !llfi_index !3321
+  %30 = fsub <2 x double> %27, %29, !llfi_index !3322
+  %fi = call <2 x double> @injectFault0(i64 3281, <2 x double> %30, i32 16, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fsub_namestr, i32 0, i32 0)), !llfi_injectfault !3323
   %31 = insertelement <2 x double> poison, double %6, i32 0, !llfi_index !3324
   %32 = shufflevector <2 x double> %31, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3325
   %33 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !3326
@@ -3856,7 +3851,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %50 = fsub <2 x double> %47, %49, !llfi_index !3343
   %51 = insertelement <2 x double> poison, double %13, i32 0, !llfi_index !3344
   %52 = insertelement <2 x double> %51, double %10, i32 1, !llfi_index !3345
-  %53 = shufflevector <2 x double> %fi2, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3346
+  %53 = shufflevector <2 x double> %28, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3346
   %54 = fsub <2 x double> %52, %53, !llfi_index !3347
   %55 = insertelement <2 x double> poison, double %21, i32 0, !llfi_index !3348
   %56 = insertelement <2 x double> %55, double %18, i32 1, !llfi_index !3349
@@ -3897,15 +3892,15 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %91 = fsub <2 x double> %90, %56, !llfi_index !3384
   %92 = fadd double %65, %71, !llfi_index !3385
   %93 = fmul double %25, %64, !llfi_index !3386
-  %shift = shufflevector <2 x double> %fi4, <2 x double> poison, <2 x i32> <i32 1, i32 undef>, !llfi_index !3387
+  %shift = shufflevector <2 x double> %fi, <2 x double> poison, <2 x i32> <i32 1, i32 undef>, !llfi_index !3387
   %94 = fmul <2 x double> %63, %shift, !llfi_index !3388
   %95 = extractelement <2 x double> %94, i32 0, !llfi_index !3389
   %96 = fsub double %93, %95, !llfi_index !3390
   %97 = fmul double %92, %96, !llfi_index !3391
   %98 = fadd <2 x double> %70, %75, !llfi_index !3392
-  %99 = fmul <2 x double> %63, %fi4, !llfi_index !3393
+  %99 = fmul <2 x double> %63, %fi, !llfi_index !3393
   %100 = insertelement <2 x double> poison, double %25, i32 0, !llfi_index !3394
-  %101 = shufflevector <2 x double> %100, <2 x double> %fi4, <2 x i32> <i32 0, i32 2>, !llfi_index !3395
+  %101 = shufflevector <2 x double> %100, <2 x double> %fi, <2 x i32> <i32 0, i32 2>, !llfi_index !3395
   %102 = extractelement <2 x double> %63, i32 1, !llfi_index !3396
   %103 = insertelement <2 x double> poison, double %102, i32 0, !llfi_index !3397
   %104 = insertelement <2 x double> %103, double %64, i32 1, !llfi_index !3398
@@ -13256,11 +13251,11 @@ attributes #34 = { allocsize(0) }
 !3316 = !{i64 3275}
 !3317 = !{i64 3276}
 !3318 = !{i64 3277}
-!3319 = !{!"after"}
-!3320 = !{i64 3278}
-!3321 = !{i64 3279}
-!3322 = !{i64 3280}
-!3323 = !{i64 3281}
+!3319 = !{i64 3278}
+!3320 = !{i64 3279}
+!3321 = !{i64 3280}
+!3322 = !{i64 3281}
+!3323 = !{!"after"}
 !3324 = !{i64 3282}
 !3325 = !{i64 3283}
 !3326 = !{i64 3284}

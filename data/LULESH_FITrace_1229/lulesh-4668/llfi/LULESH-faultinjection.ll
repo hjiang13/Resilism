@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@phi_namestr = internal constant [4 x i8] c"phi\00"
 @add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
@@ -5392,22 +5391,21 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br label %32, !llfi_index !4704
 
 32:                                               ; preds = %32, %30
-  %33 = phi i64 [ 0, %30 ], [ %fi1, %32 ], !llfi_index !4705
-  %fi = call i64 @injectFault0(i64 4656, i64 %33, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !4706
-  %34 = getelementptr inbounds double, double* %4, i64 %fi, !llfi_index !4707
-  %35 = bitcast double* %34 to <2 x double>*, !llfi_index !4708
-  %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4709, !llfi_index !4712
-  %37 = fadd <2 x double> %36, <double 1.000000e+00, double 1.000000e+00>, !llfi_index !4713
-  %38 = fmul <2 x double> %37, <double 0x3FE5555555555555, double 0x3FE5555555555555>, !llfi_index !4714
-  %39 = getelementptr inbounds double, double* %1, i64 %fi, !llfi_index !4715
-  %40 = bitcast double* %39 to <2 x double>*, !llfi_index !4716
-  store <2 x double> %38, <2 x double>* %40, align 8, !tbaa !345, !alias.scope !4717, !noalias !4719, !llfi_index !4721
-  %41 = getelementptr inbounds double, double* %2, i64 %fi, !llfi_index !4722
-  %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4723
-  store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4724, !noalias !4709, !llfi_index !4725
-  %43 = add nuw i64 %fi, 2, !llfi_index !4726
-  %fi1 = call i64 @injectFault0(i64 4668, i64 %43, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4706
-  %44 = icmp eq i64 %fi1, %31, !llfi_index !4727
+  %33 = phi i64 [ 0, %30 ], [ %fi, %32 ], !llfi_index !4705
+  %34 = getelementptr inbounds double, double* %4, i64 %33, !llfi_index !4706
+  %35 = bitcast double* %34 to <2 x double>*, !llfi_index !4707
+  %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4708, !llfi_index !4711
+  %37 = fadd <2 x double> %36, <double 1.000000e+00, double 1.000000e+00>, !llfi_index !4712
+  %38 = fmul <2 x double> %37, <double 0x3FE5555555555555, double 0x3FE5555555555555>, !llfi_index !4713
+  %39 = getelementptr inbounds double, double* %1, i64 %33, !llfi_index !4714
+  %40 = bitcast double* %39 to <2 x double>*, !llfi_index !4715
+  store <2 x double> %38, <2 x double>* %40, align 8, !tbaa !345, !alias.scope !4716, !noalias !4718, !llfi_index !4720
+  %41 = getelementptr inbounds double, double* %2, i64 %33, !llfi_index !4721
+  %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4722
+  store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4723, !noalias !4708, !llfi_index !4724
+  %43 = add nuw i64 %33, 2, !llfi_index !4725
+  %fi = call i64 @injectFault0(i64 4668, i64 %43, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4726
+  %44 = icmp eq i64 %fi, %31, !llfi_index !4727
   br i1 %44, label %45, label %32, !llvm.loop !4728, !llfi_index !4729
 
 45:                                               ; preds = %32
@@ -14640,27 +14638,27 @@ attributes #34 = { allocsize(0) }
 !4703 = !{i64 4654}
 !4704 = !{i64 4655}
 !4705 = !{i64 4656}
-!4706 = !{!"after"}
-!4707 = !{i64 4657}
-!4708 = !{i64 4658}
-!4709 = !{!4710}
-!4710 = distinct !{!4710, !4711}
-!4711 = distinct !{!4711, !"LVerDomain"}
-!4712 = !{i64 4659}
-!4713 = !{i64 4660}
-!4714 = !{i64 4661}
-!4715 = !{i64 4662}
-!4716 = !{i64 4663}
-!4717 = !{!4718}
-!4718 = distinct !{!4718, !4711}
-!4719 = !{!4720, !4710}
-!4720 = distinct !{!4720, !4711}
-!4721 = !{i64 4664}
-!4722 = !{i64 4665}
-!4723 = !{i64 4666}
-!4724 = !{!4720}
-!4725 = !{i64 4667}
-!4726 = !{i64 4668}
+!4706 = !{i64 4657}
+!4707 = !{i64 4658}
+!4708 = !{!4709}
+!4709 = distinct !{!4709, !4710}
+!4710 = distinct !{!4710, !"LVerDomain"}
+!4711 = !{i64 4659}
+!4712 = !{i64 4660}
+!4713 = !{i64 4661}
+!4714 = !{i64 4662}
+!4715 = !{i64 4663}
+!4716 = !{!4717}
+!4717 = distinct !{!4717, !4710}
+!4718 = !{!4719, !4709}
+!4719 = distinct !{!4719, !4710}
+!4720 = !{i64 4664}
+!4721 = !{i64 4665}
+!4722 = !{i64 4666}
+!4723 = !{!4719}
+!4724 = !{i64 4667}
+!4725 = !{i64 4668}
+!4726 = !{!"after"}
 !4727 = !{i64 4669}
 !4728 = distinct !{!4728, !431, !432, !2670}
 !4729 = !{i64 4670}

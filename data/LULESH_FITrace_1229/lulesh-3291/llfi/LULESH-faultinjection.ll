@@ -50,8 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@insertelement_namestr = internal constant [14 x i8] c"insertelement\00"
-@shufflevector_namestr = internal constant [14 x i8] c"shufflevector\00"
 @fsub_namestr = internal constant [5 x i8] c"fsub\00"
 
 ; Function Attrs: nounwind uwtable
@@ -3836,15 +3834,11 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %34 = insertelement <2 x double> %33, double %3, i32 1, !llfi_index !3326
   %35 = fsub <2 x double> %32, %34, !llfi_index !3327
   %36 = insertelement <2 x double> poison, double %14, i32 0, !llfi_index !3328
-  %fi = call <2 x double> @injectFault0(i64 3287, <2 x double> %36, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3329
-  %37 = shufflevector <2 x double> %fi, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3330
-  %fi1 = call <2 x double> @injectFault0(i64 3288, <2 x double> %37, i32 63, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @shufflevector_namestr, i32 0, i32 0)), !llfi_injectfault !3329
-  %38 = insertelement <2 x double> poison, double %9, i32 0, !llfi_index !3331
-  %fi2 = call <2 x double> @injectFault0(i64 3289, <2 x double> %38, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3329
-  %39 = insertelement <2 x double> %fi2, double %11, i32 1, !llfi_index !3332
-  %fi3 = call <2 x double> @injectFault0(i64 3290, <2 x double> %39, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3329
-  %40 = fsub <2 x double> %fi1, %fi3, !llfi_index !3333
-  %fi4 = call <2 x double> @injectFault0(i64 3291, <2 x double> %40, i32 16, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fsub_namestr, i32 0, i32 0)), !llfi_injectfault !3329
+  %37 = shufflevector <2 x double> %36, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3329
+  %38 = insertelement <2 x double> poison, double %9, i32 0, !llfi_index !3330
+  %39 = insertelement <2 x double> %38, double %11, i32 1, !llfi_index !3331
+  %40 = fsub <2 x double> %37, %39, !llfi_index !3332
+  %fi = call <2 x double> @injectFault0(i64 3291, <2 x double> %40, i32 16, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fsub_namestr, i32 0, i32 0)), !llfi_injectfault !3333
   %41 = insertelement <2 x double> poison, double %22, i32 0, !llfi_index !3334
   %42 = shufflevector <2 x double> %41, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3335
   %43 = insertelement <2 x double> poison, double %17, i32 0, !llfi_index !3336
@@ -3884,7 +3878,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %77 = fsub <2 x double> %34, %76, !llfi_index !3370
   %78 = insertelement <2 x double> poison, double %12, i32 0, !llfi_index !3371
   %79 = insertelement <2 x double> %78, double %9, i32 1, !llfi_index !3372
-  %80 = fsub <2 x double> %fi3, %79, !llfi_index !3373
+  %80 = fsub <2 x double> %39, %79, !llfi_index !3373
   %81 = insertelement <2 x double> %66, double %17, i32 1, !llfi_index !3374
   %82 = fsub <2 x double> %44, %81, !llfi_index !3375
   %83 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !3376
@@ -3918,7 +3912,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %110 = extractelement <2 x double> %107, i32 0, !llfi_index !3404
   %111 = fadd double %110, %109, !llfi_index !3405
   %112 = fadd <2 x double> %77, %85, !llfi_index !3406
-  %113 = fmul <2 x double> %fi4, %59, !llfi_index !3407
+  %113 = fmul <2 x double> %fi, %59, !llfi_index !3407
   %114 = fmul <2 x double> %54, %45, !llfi_index !3408
   %115 = fsub <2 x double> %113, %114, !llfi_index !3409
   %116 = fmul <2 x double> %112, %115, !llfi_index !3410
@@ -3930,7 +3924,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %122 = fadd <2 x double> %116, %121, !llfi_index !3416
   %123 = fadd <2 x double> %82, %91, !llfi_index !3417
   %124 = fmul <2 x double> %35, %54, !llfi_index !3418
-  %125 = fmul <2 x double> %50, %fi4, !llfi_index !3419
+  %125 = fmul <2 x double> %50, %fi, !llfi_index !3419
   %126 = fsub <2 x double> %124, %125, !llfi_index !3420
   %127 = fmul <2 x double> %126, %123, !llfi_index !3421
   %128 = fadd <2 x double> %127, %122, !llfi_index !3422
@@ -13267,11 +13261,11 @@ attributes #34 = { allocsize(0) }
 !3326 = !{i64 3285}
 !3327 = !{i64 3286}
 !3328 = !{i64 3287}
-!3329 = !{!"after"}
-!3330 = !{i64 3288}
-!3331 = !{i64 3289}
-!3332 = !{i64 3290}
-!3333 = !{i64 3291}
+!3329 = !{i64 3288}
+!3330 = !{i64 3289}
+!3331 = !{i64 3290}
+!3332 = !{i64 3291}
+!3333 = !{!"after"}
 !3334 = !{i64 3292}
 !3335 = !{i64 3293}
 !3336 = !{i64 3294}

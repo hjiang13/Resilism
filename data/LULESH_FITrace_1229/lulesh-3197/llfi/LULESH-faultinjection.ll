@@ -51,7 +51,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
 @phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -3723,7 +3722,7 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   ret void, !llfi_index !3235
 
 13:                                               ; preds = %13, %11
-  %14 = phi i64 [ 0, %11 ], [ %fi1, %13 ], !llfi_index !3236
+  %14 = phi i64 [ 0, %11 ], [ %42, %13 ], !llfi_index !3236
   %fi = call i64 @injectFault0(i64 3197, i64 %14, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !3237
   %15 = getelementptr inbounds double, double* %4, i64 %fi, !llfi_index !3238
   %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !3239
@@ -3756,8 +3755,7 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %41 = select i1 %40, double 0.000000e+00, double %38, !llfi_index !3266
   store double %41, double* %33, align 8, !tbaa !345, !llfi_index !3267
   %42 = add nuw nsw i64 %fi, 1, !llfi_index !3268
-  %fi1 = call i64 @injectFault0(i64 3228, i64 %42, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !3237
-  %43 = icmp eq i64 %fi1, %12, !llfi_index !3269
+  %43 = icmp eq i64 %42, %12, !llfi_index !3269
   br i1 %43, label %.loopexit, label %13, !llvm.loop !3270, !llfi_index !3271
 }
 

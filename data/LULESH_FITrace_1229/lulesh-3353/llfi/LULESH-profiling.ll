@@ -3822,17 +3822,11 @@ define dso_local void @_Z13LagrangeNodalv() local_unnamed_addr #10 {
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind readnone uwtable willreturn
 define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, double %1, double %2, double %3, double %4, double %5, double %6, double %7, double %8, double %9, double %10, double %11, double %12, double %13, double %14, double %15, double %16, double %17, double %18, double %19, double %20, double %21, double %22, double %23) local_unnamed_addr #16 {
   %25 = fsub double %7, %0, !llfi_index !3317
-  call void @doProfiling(i32 16, i32 3276)
   %26 = insertelement <2 x double> poison, double %15, i32 0, !llfi_index !3318
-  call void @doProfiling(i32 62, i32 3277)
   %27 = insertelement <2 x double> %26, double %23, i32 1, !llfi_index !3319
-  call void @doProfiling(i32 62, i32 3278)
   %28 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !3320
-  call void @doProfiling(i32 62, i32 3279)
   %29 = insertelement <2 x double> %28, double %16, i32 1, !llfi_index !3321
-  call void @doProfiling(i32 62, i32 3280)
   %30 = fsub <2 x double> %27, %29, !llfi_index !3322
-  call void @doProfiling(i32 16, i32 3281)
   %31 = insertelement <2 x double> poison, double %6, i32 0, !llfi_index !3323
   %32 = shufflevector <2 x double> %31, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3324
   %33 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !3325
@@ -3904,7 +3898,6 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %98 = fadd <2 x double> %70, %75, !llfi_index !3391
   %99 = fmul <2 x double> %63, %30, !llfi_index !3392
   %100 = insertelement <2 x double> poison, double %25, i32 0, !llfi_index !3393
-  call void @doProfiling(i32 62, i32 3352)
   %101 = shufflevector <2 x double> %100, <2 x double> %30, <2 x i32> <i32 0, i32 2>, !llfi_index !3394
   call void @doProfiling(i32 63, i32 3353)
   %102 = extractelement <2 x double> %63, i32 1, !llfi_index !3395

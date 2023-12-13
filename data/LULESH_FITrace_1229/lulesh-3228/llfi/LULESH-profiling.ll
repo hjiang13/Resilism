@@ -3722,7 +3722,6 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
 
 13:                                               ; preds = %13, %11
   %14 = phi i64 [ 0, %11 ], [ %42, %13 ], !llfi_index !3236
-  call void @doProfiling(i32 55, i32 3197)
   %15 = getelementptr inbounds double, double* %4, i64 %14, !llfi_index !3237
   %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !3238
   %17 = getelementptr inbounds double, double* %5, i64 %14, !llfi_index !3239

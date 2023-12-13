@@ -1626,7 +1626,6 @@ define dso_local void @_Z7VoluDerddddddddddddddddddPdS_S_(double %0, double %1, 
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable willreturn
 define dso_local void @_Z24CalcElemVolumeDerivativePdS_S_PKdS1_S1_(double* nocapture %0, double* nocapture %1, double* nocapture %2, double* nocapture readonly %3, double* nocapture readonly %4, double* nocapture readonly %5) local_unnamed_addr #5 {
   %7 = getelementptr inbounds double, double* %3, i64 1, !llfi_index !1290
-  call void @doProfiling(i32 34, i32 1270)
   %8 = load double, double* %7, align 8, !tbaa !345, !llfi_index !1291
   %9 = getelementptr inbounds double, double* %3, i64 2, !llfi_index !1292
   %10 = load double, double* %9, align 8, !tbaa !345, !llfi_index !1293

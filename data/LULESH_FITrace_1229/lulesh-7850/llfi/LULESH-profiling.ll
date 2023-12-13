@@ -9788,7 +9788,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 
 156:                                              ; preds = %156, %151
   %157 = phi i64 [ 0, %151 ], [ %160, %156 ], !llfi_index !8047
-  call void @doProfiling(i32 55, i32 7846)
   %158 = getelementptr double, double* %148, i64 %157, !llfi_index !8048
   %159 = bitcast double* %158 to <2 x double>*, !llfi_index !8049
   store <2 x double> %155, <2 x double>* %159, align 8, !tbaa !345, !llfi_index !8050

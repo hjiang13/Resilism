@@ -50,9 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@zext_namestr = internal constant [5 x i8] c"zext\00"
-@phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 @icmp_namestr = internal constant [5 x i8] c"icmp\00"
 
 ; Function Attrs: nounwind uwtable
@@ -699,32 +696,29 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
 
 8:                                                ; preds = %4
   %9 = zext i32 %0 to i64, !llfi_index !412
-  %fi = call i64 @injectFault0(i64 399, i64 %9, i32 39, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @zext_namestr, i32 0, i32 0)), !llfi_injectfault !413
-  br label %10, !llfi_index !414
+  br label %10, !llfi_index !413
 
 .loopexit:                                        ; preds = %10, %4
-  ret void, !llfi_index !415
+  ret void, !llfi_index !414
 
 10:                                               ; preds = %10, %8
-  %11 = phi i64 [ 0, %8 ], [ %fi2, %10 ], !llfi_index !416
-  %fi1 = call i64 @injectFault0(i64 402, i64 %11, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !413
-  %12 = getelementptr inbounds double, double* %5, i64 %fi1, !llfi_index !417
-  %13 = load double, double* %12, align 8, !tbaa !345, !llfi_index !418
-  %14 = fneg double %13, !llfi_index !419
-  %15 = getelementptr inbounds double, double* %6, i64 %fi1, !llfi_index !420
-  %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !421
-  %17 = fsub double %14, %16, !llfi_index !422
-  %18 = getelementptr inbounds double, double* %3, i64 %fi1, !llfi_index !423
-  store double %17, double* %18, align 8, !tbaa !345, !llfi_index !424
-  %19 = getelementptr inbounds double, double* %2, i64 %fi1, !llfi_index !425
-  store double %17, double* %19, align 8, !tbaa !345, !llfi_index !426
-  %20 = getelementptr inbounds double, double* %1, i64 %fi1, !llfi_index !427
-  store double %17, double* %20, align 8, !tbaa !345, !llfi_index !428
-  %21 = add nuw nsw i64 %fi1, 1, !llfi_index !429
-  %fi2 = call i64 @injectFault0(i64 415, i64 %21, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !413
-  %22 = icmp eq i64 %fi2, %fi, !llfi_index !430
-  %fi3 = call i1 @injectFault1(i64 416, i1 %22, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !413
-  br i1 %fi3, label %.loopexit, label %10, !llvm.loop !431, !llfi_index !434
+  %11 = phi i64 [ 0, %8 ], [ %21, %10 ], !llfi_index !415
+  %12 = getelementptr inbounds double, double* %5, i64 %11, !llfi_index !416
+  %13 = load double, double* %12, align 8, !tbaa !345, !llfi_index !417
+  %14 = fneg double %13, !llfi_index !418
+  %15 = getelementptr inbounds double, double* %6, i64 %11, !llfi_index !419
+  %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !420
+  %17 = fsub double %14, %16, !llfi_index !421
+  %18 = getelementptr inbounds double, double* %3, i64 %11, !llfi_index !422
+  store double %17, double* %18, align 8, !tbaa !345, !llfi_index !423
+  %19 = getelementptr inbounds double, double* %2, i64 %11, !llfi_index !424
+  store double %17, double* %19, align 8, !tbaa !345, !llfi_index !425
+  %20 = getelementptr inbounds double, double* %1, i64 %11, !llfi_index !426
+  store double %17, double* %20, align 8, !tbaa !345, !llfi_index !427
+  %21 = add nuw nsw i64 %11, 1, !llfi_index !428
+  %22 = icmp eq i64 %21, %9, !llfi_index !429
+  %fi = call i1 @injectFault0(i64 416, i1 %22, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !430
+  br i1 %fi, label %.loopexit, label %10, !llvm.loop !431, !llfi_index !434
 }
 
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable willreturn
@@ -9874,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define i64 @injectFault0(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca i64, align 8
-  store i64 %1, i64* %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast i64* %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load i64, i64* %tmploc, align 8
-  ret i64 %updateval
-}
-
-define i1 @injectFault1(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define i1 @injectFault0(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca i1, align 1
   store i1 %1, i1* %tmploc, align 1
@@ -10368,24 +10345,24 @@ attributes #34 = { allocsize(0) }
 !410 = !{i64 397}
 !411 = !{i64 398}
 !412 = !{i64 399}
-!413 = !{!"after"}
-!414 = !{i64 400}
-!415 = !{i64 401}
-!416 = !{i64 402}
-!417 = !{i64 403}
-!418 = !{i64 404}
-!419 = !{i64 405}
-!420 = !{i64 406}
-!421 = !{i64 407}
-!422 = !{i64 408}
-!423 = !{i64 409}
-!424 = !{i64 410}
-!425 = !{i64 411}
-!426 = !{i64 412}
-!427 = !{i64 413}
-!428 = !{i64 414}
-!429 = !{i64 415}
-!430 = !{i64 416}
+!413 = !{i64 400}
+!414 = !{i64 401}
+!415 = !{i64 402}
+!416 = !{i64 403}
+!417 = !{i64 404}
+!418 = !{i64 405}
+!419 = !{i64 406}
+!420 = !{i64 407}
+!421 = !{i64 408}
+!422 = !{i64 409}
+!423 = !{i64 410}
+!424 = !{i64 411}
+!425 = !{i64 412}
+!426 = !{i64 413}
+!427 = !{i64 414}
+!428 = !{i64 415}
+!429 = !{i64 416}
+!430 = !{!"after"}
 !431 = distinct !{!431, !432, !433}
 !432 = !{!"llvm.loop.mustprogress"}
 !433 = !{!"llvm.loop.unroll.disable"}

@@ -50,8 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
-@load_namestr = internal constant [5 x i8] c"load\00"
 @fmul_namestr = internal constant [5 x i8] c"fmul\00"
 
 ; Function Attrs: nounwind uwtable
@@ -1836,51 +1834,47 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %22 = fmul double %19, %21, !llfi_index !1491
   %23 = fadd double %18, %22, !llfi_index !1492
   %24 = load double, double* %5, align 8, !tbaa !345, !llfi_index !1493
-  %25 = getelementptr double, double* %0, i64 2, !llfi_index !1494
-  %fi = call double* @injectFault0(i64 1474, double* %25, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !1495
-  %26 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1496
-  %fi1 = call double @injectFault1(i64 1475, double %26, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !1495
-  %27 = fmul double %24, %fi1, !llfi_index !1497
-  %28 = fadd double %23, %27, !llfi_index !1498
-  %29 = load double, double* %6, align 8, !tbaa !345, !llfi_index !1499
-  %30 = getelementptr inbounds double, double* %0, i64 3, !llfi_index !1500
-  %31 = load double, double* %30, align 8, !tbaa !345, !llfi_index !1501
-  %32 = fmul double %29, %31, !llfi_index !1502
-  %33 = fadd double %28, %32, !llfi_index !1503
-  %34 = load double, double* %7, align 8, !tbaa !345, !llfi_index !1504
-  %35 = getelementptr inbounds double, double* %0, i64 4, !llfi_index !1505
-  %36 = load double, double* %35, align 8, !tbaa !345, !llfi_index !1506
-  %37 = fmul double %34, %36, !llfi_index !1507
-  %38 = fadd double %33, %37, !llfi_index !1508
-  %39 = load double, double* %8, align 8, !tbaa !345, !llfi_index !1509
-  %40 = getelementptr inbounds double, double* %0, i64 5, !llfi_index !1510
-  %41 = load double, double* %40, align 8, !tbaa !345, !llfi_index !1511
-  %42 = fmul double %39, %41, !llfi_index !1512
-  %43 = fadd double %38, %42, !llfi_index !1513
-  %44 = load double, double* %9, align 8, !tbaa !345, !llfi_index !1514
-  %45 = getelementptr inbounds double, double* %0, i64 6, !llfi_index !1515
-  %46 = load double, double* %45, align 8, !tbaa !345, !llfi_index !1516
-  %47 = fmul double %44, %46, !llfi_index !1517
-  %48 = fadd double %43, %47, !llfi_index !1518
-  %49 = load double, double* %10, align 8, !tbaa !345, !llfi_index !1519
-  %50 = getelementptr inbounds double, double* %0, i64 7, !llfi_index !1520
-  %51 = load double, double* %50, align 8, !tbaa !345, !llfi_index !1521
-  %52 = fmul double %49, %51, !llfi_index !1522
-  %53 = fadd double %48, %52, !llfi_index !1523
-  %54 = getelementptr inbounds double, double* %3, i64 1, !llfi_index !1524
-  %55 = load double, double* %54, align 8, !tbaa !345, !llfi_index !1525
-  %56 = fmul double %17, %55, !llfi_index !1526
-  %57 = getelementptr inbounds double, double* %4, i64 1, !llfi_index !1527
-  %58 = load double, double* %57, align 8, !tbaa !345, !llfi_index !1528
-  %59 = fmul double %21, %58, !llfi_index !1529
-  %60 = fadd double %56, %59, !llfi_index !1530
-  %61 = getelementptr double, double* %5, i64 1, !llfi_index !1531
-  %fi2 = call double* @injectFault0(i64 1510, double* %61, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !1495
-  %62 = load double, double* %fi2, align 8, !tbaa !345, !llfi_index !1532
-  %fi3 = call double @injectFault1(i64 1511, double %62, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !1495
-  %63 = fmul double %fi1, %fi3, !llfi_index !1533
-  %fi4 = call double @injectFault1(i64 1512, double %63, i32 18, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !1495
-  %64 = fadd double %60, %fi4, !llfi_index !1534
+  %25 = getelementptr inbounds double, double* %0, i64 2, !llfi_index !1494
+  %26 = load double, double* %25, align 8, !tbaa !345, !llfi_index !1495
+  %27 = fmul double %24, %26, !llfi_index !1496
+  %28 = fadd double %23, %27, !llfi_index !1497
+  %29 = load double, double* %6, align 8, !tbaa !345, !llfi_index !1498
+  %30 = getelementptr inbounds double, double* %0, i64 3, !llfi_index !1499
+  %31 = load double, double* %30, align 8, !tbaa !345, !llfi_index !1500
+  %32 = fmul double %29, %31, !llfi_index !1501
+  %33 = fadd double %28, %32, !llfi_index !1502
+  %34 = load double, double* %7, align 8, !tbaa !345, !llfi_index !1503
+  %35 = getelementptr inbounds double, double* %0, i64 4, !llfi_index !1504
+  %36 = load double, double* %35, align 8, !tbaa !345, !llfi_index !1505
+  %37 = fmul double %34, %36, !llfi_index !1506
+  %38 = fadd double %33, %37, !llfi_index !1507
+  %39 = load double, double* %8, align 8, !tbaa !345, !llfi_index !1508
+  %40 = getelementptr inbounds double, double* %0, i64 5, !llfi_index !1509
+  %41 = load double, double* %40, align 8, !tbaa !345, !llfi_index !1510
+  %42 = fmul double %39, %41, !llfi_index !1511
+  %43 = fadd double %38, %42, !llfi_index !1512
+  %44 = load double, double* %9, align 8, !tbaa !345, !llfi_index !1513
+  %45 = getelementptr inbounds double, double* %0, i64 6, !llfi_index !1514
+  %46 = load double, double* %45, align 8, !tbaa !345, !llfi_index !1515
+  %47 = fmul double %44, %46, !llfi_index !1516
+  %48 = fadd double %43, %47, !llfi_index !1517
+  %49 = load double, double* %10, align 8, !tbaa !345, !llfi_index !1518
+  %50 = getelementptr inbounds double, double* %0, i64 7, !llfi_index !1519
+  %51 = load double, double* %50, align 8, !tbaa !345, !llfi_index !1520
+  %52 = fmul double %49, %51, !llfi_index !1521
+  %53 = fadd double %48, %52, !llfi_index !1522
+  %54 = getelementptr inbounds double, double* %3, i64 1, !llfi_index !1523
+  %55 = load double, double* %54, align 8, !tbaa !345, !llfi_index !1524
+  %56 = fmul double %17, %55, !llfi_index !1525
+  %57 = getelementptr inbounds double, double* %4, i64 1, !llfi_index !1526
+  %58 = load double, double* %57, align 8, !tbaa !345, !llfi_index !1527
+  %59 = fmul double %21, %58, !llfi_index !1528
+  %60 = fadd double %56, %59, !llfi_index !1529
+  %61 = getelementptr inbounds double, double* %5, i64 1, !llfi_index !1530
+  %62 = load double, double* %61, align 8, !tbaa !345, !llfi_index !1531
+  %63 = fmul double %26, %62, !llfi_index !1532
+  %fi = call double @injectFault0(i64 1512, double %63, i32 18, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !1533
+  %64 = fadd double %60, %fi, !llfi_index !1534
   %65 = getelementptr inbounds double, double* %6, i64 1, !llfi_index !1535
   %66 = load double, double* %65, align 8, !tbaa !345, !llfi_index !1536
   %67 = fmul double %31, %66, !llfi_index !1537
@@ -1910,7 +1904,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %91 = fadd double %87, %90, !llfi_index !1561
   %92 = getelementptr inbounds double, double* %5, i64 2, !llfi_index !1562
   %93 = load double, double* %92, align 8, !tbaa !345, !llfi_index !1563
-  %94 = fmul double %fi1, %93, !llfi_index !1564
+  %94 = fmul double %26, %93, !llfi_index !1564
   %95 = fadd double %91, %94, !llfi_index !1565
   %96 = getelementptr inbounds double, double* %6, i64 2, !llfi_index !1566
   %97 = load double, double* %96, align 8, !tbaa !345, !llfi_index !1567
@@ -1941,7 +1935,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %122 = fadd double %118, %121, !llfi_index !1592
   %123 = getelementptr inbounds double, double* %5, i64 3, !llfi_index !1593
   %124 = load double, double* %123, align 8, !tbaa !345, !llfi_index !1594
-  %125 = fmul double %fi1, %124, !llfi_index !1595
+  %125 = fmul double %26, %124, !llfi_index !1595
   %126 = fadd double %122, %125, !llfi_index !1596
   %127 = getelementptr inbounds double, double* %6, i64 3, !llfi_index !1597
   %128 = load double, double* %127, align 8, !tbaa !345, !llfi_index !1598
@@ -1988,7 +1982,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   store double %166, double* %167, align 8, !tbaa !345, !llfi_index !1639
   %168 = load double, double* %5, align 8, !tbaa !345, !llfi_index !1640
   %169 = fmul double %53, %168, !llfi_index !1641
-  %170 = load double, double* %fi2, align 8, !tbaa !345, !llfi_index !1642
+  %170 = load double, double* %61, align 8, !tbaa !345, !llfi_index !1642
   %171 = fmul double %84, %170, !llfi_index !1643
   %172 = fadd double %169, %171, !llfi_index !1644
   %173 = load double, double* %92, align 8, !tbaa !345, !llfi_index !1645
@@ -2113,7 +2107,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %286 = load double, double* %57, align 8, !tbaa !345, !llfi_index !1764
   %287 = fmul double %251, %286, !llfi_index !1765
   %288 = fadd double %285, %287, !llfi_index !1766
-  %289 = load double, double* %fi2, align 8, !tbaa !345, !llfi_index !1767
+  %289 = load double, double* %61, align 8, !tbaa !345, !llfi_index !1767
   %290 = fmul double %256, %289, !llfi_index !1768
   %291 = fadd double %288, %290, !llfi_index !1769
   %292 = load double, double* %65, align 8, !tbaa !345, !llfi_index !1770
@@ -2202,7 +2196,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   store double %372, double* %373, align 8, !tbaa !345, !llfi_index !1853
   %374 = load double, double* %5, align 8, !tbaa !345, !llfi_index !1854
   %375 = fmul double %283, %374, !llfi_index !1855
-  %376 = load double, double* %fi2, align 8, !tbaa !345, !llfi_index !1856
+  %376 = load double, double* %61, align 8, !tbaa !345, !llfi_index !1856
   %377 = fmul double %306, %376, !llfi_index !1857
   %378 = fadd double %375, %377, !llfi_index !1858
   %379 = load double, double* %92, align 8, !tbaa !345, !llfi_index !1859
@@ -2327,7 +2321,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %492 = load double, double* %57, align 8, !tbaa !345, !llfi_index !1978
   %493 = fmul double %457, %492, !llfi_index !1979
   %494 = fadd double %491, %493, !llfi_index !1980
-  %495 = load double, double* %fi2, align 8, !tbaa !345, !llfi_index !1981
+  %495 = load double, double* %61, align 8, !tbaa !345, !llfi_index !1981
   %496 = fmul double %462, %495, !llfi_index !1982
   %497 = fadd double %494, %496, !llfi_index !1983
   %498 = load double, double* %65, align 8, !tbaa !345, !llfi_index !1984
@@ -2416,7 +2410,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   store double %578, double* %579, align 8, !tbaa !345, !llfi_index !2067
   %580 = load double, double* %5, align 8, !tbaa !345, !llfi_index !2068
   %581 = fmul double %489, %580, !llfi_index !2069
-  %582 = load double, double* %fi2, align 8, !tbaa !345, !llfi_index !2070
+  %582 = load double, double* %61, align 8, !tbaa !345, !llfi_index !2070
   %583 = fmul double %512, %582, !llfi_index !2071
   %584 = fadd double %581, %583, !llfi_index !2072
   %585 = load double, double* %92, align 8, !tbaa !345, !llfi_index !2073
@@ -9874,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define double* @injectFault0(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca double*, align 8
-  store double* %1, double** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast double** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load double*, double** %tmploc, align 8
-  ret double* %updateval
-}
-
-define double @injectFault1(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define double @injectFault0(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca double, align 8
   store double %1, double* %tmploc, align 8
@@ -11450,45 +11427,45 @@ attributes #34 = { allocsize(0) }
 !1492 = !{i64 1472}
 !1493 = !{i64 1473}
 !1494 = !{i64 1474}
-!1495 = !{!"after"}
-!1496 = !{i64 1475}
-!1497 = !{i64 1476}
-!1498 = !{i64 1477}
-!1499 = !{i64 1478}
-!1500 = !{i64 1479}
-!1501 = !{i64 1480}
-!1502 = !{i64 1481}
-!1503 = !{i64 1482}
-!1504 = !{i64 1483}
-!1505 = !{i64 1484}
-!1506 = !{i64 1485}
-!1507 = !{i64 1486}
-!1508 = !{i64 1487}
-!1509 = !{i64 1488}
-!1510 = !{i64 1489}
-!1511 = !{i64 1490}
-!1512 = !{i64 1491}
-!1513 = !{i64 1492}
-!1514 = !{i64 1493}
-!1515 = !{i64 1494}
-!1516 = !{i64 1495}
-!1517 = !{i64 1496}
-!1518 = !{i64 1497}
-!1519 = !{i64 1498}
-!1520 = !{i64 1499}
-!1521 = !{i64 1500}
-!1522 = !{i64 1501}
-!1523 = !{i64 1502}
-!1524 = !{i64 1503}
-!1525 = !{i64 1504}
-!1526 = !{i64 1505}
-!1527 = !{i64 1506}
-!1528 = !{i64 1507}
-!1529 = !{i64 1508}
-!1530 = !{i64 1509}
-!1531 = !{i64 1510}
-!1532 = !{i64 1511}
-!1533 = !{i64 1512}
+!1495 = !{i64 1475}
+!1496 = !{i64 1476}
+!1497 = !{i64 1477}
+!1498 = !{i64 1478}
+!1499 = !{i64 1479}
+!1500 = !{i64 1480}
+!1501 = !{i64 1481}
+!1502 = !{i64 1482}
+!1503 = !{i64 1483}
+!1504 = !{i64 1484}
+!1505 = !{i64 1485}
+!1506 = !{i64 1486}
+!1507 = !{i64 1487}
+!1508 = !{i64 1488}
+!1509 = !{i64 1489}
+!1510 = !{i64 1490}
+!1511 = !{i64 1491}
+!1512 = !{i64 1492}
+!1513 = !{i64 1493}
+!1514 = !{i64 1494}
+!1515 = !{i64 1495}
+!1516 = !{i64 1496}
+!1517 = !{i64 1497}
+!1518 = !{i64 1498}
+!1519 = !{i64 1499}
+!1520 = !{i64 1500}
+!1521 = !{i64 1501}
+!1522 = !{i64 1502}
+!1523 = !{i64 1503}
+!1524 = !{i64 1504}
+!1525 = !{i64 1505}
+!1526 = !{i64 1506}
+!1527 = !{i64 1507}
+!1528 = !{i64 1508}
+!1529 = !{i64 1509}
+!1530 = !{i64 1510}
+!1531 = !{i64 1511}
+!1532 = !{i64 1512}
+!1533 = !{!"after"}
 !1534 = !{i64 1513}
 !1535 = !{i64 1514}
 !1536 = !{i64 1515}

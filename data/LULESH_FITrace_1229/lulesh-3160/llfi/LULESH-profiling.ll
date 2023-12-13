@@ -3661,7 +3661,6 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
 
 12:                                               ; preds = %12, %7
   %13 = phi i64 [ 0, %7 ], [ %18, %12 ], !llfi_index !3190
-  call void @doProfiling(i32 55, i32 3154)
   %14 = getelementptr inbounds i32, i32* %4, i64 %13, !llfi_index !3191
   %15 = load i32, i32* %14, align 4, !tbaa !404, !llfi_index !3192
   %16 = sext i32 %15 to i64, !llfi_index !3193

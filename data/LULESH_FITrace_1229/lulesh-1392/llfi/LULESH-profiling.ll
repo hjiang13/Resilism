@@ -1654,7 +1654,6 @@ define dso_local void @_Z24CalcElemVolumeDerivativePdS_S_PKdS1_S1_(double* nocap
   %33 = getelementptr inbounds double, double* %5, i64 2, !llfi_index !1316
   %34 = load double, double* %33, align 8, !tbaa !345, !llfi_index !1317
   %35 = getelementptr inbounds double, double* %5, i64 3, !llfi_index !1318
-  call void @doProfiling(i32 34, i32 1298)
   %36 = load double, double* %35, align 8, !tbaa !345, !llfi_index !1319
   %37 = getelementptr inbounds double, double* %5, i64 4, !llfi_index !1320
   %38 = load double, double* %37, align 8, !tbaa !345, !llfi_index !1321

@@ -1347,7 +1347,6 @@ define dso_local void @_Z23IntegrateStressForElemsiPdS_S_S_(i32 %0, double* noca
 
 33:                                               ; preds = %68, %31
   %34 = phi i64 [ 0, %31 ], [ %69, %68 ], !llfi_index !1034
-  call void @doProfiling(i32 55, i32 1017)
   %35 = shl nsw i64 %34, 3, !llfi_index !1035
   %36 = load i32*, i32** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 17, i32 0, i32 0, i32 0, i32 0), align 8, !tbaa !168, !llfi_index !1036
   %37 = getelementptr inbounds i32, i32* %36, i64 %35, !llfi_index !1037
@@ -1361,7 +1360,6 @@ define dso_local void @_Z23IntegrateStressForElemsiPdS_S_S_(i32 %0, double* noca
   call void @_Z32CalcElemShapeFunctionDerivativesPKdS0_S0_PA8_dPd(double* nonnull %20, double* nonnull %21, double* nonnull %22, [8 x double]* nonnull %23, double* %42), !llfi_index !1043
   call void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nonnull %24, double* nonnull %25, double* nonnull %26, double* nonnull %20, double* nonnull %21, double* nonnull %22), !llfi_index !1044
   %43 = getelementptr inbounds double, double* %1, i64 %34, !llfi_index !1045
-  call void @doProfiling(i32 34, i32 1028)
   %44 = load double, double* %43, align 8, !tbaa !345, !llfi_index !1046
   call void @doProfiling(i32 32, i32 1029)
   %45 = getelementptr inbounds double, double* %2, i64 %34, !llfi_index !1047
@@ -1397,7 +1395,6 @@ define dso_local void @_Z23IntegrateStressForElemsiPdS_S_S_(i32 %0, double* noca
 
 68:                                               ; preds = %71
   %69 = add nuw nsw i64 %34, 1, !llfi_index !1076
-  call void @doProfiling(i32 13, i32 1058)
   %70 = icmp eq i64 %69, %32, !llfi_index !1077
   br i1 %70, label %.loopexit, label %33, !llvm.loop !1078, !llfi_index !1079
 

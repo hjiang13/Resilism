@@ -51,7 +51,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
 @phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -7078,7 +7077,7 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   br i1 %181, label %.loopexit34, label %154, !llvm.loop !6055, !llfi_index !6056
 
 182:                                              ; preds = %182, %158
-  %183 = phi i64 [ 0, %158 ], [ %fi1, %182 ], !llfi_index !6057
+  %183 = phi i64 [ 0, %158 ], [ %190, %182 ], !llfi_index !6057
   %fi = call i64 @injectFault0(i64 5923, i64 %183, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !6058
   %184 = getelementptr inbounds i32, i32* %157, i64 %fi, !llfi_index !6059
   %185 = load i32, i32* %184, align 4, !tbaa !404, !llfi_index !6060
@@ -7088,8 +7087,7 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   %189 = fadd double %162, %188, !llfi_index !6064
   store double %189, double* %187, align 8, !tbaa !345, !llfi_index !6065
   %190 = add nuw nsw i64 %fi, 1, !llfi_index !6066
-  %fi1 = call i64 @injectFault0(i64 5931, i64 %190, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !6058
-  %191 = icmp eq i64 %fi1, 8, !llfi_index !6067
+  %191 = icmp eq i64 %190, 8, !llfi_index !6067
   br i1 %191, label %179, label %182, !llvm.loop !6068, !llfi_index !6069
 
 .loopexit33:                                      ; preds = %.loopexit32, %.loopexit34

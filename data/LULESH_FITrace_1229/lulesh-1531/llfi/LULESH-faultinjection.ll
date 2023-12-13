@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
 @load_namestr = internal constant [5 x i8] c"load\00"
 
 ; Function Attrs: nounwind uwtable
@@ -1891,11 +1890,10 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %78 = load double, double* %77, align 8, !tbaa !345, !llfi_index !1547
   %79 = fmul double %46, %78, !llfi_index !1548
   %80 = fadd double %76, %79, !llfi_index !1549
-  %81 = getelementptr double, double* %10, i64 1, !llfi_index !1550
-  %fi = call double* @injectFault0(i64 1530, double* %81, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !1551
-  %82 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1552
-  %fi1 = call double @injectFault1(i64 1531, double %82, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !1551
-  %83 = fmul double %51, %fi1, !llfi_index !1553
+  %81 = getelementptr inbounds double, double* %10, i64 1, !llfi_index !1550
+  %82 = load double, double* %81, align 8, !tbaa !345, !llfi_index !1551
+  %fi = call double @injectFault0(i64 1531, double %82, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !1552
+  %83 = fmul double %51, %fi, !llfi_index !1553
   %84 = fadd double %80, %83, !llfi_index !1554
   %85 = getelementptr inbounds double, double* %3, i64 2, !llfi_index !1555
   %86 = load double, double* %85, align 8, !tbaa !345, !llfi_index !1556
@@ -2054,7 +2052,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   store double %231, double* %232, align 8, !tbaa !345, !llfi_index !1709
   %233 = load double, double* %10, align 8, !tbaa !345, !llfi_index !1710
   %234 = fmul double %53, %233, !llfi_index !1711
-  %235 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1712
+  %235 = load double, double* %81, align 8, !tbaa !345, !llfi_index !1712
   %236 = fmul double %84, %235, !llfi_index !1713
   %237 = fadd double %234, %236, !llfi_index !1714
   %238 = load double, double* %112, align 8, !tbaa !345, !llfi_index !1715
@@ -2124,7 +2122,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %301 = load double, double* %77, align 8, !tbaa !345, !llfi_index !1779
   %302 = fmul double %276, %301, !llfi_index !1780
   %303 = fadd double %300, %302, !llfi_index !1781
-  %304 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1782
+  %304 = load double, double* %81, align 8, !tbaa !345, !llfi_index !1782
   %305 = fmul double %281, %304, !llfi_index !1783
   %306 = fadd double %303, %305, !llfi_index !1784
   %307 = load double, double* %85, align 8, !tbaa !345, !llfi_index !1785
@@ -2268,7 +2266,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   store double %437, double* %438, align 8, !tbaa !345, !llfi_index !1923
   %439 = load double, double* %10, align 8, !tbaa !345, !llfi_index !1924
   %440 = fmul double %283, %439, !llfi_index !1925
-  %441 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1926
+  %441 = load double, double* %81, align 8, !tbaa !345, !llfi_index !1926
   %442 = fmul double %306, %441, !llfi_index !1927
   %443 = fadd double %440, %442, !llfi_index !1928
   %444 = load double, double* %112, align 8, !tbaa !345, !llfi_index !1929
@@ -2338,7 +2336,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %507 = load double, double* %77, align 8, !tbaa !345, !llfi_index !1993
   %508 = fmul double %482, %507, !llfi_index !1994
   %509 = fadd double %506, %508, !llfi_index !1995
-  %510 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1996
+  %510 = load double, double* %81, align 8, !tbaa !345, !llfi_index !1996
   %511 = fmul double %487, %510, !llfi_index !1997
   %512 = fadd double %509, %511, !llfi_index !1998
   %513 = load double, double* %85, align 8, !tbaa !345, !llfi_index !1999
@@ -2482,7 +2480,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   store double %643, double* %644, align 8, !tbaa !345, !llfi_index !2137
   %645 = load double, double* %10, align 8, !tbaa !345, !llfi_index !2138
   %646 = fmul double %489, %645, !llfi_index !2139
-  %647 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !2140
+  %647 = load double, double* %81, align 8, !tbaa !345, !llfi_index !2140
   %648 = fmul double %512, %647, !llfi_index !2141
   %649 = fadd double %646, %648, !llfi_index !2142
   %650 = load double, double* %112, align 8, !tbaa !345, !llfi_index !2143
@@ -9870,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define double* @injectFault0(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca double*, align 8
-  store double* %1, double** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast double** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load double*, double** %tmploc, align 8
-  ret double* %updateval
-}
-
-define double @injectFault1(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define double @injectFault0(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca double, align 8
   store double %1, double* %tmploc, align 8
@@ -11502,8 +11483,8 @@ attributes #34 = { allocsize(0) }
 !1548 = !{i64 1528}
 !1549 = !{i64 1529}
 !1550 = !{i64 1530}
-!1551 = !{!"after"}
-!1552 = !{i64 1531}
+!1551 = !{i64 1531}
+!1552 = !{!"after"}
 !1553 = !{i64 1532}
 !1554 = !{i64 1533}
 !1555 = !{i64 1534}

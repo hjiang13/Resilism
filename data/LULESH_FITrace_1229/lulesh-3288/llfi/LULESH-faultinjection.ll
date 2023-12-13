@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@insertelement_namestr = internal constant [14 x i8] c"insertelement\00"
 @shufflevector_namestr = internal constant [14 x i8] c"shufflevector\00"
 
 ; Function Attrs: nounwind uwtable
@@ -3835,12 +3834,11 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %34 = insertelement <2 x double> %33, double %3, i32 1, !llfi_index !3326
   %35 = fsub <2 x double> %32, %34, !llfi_index !3327
   %36 = insertelement <2 x double> poison, double %14, i32 0, !llfi_index !3328
-  %fi = call <2 x double> @injectFault0(i64 3287, <2 x double> %36, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3329
-  %37 = shufflevector <2 x double> %fi, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3330
-  %fi1 = call <2 x double> @injectFault0(i64 3288, <2 x double> %37, i32 63, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @shufflevector_namestr, i32 0, i32 0)), !llfi_injectfault !3329
+  %37 = shufflevector <2 x double> %36, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3329
+  %fi = call <2 x double> @injectFault0(i64 3288, <2 x double> %37, i32 63, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @shufflevector_namestr, i32 0, i32 0)), !llfi_injectfault !3330
   %38 = insertelement <2 x double> poison, double %9, i32 0, !llfi_index !3331
   %39 = insertelement <2 x double> %38, double %11, i32 1, !llfi_index !3332
-  %40 = fsub <2 x double> %fi1, %39, !llfi_index !3333
+  %40 = fsub <2 x double> %fi, %39, !llfi_index !3333
   %41 = insertelement <2 x double> poison, double %22, i32 0, !llfi_index !3334
   %42 = shufflevector <2 x double> %41, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3335
   %43 = insertelement <2 x double> poison, double %17, i32 0, !llfi_index !3336
@@ -13263,8 +13261,8 @@ attributes #34 = { allocsize(0) }
 !3326 = !{i64 3285}
 !3327 = !{i64 3286}
 !3328 = !{i64 3287}
-!3329 = !{!"after"}
-!3330 = !{i64 3288}
+!3329 = !{i64 3288}
+!3330 = !{!"after"}
 !3331 = !{i64 3289}
 !3332 = !{i64 3290}
 !3333 = !{i64 3291}

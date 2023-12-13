@@ -1829,9 +1829,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %18 = fmul double %16, %17, !llfi_index !1487
   %19 = load double, double* %4, align 8, !tbaa !345, !llfi_index !1488
   %20 = getelementptr inbounds double, double* %0, i64 1, !llfi_index !1489
-  call void @doProfiling(i32 34, i32 1469)
   %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !1490
-  call void @doProfiling(i32 32, i32 1470)
   %22 = fmul double %19, %21, !llfi_index !1491
   %23 = fadd double %18, %22, !llfi_index !1492
   %24 = load double, double* %5, align 8, !tbaa !345, !llfi_index !1493
@@ -1868,9 +1866,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %55 = load double, double* %54, align 8, !tbaa !345, !llfi_index !1524
   %56 = fmul double %17, %55, !llfi_index !1525
   %57 = getelementptr inbounds double, double* %4, i64 1, !llfi_index !1526
-  call void @doProfiling(i32 34, i32 1506)
   %58 = load double, double* %57, align 8, !tbaa !345, !llfi_index !1527
-  call void @doProfiling(i32 32, i32 1507)
   %59 = fmul double %21, %58, !llfi_index !1528
   call void @doProfiling(i32 18, i32 1508)
   %60 = fadd double %56, %59, !llfi_index !1529

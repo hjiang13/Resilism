@@ -3833,30 +3833,20 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %34 = insertelement <2 x double> %33, double %3, i32 1, !llfi_index !3326
   %35 = fsub <2 x double> %32, %34, !llfi_index !3327
   %36 = insertelement <2 x double> poison, double %14, i32 0, !llfi_index !3328
-  call void @doProfiling(i32 62, i32 3287)
   %37 = shufflevector <2 x double> %36, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3329
-  call void @doProfiling(i32 63, i32 3288)
   %38 = insertelement <2 x double> poison, double %9, i32 0, !llfi_index !3330
-  call void @doProfiling(i32 62, i32 3289)
   %39 = insertelement <2 x double> %38, double %11, i32 1, !llfi_index !3331
-  call void @doProfiling(i32 62, i32 3290)
   %40 = fsub <2 x double> %37, %39, !llfi_index !3332
-  call void @doProfiling(i32 16, i32 3291)
   %41 = insertelement <2 x double> poison, double %22, i32 0, !llfi_index !3333
   %42 = shufflevector <2 x double> %41, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3334
   %43 = insertelement <2 x double> poison, double %17, i32 0, !llfi_index !3335
   %44 = insertelement <2 x double> %43, double %19, i32 1, !llfi_index !3336
   %45 = fsub <2 x double> %42, %44, !llfi_index !3337
   %46 = insertelement <2 x double> poison, double %5, i32 0, !llfi_index !3338
-  call void @doProfiling(i32 62, i32 3297)
   %47 = insertelement <2 x double> %46, double %2, i32 1, !llfi_index !3339
-  call void @doProfiling(i32 62, i32 3298)
   %48 = insertelement <2 x double> poison, double %0, i32 0, !llfi_index !3340
-  call void @doProfiling(i32 62, i32 3299)
   %49 = shufflevector <2 x double> %48, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3341
-  call void @doProfiling(i32 63, i32 3300)
   %50 = fsub <2 x double> %47, %49, !llfi_index !3342
-  call void @doProfiling(i32 16, i32 3301)
   %51 = insertelement <2 x double> poison, double %13, i32 0, !llfi_index !3343
   %52 = insertelement <2 x double> %51, double %10, i32 1, !llfi_index !3344
   %53 = shufflevector <2 x double> %28, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3345

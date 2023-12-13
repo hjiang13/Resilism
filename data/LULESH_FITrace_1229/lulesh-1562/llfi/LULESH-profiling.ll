@@ -1921,7 +1921,6 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %110 = fmul double %46, %109, !llfi_index !1579
   %111 = fadd double %107, %110, !llfi_index !1580
   %112 = getelementptr inbounds double, double* %10, i64 2, !llfi_index !1581
-  call void @doProfiling(i32 34, i32 1561)
   %113 = load double, double* %112, align 8, !tbaa !345, !llfi_index !1582
   call void @doProfiling(i32 32, i32 1562)
   %114 = fmul double %51, %113, !llfi_index !1583

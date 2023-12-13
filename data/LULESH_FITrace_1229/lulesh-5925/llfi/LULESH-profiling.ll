@@ -6987,7 +6987,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   %124 = bitcast [8 x double]* %4 to i8*, !llfi_index !5981
   %125 = bitcast [8 x double]* %5 to i8*, !llfi_index !5982
   %126 = load i32*, i32** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 17, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !5983
-  call void @doProfiling(i32 32, i32 5852)
   %127 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 0, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !5984
   %128 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 1, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !5985
   %129 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 2, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !5986
@@ -7030,14 +7029,11 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
 
 154:                                              ; preds = %179, %136
   %155 = phi i64 [ 0, %136 ], [ %180, %179 ], !llfi_index !6016
-  call void @doProfiling(i32 55, i32 5884)
   call void @llvm.lifetime.start.p0i8(i64 64, i8* nonnull %123) #2, !llfi_index !6017
   call void @llvm.lifetime.start.p0i8(i64 64, i8* nonnull %124) #2, !llfi_index !6018
   call void @llvm.lifetime.start.p0i8(i64 64, i8* nonnull %125) #2, !llfi_index !6019
   %156 = shl nsw i64 %155, 3, !llfi_index !6020
-  call void @doProfiling(i32 25, i32 5888)
   %157 = getelementptr inbounds i32, i32* %126, i64 %156, !llfi_index !6021
-  call void @doProfiling(i32 34, i32 5889)
   br label %163, !llfi_index !6022
 
 158:                                              ; preds = %163
@@ -7075,15 +7071,12 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   call void @llvm.lifetime.end.p0i8(i64 64, i8* nonnull %124) #2, !llfi_index !6051
   call void @llvm.lifetime.end.p0i8(i64 64, i8* nonnull %123) #2, !llfi_index !6052
   %180 = add nuw nsw i64 %155, 1, !llfi_index !6053
-  call void @doProfiling(i32 13, i32 5920)
   %181 = icmp eq i64 %180, %137, !llfi_index !6054
   br i1 %181, label %.loopexit34, label %154, !llvm.loop !6055, !llfi_index !6056
 
 182:                                              ; preds = %182, %158
   %183 = phi i64 [ 0, %158 ], [ %190, %182 ], !llfi_index !6057
-  call void @doProfiling(i32 55, i32 5923)
   %184 = getelementptr inbounds i32, i32* %157, i64 %183, !llfi_index !6058
-  call void @doProfiling(i32 34, i32 5924)
   %185 = load i32, i32* %184, align 4, !tbaa !404, !llfi_index !6059
   call void @doProfiling(i32 32, i32 5925)
   %186 = sext i32 %185 to i64, !llfi_index !6060
@@ -7092,7 +7085,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   %189 = fadd double %162, %188, !llfi_index !6063
   store double %189, double* %187, align 8, !tbaa !345, !llfi_index !6064
   %190 = add nuw nsw i64 %183, 1, !llfi_index !6065
-  call void @doProfiling(i32 13, i32 5931)
   %191 = icmp eq i64 %190, 8, !llfi_index !6066
   br i1 %191, label %179, label %182, !llvm.loop !6067, !llfi_index !6068
 

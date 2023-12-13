@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
 @load_namestr = internal constant [5 x i8] c"load\00"
 
 ; Function Attrs: nounwind uwtable
@@ -1840,11 +1839,10 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %27 = fmul double %24, %26, !llfi_index !1496
   %28 = fadd double %23, %27, !llfi_index !1497
   %29 = load double, double* %6, align 8, !tbaa !345, !llfi_index !1498
-  %30 = getelementptr double, double* %0, i64 3, !llfi_index !1499
-  %fi = call double* @injectFault0(i64 1479, double* %30, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !1500
-  %31 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !1501
-  %fi1 = call double @injectFault1(i64 1480, double %31, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !1500
-  %32 = fmul double %29, %fi1, !llfi_index !1502
+  %30 = getelementptr inbounds double, double* %0, i64 3, !llfi_index !1499
+  %31 = load double, double* %30, align 8, !tbaa !345, !llfi_index !1500
+  %fi = call double @injectFault0(i64 1480, double %31, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !1501
+  %32 = fmul double %29, %fi, !llfi_index !1502
   %33 = fadd double %28, %32, !llfi_index !1503
   %34 = load double, double* %7, align 8, !tbaa !345, !llfi_index !1504
   %35 = getelementptr inbounds double, double* %0, i64 4, !llfi_index !1505
@@ -1879,7 +1877,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %64 = fadd double %60, %63, !llfi_index !1534
   %65 = getelementptr inbounds double, double* %6, i64 1, !llfi_index !1535
   %66 = load double, double* %65, align 8, !tbaa !345, !llfi_index !1536
-  %67 = fmul double %fi1, %66, !llfi_index !1537
+  %67 = fmul double %fi, %66, !llfi_index !1537
   %68 = fadd double %64, %67, !llfi_index !1538
   %69 = getelementptr inbounds double, double* %7, i64 1, !llfi_index !1539
   %70 = load double, double* %69, align 8, !tbaa !345, !llfi_index !1540
@@ -1910,7 +1908,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %95 = fadd double %91, %94, !llfi_index !1565
   %96 = getelementptr inbounds double, double* %6, i64 2, !llfi_index !1566
   %97 = load double, double* %96, align 8, !tbaa !345, !llfi_index !1567
-  %98 = fmul double %fi1, %97, !llfi_index !1568
+  %98 = fmul double %fi, %97, !llfi_index !1568
   %99 = fadd double %95, %98, !llfi_index !1569
   %100 = getelementptr inbounds double, double* %7, i64 2, !llfi_index !1570
   %101 = load double, double* %100, align 8, !tbaa !345, !llfi_index !1571
@@ -1941,7 +1939,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %126 = fadd double %122, %125, !llfi_index !1596
   %127 = getelementptr inbounds double, double* %6, i64 3, !llfi_index !1597
   %128 = load double, double* %127, align 8, !tbaa !345, !llfi_index !1598
-  %129 = fmul double %fi1, %128, !llfi_index !1599
+  %129 = fmul double %fi, %128, !llfi_index !1599
   %130 = fadd double %126, %129, !llfi_index !1600
   %131 = getelementptr inbounds double, double* %7, i64 3, !llfi_index !1601
   %132 = load double, double* %131, align 8, !tbaa !345, !llfi_index !1602
@@ -9870,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define double* @injectFault0(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca double*, align 8
-  store double* %1, double** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast double** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load double*, double** %tmploc, align 8
-  ret double* %updateval
-}
-
-define double @injectFault1(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define double @injectFault0(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca double, align 8
   store double %1, double* %tmploc, align 8
@@ -11451,8 +11432,8 @@ attributes #34 = { allocsize(0) }
 !1497 = !{i64 1477}
 !1498 = !{i64 1478}
 !1499 = !{i64 1479}
-!1500 = !{!"after"}
-!1501 = !{i64 1480}
+!1500 = !{i64 1480}
+!1501 = !{!"after"}
 !1502 = !{i64 1481}
 !1503 = !{i64 1482}
 !1504 = !{i64 1483}

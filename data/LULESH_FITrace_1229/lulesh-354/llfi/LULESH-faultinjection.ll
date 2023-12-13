@@ -50,8 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@fmul_namestr = internal constant [5 x i8] c"fmul\00"
-@load_namestr = internal constant [5 x i8] c"load\00"
 @fdiv_namestr = internal constant [5 x i8] c"fdiv\00"
 
 ; Function Attrs: nounwind uwtable
@@ -619,19 +617,17 @@ define dso_local void @_Z13TimeIncrementv() local_unnamed_addr #5 {
   %13 = fmul double %11, 5.000000e-01, !llfi_index !359
   %14 = select i1 %12, double %13, double 1.000000e+20, !llfi_index !360
   %15 = load double, double* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 73), align 8, !tbaa !345, !llfi_index !361
-  %fi1 = call double @injectFault0(i64 350, double %15, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !362
-  %16 = fcmp olt double %fi1, %14, !llfi_index !363
-  br i1 %16, label %17, label %20, !llfi_index !364
+  %16 = fcmp olt double %15, %14, !llfi_index !362
+  br i1 %16, label %17, label %20, !llfi_index !363
 
 17:                                               ; preds = %10
-  %18 = fmul double %fi1, 2.000000e+00, !llfi_index !365
-  %fi = call double @injectFault0(i64 353, double %18, i32 18, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !362
-  %19 = fdiv double %fi, 3.000000e+00, !llfi_index !366
-  %fi2 = call double @injectFault0(i64 354, double %19, i32 21, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !362
+  %18 = fmul double %15, 2.000000e+00, !llfi_index !364
+  %19 = fdiv double %18, 3.000000e+00, !llfi_index !365
+  %fi = call double @injectFault0(i64 354, double %19, i32 21, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !366
   br label %20, !llfi_index !367
 
 20:                                               ; preds = %17, %10
-  %21 = phi double [ %fi2, %17 ], [ %14, %10 ], !llfi_index !368
+  %21 = phi double [ %fi, %17 ], [ %14, %10 ], !llfi_index !368
   %22 = fdiv double %21, %9, !llfi_index !369
   %23 = fcmp ult double %22, 1.000000e+00, !llfi_index !370
   br i1 %23, label %32, label %24, !llfi_index !371
@@ -10298,11 +10294,11 @@ attributes #34 = { allocsize(0) }
 !359 = !{i64 348}
 !360 = !{i64 349}
 !361 = !{i64 350}
-!362 = !{!"after"}
-!363 = !{i64 351}
-!364 = !{i64 352}
-!365 = !{i64 353}
-!366 = !{i64 354}
+!362 = !{i64 351}
+!363 = !{i64 352}
+!364 = !{i64 353}
+!365 = !{i64 354}
+!366 = !{!"after"}
 !367 = !{i64 355}
 !368 = !{i64 356}
 !369 = !{i64 357}

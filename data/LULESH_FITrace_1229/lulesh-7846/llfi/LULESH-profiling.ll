@@ -9793,7 +9793,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   %159 = bitcast double* %158 to <2 x double>*, !llfi_index !8049
   store <2 x double> %155, <2 x double>* %159, align 8, !tbaa !345, !llfi_index !8050
   %160 = add nuw i64 %157, 2, !llfi_index !8051
-  call void @doProfiling(i32 13, i32 7850)
   %161 = icmp eq i64 %160, %152, !llfi_index !8052
   br i1 %161, label %162, label %156, !llvm.loop !8053, !llfi_index !8054
 

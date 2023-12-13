@@ -3781,7 +3781,6 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
 
 12:                                               ; preds = %12, %10
   %13 = phi i64 [ 0, %10 ], [ %32, %12 ], !llfi_index !3283
-  call void @doProfiling(i32 55, i32 3243)
   %14 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3284
   %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3285
   %16 = fmul double %15, %0, !llfi_index !3286

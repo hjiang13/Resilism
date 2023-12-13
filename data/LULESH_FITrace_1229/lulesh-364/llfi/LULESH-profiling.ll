@@ -608,35 +608,25 @@ define dso_local void @_Z13TimeIncrementv() local_unnamed_addr #5 {
   %7 = icmp eq i32 %6, 0, !llfi_index !353
   %8 = select i1 %5, i1 true, i1 %7, !llfi_index !354
   %9 = load double, double* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 49), align 8, !tbaa !345, !llfi_index !355
-  call void @doProfiling(i32 32, i32 344)
   br i1 %8, label %37, label %10, !llfi_index !356
 
 10:                                               ; preds = %0
   %11 = load double, double* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 72), align 8, !tbaa !345, !llfi_index !357
-  call void @doProfiling(i32 32, i32 346)
   %12 = fcmp olt double %11, 1.000000e+20, !llfi_index !358
-  call void @doProfiling(i32 54, i32 347)
   %13 = fmul double %11, 5.000000e-01, !llfi_index !359
-  call void @doProfiling(i32 18, i32 348)
   %14 = select i1 %12, double %13, double 1.000000e+20, !llfi_index !360
-  call void @doProfiling(i32 57, i32 349)
   %15 = load double, double* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 73), align 8, !tbaa !345, !llfi_index !361
-  call void @doProfiling(i32 32, i32 350)
   %16 = fcmp olt double %15, %14, !llfi_index !362
   br i1 %16, label %17, label %20, !llfi_index !363
 
 17:                                               ; preds = %10
   %18 = fmul double %15, 2.000000e+00, !llfi_index !364
-  call void @doProfiling(i32 18, i32 353)
   %19 = fdiv double %18, 3.000000e+00, !llfi_index !365
-  call void @doProfiling(i32 21, i32 354)
   br label %20, !llfi_index !366
 
 20:                                               ; preds = %17, %10
   %21 = phi double [ %19, %17 ], [ %14, %10 ], !llfi_index !367
-  call void @doProfiling(i32 55, i32 356)
   %22 = fdiv double %21, %9, !llfi_index !368
-  call void @doProfiling(i32 21, i32 357)
   %23 = fcmp ult double %22, 1.000000e+00, !llfi_index !369
   br i1 %23, label %32, label %24, !llfi_index !370
 
@@ -647,7 +637,6 @@ define dso_local void @_Z13TimeIncrementv() local_unnamed_addr #5 {
 
 27:                                               ; preds = %24
   %28 = load double, double* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 51), align 8, !tbaa !345, !llfi_index !374
-  call void @doProfiling(i32 32, i32 363)
   %29 = fcmp ogt double %22, %28, !llfi_index !375
   call void @doProfiling(i32 54, i32 364)
   br i1 %29, label %30, label %32, !llfi_index !376

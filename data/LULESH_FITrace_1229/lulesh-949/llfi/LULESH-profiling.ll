@@ -1215,11 +1215,8 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %26 = bitcast double* %25 to <2 x double>*, !llfi_index !910
   %27 = load <2 x double>, <2 x double>* %26, align 8, !tbaa !345, !llfi_index !911
   %28 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 1, i64 6, !llfi_index !912
-  call void @doProfiling(i32 34, i32 895)
   %29 = bitcast double* %28 to <2 x double>*, !llfi_index !913
-  call void @doProfiling(i32 49, i32 896)
   %30 = load <2 x double>, <2 x double>* %29, align 8, !tbaa !345, !llfi_index !914
-  call void @doProfiling(i32 32, i32 897)
   %31 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 0, !llfi_index !915
   %32 = bitcast double* %31 to <2 x double>*, !llfi_index !916
   %33 = load <2 x double>, <2 x double>* %32, align 8, !tbaa !345, !llfi_index !917
@@ -1255,9 +1252,7 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   store <2 x double> %58, <2 x double>* %59, align 8, !tbaa !345, !llfi_index !947
   %60 = fneg <2 x double> %21, !llfi_index !948
   %61 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !949
-  call void @doProfiling(i32 62, i32 932)
   %62 = shufflevector <2 x double> %61, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !950
-  call void @doProfiling(i32 63, i32 933)
   %63 = fmul <2 x double> %62, %60, !llfi_index !951
   %64 = bitcast double* %5 to <2 x double>*, !llfi_index !952
   store <2 x double> %63, <2 x double>* %64, align 8, !tbaa !345, !llfi_index !953
@@ -1273,7 +1268,6 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   store <2 x double> %71, <2 x double>* %72, align 8, !tbaa !345, !llfi_index !963
   %73 = getelementptr inbounds double, double* %5, i64 6, !llfi_index !964
   %74 = fneg <2 x double> %30, !llfi_index !965
-  call void @doProfiling(i32 12, i32 948)
   %75 = fmul <2 x double> %62, %74, !llfi_index !966
   call void @doProfiling(i32 18, i32 949)
   %76 = bitcast double* %73 to <2 x double>*, !llfi_index !967

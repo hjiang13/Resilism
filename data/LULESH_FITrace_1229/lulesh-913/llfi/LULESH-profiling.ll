@@ -1195,9 +1195,7 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable willreturn
 define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x double]* nocapture readonly %0, double %1, double %2, double %3, double* nocapture %4, double* nocapture %5, double* nocapture %6) local_unnamed_addr #5 {
   %8 = bitcast [8 x double]* %0 to <2 x double>*, !llfi_index !892
-  call void @doProfiling(i32 49, i32 875)
   %9 = load <2 x double>, <2 x double>* %8, align 8, !tbaa !345, !llfi_index !893
-  call void @doProfiling(i32 32, i32 876)
   %10 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 0, i64 2, !llfi_index !894
   %11 = bitcast double* %10 to <2 x double>*, !llfi_index !895
   %12 = load <2 x double>, <2 x double>* %11, align 8, !tbaa !345, !llfi_index !896
@@ -1232,11 +1230,8 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %41 = bitcast double* %40 to <2 x double>*, !llfi_index !925
   %42 = load <2 x double>, <2 x double>* %41, align 8, !tbaa !345, !llfi_index !926
   %43 = fneg <2 x double> %9, !llfi_index !927
-  call void @doProfiling(i32 12, i32 910)
   %44 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !928
-  call void @doProfiling(i32 62, i32 911)
   %45 = shufflevector <2 x double> %44, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !929
-  call void @doProfiling(i32 63, i32 912)
   %46 = fmul <2 x double> %45, %43, !llfi_index !930
   call void @doProfiling(i32 18, i32 913)
   %47 = bitcast double* %4 to <2 x double>*, !llfi_index !931

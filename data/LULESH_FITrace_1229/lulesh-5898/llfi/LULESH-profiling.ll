@@ -7064,7 +7064,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   %176 = getelementptr inbounds [8 x double], [8 x double]* %5, i64 0, i64 %164, !llfi_index !6044
   store double %175, double* %176, align 8, !tbaa !345, !llfi_index !6045
   %177 = add nuw nsw i64 %164, 1, !llfi_index !6046
-  call void @doProfiling(i32 13, i32 5914)
   %178 = icmp eq i64 %177, 8, !llfi_index !6047
   br i1 %178, label %158, label %163, !llvm.loop !6048, !llfi_index !6049
 

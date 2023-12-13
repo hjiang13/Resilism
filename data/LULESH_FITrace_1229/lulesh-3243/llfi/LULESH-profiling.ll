@@ -3804,7 +3804,6 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   %31 = fadd double %28, %30, !llfi_index !3303
   store double %31, double* %29, align 8, !tbaa !345, !llfi_index !3304
   %32 = add nuw nsw i64 %13, 1, !llfi_index !3305
-  call void @doProfiling(i32 13, i32 3265)
   %33 = icmp eq i64 %32, %11, !llfi_index !3306
   br i1 %33, label %.loopexit, label %12, !llvm.loop !3307, !llfi_index !3308
 }

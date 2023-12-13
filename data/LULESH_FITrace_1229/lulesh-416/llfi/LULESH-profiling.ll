@@ -695,7 +695,6 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
 
 8:                                                ; preds = %4
   %9 = zext i32 %0 to i64, !llfi_index !412
-  call void @doProfiling(i32 39, i32 399)
   br label %10, !llfi_index !413
 
 .loopexit:                                        ; preds = %10, %4
@@ -703,7 +702,6 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
 
 10:                                               ; preds = %10, %8
   %11 = phi i64 [ 0, %8 ], [ %21, %10 ], !llfi_index !415
-  call void @doProfiling(i32 55, i32 402)
   %12 = getelementptr inbounds double, double* %5, i64 %11, !llfi_index !416
   %13 = load double, double* %12, align 8, !tbaa !345, !llfi_index !417
   %14 = fneg double %13, !llfi_index !418
@@ -717,7 +715,6 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
   %20 = getelementptr inbounds double, double* %1, i64 %11, !llfi_index !426
   store double %17, double* %20, align 8, !tbaa !345, !llfi_index !427
   %21 = add nuw nsw i64 %11, 1, !llfi_index !428
-  call void @doProfiling(i32 13, i32 415)
   %22 = icmp eq i64 %21, %9, !llfi_index !429
   call void @doProfiling(i32 53, i32 416)
   br i1 %22, label %.loopexit, label %10, !llvm.loop !430, !llfi_index !433

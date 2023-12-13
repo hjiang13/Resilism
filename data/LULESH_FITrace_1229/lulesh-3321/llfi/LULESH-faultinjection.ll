@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@insertelement_namestr = internal constant [14 x i8] c"insertelement\00"
 @fsub_namestr = internal constant [5 x i8] c"fsub\00"
 
 ; Function Attrs: nounwind uwtable
@@ -3865,15 +3864,11 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %64 = fsub double %22, %20, !llfi_index !3356
   %65 = fsub double %12, %11, !llfi_index !3357
   %66 = insertelement <2 x double> poison, double %20, i32 0, !llfi_index !3358
-  %fi = call <2 x double> @injectFault0(i64 3317, <2 x double> %66, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3359
-  %67 = insertelement <2 x double> %fi, double %4, i32 1, !llfi_index !3360
-  %fi1 = call <2 x double> @injectFault0(i64 3318, <2 x double> %67, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3359
-  %68 = insertelement <2 x double> poison, double %19, i32 0, !llfi_index !3361
-  %fi2 = call <2 x double> @injectFault0(i64 3319, <2 x double> %68, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3359
-  %69 = insertelement <2 x double> %fi2, double %3, i32 1, !llfi_index !3362
-  %fi3 = call <2 x double> @injectFault0(i64 3320, <2 x double> %69, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3359
-  %70 = fsub <2 x double> %fi1, %fi3, !llfi_index !3363
-  %fi4 = call <2 x double> @injectFault0(i64 3321, <2 x double> %70, i32 16, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fsub_namestr, i32 0, i32 0)), !llfi_injectfault !3359
+  %67 = insertelement <2 x double> %66, double %4, i32 1, !llfi_index !3359
+  %68 = insertelement <2 x double> poison, double %19, i32 0, !llfi_index !3360
+  %69 = insertelement <2 x double> %68, double %3, i32 1, !llfi_index !3361
+  %70 = fsub <2 x double> %67, %69, !llfi_index !3362
+  %fi = call <2 x double> @injectFault0(i64 3321, <2 x double> %70, i32 16, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fsub_namestr, i32 0, i32 0)), !llfi_injectfault !3363
   %71 = fsub double %13, %15, !llfi_index !3364
   %72 = insertelement <2 x double> %55, double %5, i32 1, !llfi_index !3365
   %73 = insertelement <2 x double> poison, double %23, i32 0, !llfi_index !3366
@@ -3884,7 +3879,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %78 = insertelement <2 x double> poison, double %12, i32 0, !llfi_index !3371
   %79 = insertelement <2 x double> %78, double %9, i32 1, !llfi_index !3372
   %80 = fsub <2 x double> %39, %79, !llfi_index !3373
-  %81 = insertelement <2 x double> %fi, double %17, i32 1, !llfi_index !3374
+  %81 = insertelement <2 x double> %66, double %17, i32 1, !llfi_index !3374
   %82 = fsub <2 x double> %44, %81, !llfi_index !3375
   %83 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !3376
   %84 = insertelement <2 x double> %83, double %7, i32 1, !llfi_index !3377
@@ -3902,7 +3897,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %95 = extractelement <2 x double> %94, i32 0, !llfi_index !3389
   %96 = fsub double %93, %95, !llfi_index !3390
   %97 = fmul double %92, %96, !llfi_index !3391
-  %98 = fadd <2 x double> %fi4, %75, !llfi_index !3392
+  %98 = fadd <2 x double> %fi, %75, !llfi_index !3392
   %99 = fmul <2 x double> %63, %30, !llfi_index !3393
   %100 = insertelement <2 x double> poison, double %25, i32 0, !llfi_index !3394
   %101 = shufflevector <2 x double> %100, <2 x double> %30, <2 x i32> <i32 0, i32 2>, !llfi_index !3395
@@ -13296,11 +13291,11 @@ attributes #34 = { allocsize(0) }
 !3356 = !{i64 3315}
 !3357 = !{i64 3316}
 !3358 = !{i64 3317}
-!3359 = !{!"after"}
-!3360 = !{i64 3318}
-!3361 = !{i64 3319}
-!3362 = !{i64 3320}
-!3363 = !{i64 3321}
+!3359 = !{i64 3318}
+!3360 = !{i64 3319}
+!3361 = !{i64 3320}
+!3362 = !{i64 3321}
+!3363 = !{!"after"}
 !3364 = !{i64 3322}
 !3365 = !{i64 3323}
 !3366 = !{i64 3324}

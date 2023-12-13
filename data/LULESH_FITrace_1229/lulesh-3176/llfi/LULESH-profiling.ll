@@ -3698,7 +3698,6 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
   %36 = getelementptr inbounds double, double* %22, i64 %35, !llfi_index !3218
   store double 0.000000e+00, double* %36, align 8, !tbaa !345, !llfi_index !3219
   %37 = add nuw nsw i64 %32, 1, !llfi_index !3220
-  call void @doProfiling(i32 13, i32 3182)
   %38 = icmp eq i64 %37, %8, !llfi_index !3221
   br i1 %38, label %.loopexit, label %31, !llvm.loop !3222, !llfi_index !3223
 }

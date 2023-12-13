@@ -3643,11 +3643,8 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable
 define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_unnamed_addr #6 {
   %1 = load i32, i32* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 76), align 4, !tbaa !404, !llfi_index !3178
-  call void @doProfiling(i32 32, i32 3142)
   %2 = add i32 %1, 1, !llfi_index !3179
-  call void @doProfiling(i32 13, i32 3143)
   %3 = mul i32 %2, %2, !llfi_index !3180
-  call void @doProfiling(i32 17, i32 3144)
   %4 = load i32*, i32** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 13, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3181
   %5 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 6, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3182
   %6 = icmp eq i32 %3, 0, !llfi_index !3183
@@ -3655,7 +3652,6 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
 
 7:                                                ; preds = %0
   %8 = zext i32 %3 to i64, !llfi_index !3185
-  call void @doProfiling(i32 39, i32 3149)
   br label %12, !llfi_index !3186
 
 9:                                                ; preds = %12
@@ -3695,14 +3691,12 @@ define dso_local void @_Z43ApplyAccelerationBoundaryConditionsForNodesv() local_
 
 31:                                               ; preds = %31, %20
   %32 = phi i64 [ 0, %20 ], [ %37, %31 ], !llfi_index !3214
-  call void @doProfiling(i32 55, i32 3176)
   %33 = getelementptr inbounds i32, i32* %21, i64 %32, !llfi_index !3215
   %34 = load i32, i32* %33, align 4, !tbaa !404, !llfi_index !3216
   %35 = sext i32 %34 to i64, !llfi_index !3217
   %36 = getelementptr inbounds double, double* %22, i64 %35, !llfi_index !3218
   store double 0.000000e+00, double* %36, align 8, !tbaa !345, !llfi_index !3219
   %37 = add nuw nsw i64 %32, 1, !llfi_index !3220
-  call void @doProfiling(i32 13, i32 3182)
   %38 = icmp eq i64 %37, %8, !llfi_index !3221
   call void @doProfiling(i32 53, i32 3183)
   br i1 %38, label %.loopexit, label %31, !llvm.loop !3222, !llfi_index !3223

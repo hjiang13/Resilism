@@ -689,7 +689,6 @@ define dso_local void @_Z13TimeIncrementv() local_unnamed_addr #5 {
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable
 define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapture %1, double* nocapture %2, double* nocapture %3) local_unnamed_addr #6 {
   %5 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 35, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !408
-  call void @doProfiling(i32 32, i32 395)
   %6 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 36, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !409
   %7 = icmp sgt i32 %0, 0, !llfi_index !410
   br i1 %7, label %8, label %.loopexit, !llfi_index !411
@@ -703,11 +702,8 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
 
 10:                                               ; preds = %10, %8
   %11 = phi i64 [ 0, %8 ], [ %21, %10 ], !llfi_index !415
-  call void @doProfiling(i32 55, i32 402)
   %12 = getelementptr inbounds double, double* %5, i64 %11, !llfi_index !416
-  call void @doProfiling(i32 34, i32 403)
   %13 = load double, double* %12, align 8, !tbaa !345, !llfi_index !417
-  call void @doProfiling(i32 32, i32 404)
   %14 = fneg double %13, !llfi_index !418
   call void @doProfiling(i32 12, i32 405)
   %15 = getelementptr inbounds double, double* %6, i64 %11, !llfi_index !419
@@ -720,7 +716,6 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
   %20 = getelementptr inbounds double, double* %1, i64 %11, !llfi_index !426
   store double %17, double* %20, align 8, !tbaa !345, !llfi_index !427
   %21 = add nuw nsw i64 %11, 1, !llfi_index !428
-  call void @doProfiling(i32 13, i32 415)
   %22 = icmp eq i64 %21, %9, !llfi_index !429
   br i1 %22, label %.loopexit, label %10, !llvm.loop !430, !llfi_index !433
 }

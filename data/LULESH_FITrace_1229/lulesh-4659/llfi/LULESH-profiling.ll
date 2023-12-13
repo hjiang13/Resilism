@@ -5391,11 +5391,8 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 32:                                               ; preds = %32, %30
   %33 = phi i64 [ 0, %30 ], [ %43, %32 ], !llfi_index !4705
-  call void @doProfiling(i32 55, i32 4656)
   %34 = getelementptr inbounds double, double* %4, i64 %33, !llfi_index !4706
-  call void @doProfiling(i32 34, i32 4657)
   %35 = bitcast double* %34 to <2 x double>*, !llfi_index !4707
-  call void @doProfiling(i32 49, i32 4658)
   %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4708, !llfi_index !4711
   call void @doProfiling(i32 32, i32 4659)
   %37 = fadd <2 x double> %36, <double 1.000000e+00, double 1.000000e+00>, !llfi_index !4712
@@ -5407,7 +5404,6 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4722
   store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4723, !noalias !4708, !llfi_index !4724
   %43 = add nuw i64 %33, 2, !llfi_index !4725
-  call void @doProfiling(i32 13, i32 4668)
   %44 = icmp eq i64 %43, %31, !llfi_index !4726
   br i1 %44, label %45, label %32, !llvm.loop !4727, !llfi_index !4728
 

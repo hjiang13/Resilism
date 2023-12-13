@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@phi_namestr = internal constant [4 x i8] c"phi\00"
 @add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
@@ -5448,56 +5447,55 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br label %71, !llfi_index !4757
 
 71:                                               ; preds = %106, %63
-  %72 = phi i64 [ 0, %63 ], [ %fi1, %106 ], !llfi_index !4758
-  %fi = call i64 @injectFault0(i64 4700, i64 %72, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !4759
-  %73 = getelementptr inbounds double, double* %1, i64 %fi, !llfi_index !4760
-  %74 = bitcast double* %73 to <2 x double>*, !llfi_index !4761
-  %75 = load <2 x double>, <2 x double>* %74, align 8, !tbaa !345, !alias.scope !4762, !llfi_index !4765
-  %76 = getelementptr inbounds double, double* %3, i64 %fi, !llfi_index !4766
-  %77 = bitcast double* %76 to <2 x double>*, !llfi_index !4767
-  %78 = load <2 x double>, <2 x double>* %77, align 8, !tbaa !345, !alias.scope !4768, !llfi_index !4770
-  %79 = fmul <2 x double> %75, %78, !llfi_index !4771
-  %80 = getelementptr inbounds double, double* %0, i64 %fi, !llfi_index !4772
-  %81 = tail call <2 x double> @llvm.fabs.v2f64(<2 x double> %79), !llfi_index !4773
-  %82 = fcmp olt <2 x double> %81, %66, !llfi_index !4774
-  %83 = select <2 x i1> %82, <2 x double> zeroinitializer, <2 x double> %79, !llfi_index !4775
-  %84 = bitcast double* %80 to <2 x double>*, !llfi_index !4776
-  store <2 x double> %83, <2 x double>* %84, align 8, !tbaa !345, !alias.scope !4777, !noalias !4779, !llfi_index !4781
-  %85 = getelementptr inbounds double, double* %5, i64 %fi, !llfi_index !4782
-  %86 = bitcast double* %85 to <2 x double>*, !llfi_index !4783
-  %87 = load <2 x double>, <2 x double>* %86, align 8, !tbaa !345, !alias.scope !4784, !llfi_index !4785
-  %88 = fcmp ult <2 x double> %87, %68, !llfi_index !4786
-  %89 = select <2 x i1> %88, <2 x double> %83, <2 x double> zeroinitializer, !llfi_index !4787
-  %90 = fcmp olt <2 x double> %89, %70, !llfi_index !4788
-  %91 = xor <2 x i1> %88, <i1 true, i1 true>, !llfi_index !4789
-  %92 = or <2 x i1> %90, %91, !llfi_index !4790
-  %93 = extractelement <2 x i1> %92, i32 0, !llfi_index !4791
-  br i1 %93, label %94, label %98, !llfi_index !4792
+  %72 = phi i64 [ 0, %63 ], [ %fi, %106 ], !llfi_index !4758
+  %73 = getelementptr inbounds double, double* %1, i64 %72, !llfi_index !4759
+  %74 = bitcast double* %73 to <2 x double>*, !llfi_index !4760
+  %75 = load <2 x double>, <2 x double>* %74, align 8, !tbaa !345, !alias.scope !4761, !llfi_index !4764
+  %76 = getelementptr inbounds double, double* %3, i64 %72, !llfi_index !4765
+  %77 = bitcast double* %76 to <2 x double>*, !llfi_index !4766
+  %78 = load <2 x double>, <2 x double>* %77, align 8, !tbaa !345, !alias.scope !4767, !llfi_index !4769
+  %79 = fmul <2 x double> %75, %78, !llfi_index !4770
+  %80 = getelementptr inbounds double, double* %0, i64 %72, !llfi_index !4771
+  %81 = tail call <2 x double> @llvm.fabs.v2f64(<2 x double> %79), !llfi_index !4772
+  %82 = fcmp olt <2 x double> %81, %66, !llfi_index !4773
+  %83 = select <2 x i1> %82, <2 x double> zeroinitializer, <2 x double> %79, !llfi_index !4774
+  %84 = bitcast double* %80 to <2 x double>*, !llfi_index !4775
+  store <2 x double> %83, <2 x double>* %84, align 8, !tbaa !345, !alias.scope !4776, !noalias !4778, !llfi_index !4780
+  %85 = getelementptr inbounds double, double* %5, i64 %72, !llfi_index !4781
+  %86 = bitcast double* %85 to <2 x double>*, !llfi_index !4782
+  %87 = load <2 x double>, <2 x double>* %86, align 8, !tbaa !345, !alias.scope !4783, !llfi_index !4784
+  %88 = fcmp ult <2 x double> %87, %68, !llfi_index !4785
+  %89 = select <2 x i1> %88, <2 x double> %83, <2 x double> zeroinitializer, !llfi_index !4786
+  %90 = fcmp olt <2 x double> %89, %70, !llfi_index !4787
+  %91 = xor <2 x i1> %88, <i1 true, i1 true>, !llfi_index !4788
+  %92 = or <2 x i1> %90, %91, !llfi_index !4789
+  %93 = extractelement <2 x i1> %92, i32 0, !llfi_index !4790
+  br i1 %93, label %94, label %98, !llfi_index !4791
 
 94:                                               ; preds = %71
-  %95 = extractelement <2 x i1> %90, i32 0, !llfi_index !4793
-  %96 = extractelement <2 x double> %89, i32 0, !llfi_index !4794
-  %97 = select i1 %95, double %6, double %96, !llfi_index !4795
-  store double %97, double* %80, align 8, !tbaa !345, !alias.scope !4777, !noalias !4779, !llfi_index !4796
-  br label %98, !llfi_index !4797
+  %95 = extractelement <2 x i1> %90, i32 0, !llfi_index !4792
+  %96 = extractelement <2 x double> %89, i32 0, !llfi_index !4793
+  %97 = select i1 %95, double %6, double %96, !llfi_index !4794
+  store double %97, double* %80, align 8, !tbaa !345, !alias.scope !4776, !noalias !4778, !llfi_index !4795
+  br label %98, !llfi_index !4796
 
 98:                                               ; preds = %94, %71
-  %99 = extractelement <2 x i1> %92, i32 1, !llfi_index !4798
-  br i1 %99, label %100, label %106, !llfi_index !4799
+  %99 = extractelement <2 x i1> %92, i32 1, !llfi_index !4797
+  br i1 %99, label %100, label %106, !llfi_index !4798
 
 100:                                              ; preds = %98
-  %101 = or i64 %fi, 1, !llfi_index !4800
-  %102 = getelementptr inbounds double, double* %0, i64 %101, !llfi_index !4801
-  %103 = extractelement <2 x i1> %90, i32 1, !llfi_index !4802
-  %104 = extractelement <2 x double> %89, i32 1, !llfi_index !4803
-  %105 = select i1 %103, double %6, double %104, !llfi_index !4804
-  store double %105, double* %102, align 8, !tbaa !345, !alias.scope !4777, !noalias !4779, !llfi_index !4805
-  br label %106, !llfi_index !4806
+  %101 = or i64 %72, 1, !llfi_index !4799
+  %102 = getelementptr inbounds double, double* %0, i64 %101, !llfi_index !4800
+  %103 = extractelement <2 x i1> %90, i32 1, !llfi_index !4801
+  %104 = extractelement <2 x double> %89, i32 1, !llfi_index !4802
+  %105 = select i1 %103, double %6, double %104, !llfi_index !4803
+  store double %105, double* %102, align 8, !tbaa !345, !alias.scope !4776, !noalias !4778, !llfi_index !4804
+  br label %106, !llfi_index !4805
 
 106:                                              ; preds = %100, %98
-  %107 = add nuw i64 %fi, 2, !llfi_index !4807
-  %fi1 = call i64 @injectFault0(i64 4738, i64 %107, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4759
-  %108 = icmp eq i64 %fi1, %64, !llfi_index !4808
+  %107 = add nuw i64 %72, 2, !llfi_index !4806
+  %fi = call i64 @injectFault0(i64 4738, i64 %107, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4807
+  %108 = icmp eq i64 %fi, %64, !llfi_index !4808
   br i1 %108, label %109, label %71, !llvm.loop !4809, !llfi_index !4810
 
 109:                                              ; preds = %106
@@ -14693,55 +14691,55 @@ attributes #34 = { allocsize(0) }
 !4756 = !{i64 4698}
 !4757 = !{i64 4699}
 !4758 = !{i64 4700}
-!4759 = !{!"after"}
-!4760 = !{i64 4701}
-!4761 = !{i64 4702}
-!4762 = !{!4763}
-!4763 = distinct !{!4763, !4764}
-!4764 = distinct !{!4764, !"LVerDomain"}
-!4765 = !{i64 4703}
-!4766 = !{i64 4704}
-!4767 = !{i64 4705}
-!4768 = !{!4769}
-!4769 = distinct !{!4769, !4764}
-!4770 = !{i64 4706}
-!4771 = !{i64 4707}
-!4772 = !{i64 4708}
-!4773 = !{i64 4709}
-!4774 = !{i64 4710}
-!4775 = !{i64 4711}
-!4776 = !{i64 4712}
-!4777 = !{!4778}
-!4778 = distinct !{!4778, !4764}
-!4779 = !{!4763, !4769, !4780}
-!4780 = distinct !{!4780, !4764}
-!4781 = !{i64 4713}
-!4782 = !{i64 4714}
-!4783 = !{i64 4715}
-!4784 = !{!4780}
-!4785 = !{i64 4716}
-!4786 = !{i64 4717}
-!4787 = !{i64 4718}
-!4788 = !{i64 4719}
-!4789 = !{i64 4720}
-!4790 = !{i64 4721}
-!4791 = !{i64 4722}
-!4792 = !{i64 4723}
-!4793 = !{i64 4724}
-!4794 = !{i64 4725}
-!4795 = !{i64 4726}
-!4796 = !{i64 4727}
-!4797 = !{i64 4728}
-!4798 = !{i64 4729}
-!4799 = !{i64 4730}
-!4800 = !{i64 4731}
-!4801 = !{i64 4732}
-!4802 = !{i64 4733}
-!4803 = !{i64 4734}
-!4804 = !{i64 4735}
-!4805 = !{i64 4736}
-!4806 = !{i64 4737}
-!4807 = !{i64 4738}
+!4759 = !{i64 4701}
+!4760 = !{i64 4702}
+!4761 = !{!4762}
+!4762 = distinct !{!4762, !4763}
+!4763 = distinct !{!4763, !"LVerDomain"}
+!4764 = !{i64 4703}
+!4765 = !{i64 4704}
+!4766 = !{i64 4705}
+!4767 = !{!4768}
+!4768 = distinct !{!4768, !4763}
+!4769 = !{i64 4706}
+!4770 = !{i64 4707}
+!4771 = !{i64 4708}
+!4772 = !{i64 4709}
+!4773 = !{i64 4710}
+!4774 = !{i64 4711}
+!4775 = !{i64 4712}
+!4776 = !{!4777}
+!4777 = distinct !{!4777, !4763}
+!4778 = !{!4762, !4768, !4779}
+!4779 = distinct !{!4779, !4763}
+!4780 = !{i64 4713}
+!4781 = !{i64 4714}
+!4782 = !{i64 4715}
+!4783 = !{!4779}
+!4784 = !{i64 4716}
+!4785 = !{i64 4717}
+!4786 = !{i64 4718}
+!4787 = !{i64 4719}
+!4788 = !{i64 4720}
+!4789 = !{i64 4721}
+!4790 = !{i64 4722}
+!4791 = !{i64 4723}
+!4792 = !{i64 4724}
+!4793 = !{i64 4725}
+!4794 = !{i64 4726}
+!4795 = !{i64 4727}
+!4796 = !{i64 4728}
+!4797 = !{i64 4729}
+!4798 = !{i64 4730}
+!4799 = !{i64 4731}
+!4800 = !{i64 4732}
+!4801 = !{i64 4733}
+!4802 = !{i64 4734}
+!4803 = !{i64 4735}
+!4804 = !{i64 4736}
+!4805 = !{i64 4737}
+!4806 = !{i64 4738}
+!4807 = !{!"after"}
 !4808 = !{i64 4739}
 !4809 = distinct !{!4809, !431, !432, !2670}
 !4810 = !{i64 4740}

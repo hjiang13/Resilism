@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@bitcast_namestr = internal constant [8 x i8] c"bitcast\00"
 @load_namestr = internal constant [5 x i8] c"load\00"
 
 ; Function Attrs: nounwind uwtable
@@ -1197,9 +1196,8 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable willreturn
 define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x double]* nocapture readonly %0, double %1, double %2, double %3, double* nocapture %4, double* nocapture %5, double* nocapture %6) local_unnamed_addr #5 {
   %8 = bitcast [8 x double]* %0 to <2 x double>*, !llfi_index !892
-  %fi = call <2 x double>* @injectFault0(i64 875, <2 x double>* %8, i32 49, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([8 x i8], [8 x i8]* @bitcast_namestr, i32 0, i32 0)), !llfi_injectfault !893
-  %9 = load <2 x double>, <2 x double>* %fi, align 8, !tbaa !345, !llfi_index !894
-  %fi1 = call <2 x double> @injectFault1(i64 876, <2 x double> %9, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !893
+  %9 = load <2 x double>, <2 x double>* %8, align 8, !tbaa !345, !llfi_index !893
+  %fi = call <2 x double> @injectFault0(i64 876, <2 x double> %9, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !894
   %10 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 0, i64 2, !llfi_index !895
   %11 = bitcast double* %10 to <2 x double>*, !llfi_index !896
   %12 = load <2 x double>, <2 x double>* %11, align 8, !tbaa !345, !llfi_index !897
@@ -1233,7 +1231,7 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %40 = getelementptr inbounds [8 x double], [8 x double]* %0, i64 2, i64 6, !llfi_index !925
   %41 = bitcast double* %40 to <2 x double>*, !llfi_index !926
   %42 = load <2 x double>, <2 x double>* %41, align 8, !tbaa !345, !llfi_index !927
-  %43 = fneg <2 x double> %fi1, !llfi_index !928
+  %43 = fneg <2 x double> %fi, !llfi_index !928
   %44 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !929
   %45 = shufflevector <2 x double> %44, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !930
   %46 = fmul <2 x double> %45, %43, !llfi_index !931
@@ -9870,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define <2 x double>* @injectFault0(i64 %0, <2 x double>* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca <2 x double>*, align 8
-  store <2 x double>* %1, <2 x double>** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast <2 x double>** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load <2 x double>*, <2 x double>** %tmploc, align 8
-  ret <2 x double>* %updateval
-}
-
-define <2 x double> @injectFault1(i64 %0, <2 x double> %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define <2 x double> @injectFault0(i64 %0, <2 x double> %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca <2 x double>, align 16
   store <2 x double> %1, <2 x double>* %tmploc, align 16
@@ -10844,8 +10825,8 @@ attributes #34 = { allocsize(0) }
 !890 = distinct !{!890, !431, !432}
 !891 = !{i64 874}
 !892 = !{i64 875}
-!893 = !{!"after"}
-!894 = !{i64 876}
+!893 = !{i64 876}
+!894 = !{!"after"}
 !895 = !{i64 877}
 !896 = !{i64 878}
 !897 = !{i64 879}

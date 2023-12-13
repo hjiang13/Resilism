@@ -1435,9 +1435,7 @@ declare void @llvm.lifetime.end.p0i8(i64 immarg, i8* nocapture) #8
 define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocapture readonly %0, double* nocapture %1, double* nocapture %2, double* nocapture %3) local_unnamed_addr #5 {
   %5 = load i32, i32* %0, align 4, !tbaa !404, !llfi_index !1106
   %6 = getelementptr inbounds i32, i32* %0, i64 1, !llfi_index !1107
-  call void @doProfiling(i32 34, i32 1087)
   %7 = load i32, i32* %6, align 4, !tbaa !404, !llfi_index !1108
-  call void @doProfiling(i32 32, i32 1088)
   %8 = getelementptr inbounds i32, i32* %0, i64 2, !llfi_index !1109
   %9 = load i32, i32* %8, align 4, !tbaa !404, !llfi_index !1110
   %10 = getelementptr inbounds i32, i32* %0, i64 3, !llfi_index !1111
@@ -1456,7 +1454,6 @@ define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocaptu
   %23 = load double, double* %22, align 8, !tbaa !345, !llfi_index !1124
   store double %23, double* %1, align 8, !tbaa !345, !llfi_index !1125
   %24 = sext i32 %7 to i64, !llfi_index !1126
-  call void @doProfiling(i32 40, i32 1106)
   %25 = getelementptr inbounds double, double* %21, i64 %24, !llfi_index !1127
   %26 = load double, double* %25, align 8, !tbaa !345, !llfi_index !1128
   %27 = getelementptr inbounds double, double* %1, i64 1, !llfi_index !1129
@@ -1524,12 +1521,10 @@ define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocaptu
   %75 = getelementptr inbounds double, double* %2, i64 7, !llfi_index !1191
   store double %74, double* %75, align 8, !tbaa !345, !llfi_index !1192
   %76 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 2, i32 0, i32 0, i32 0, i32 0), align 8, !tbaa !9, !llfi_index !1193
-  call void @doProfiling(i32 32, i32 1173)
   %77 = getelementptr inbounds double, double* %76, i64 %20, !llfi_index !1194
   %78 = load double, double* %77, align 8, !tbaa !345, !llfi_index !1195
   store double %78, double* %3, align 8, !tbaa !345, !llfi_index !1196
   %79 = getelementptr inbounds double, double* %76, i64 %24, !llfi_index !1197
-  call void @doProfiling(i32 34, i32 1177)
   %80 = load double, double* %79, align 8, !tbaa !345, !llfi_index !1198
   call void @doProfiling(i32 32, i32 1178)
   %81 = getelementptr inbounds double, double* %3, i64 1, !llfi_index !1199

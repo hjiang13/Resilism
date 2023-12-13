@@ -7085,7 +7085,6 @@ define dso_local i32 @main(i32 %0, i8** nocapture readonly %1) local_unnamed_add
   %189 = fadd double %162, %188, !llfi_index !6063
   store double %189, double* %187, align 8, !tbaa !345, !llfi_index !6064
   %190 = add nuw nsw i64 %183, 1, !llfi_index !6065
-  call void @doProfiling(i32 13, i32 5931)
   %191 = icmp eq i64 %190, 8, !llfi_index !6066
   br i1 %191, label %179, label %182, !llvm.loop !6067, !llfi_index !6068
 

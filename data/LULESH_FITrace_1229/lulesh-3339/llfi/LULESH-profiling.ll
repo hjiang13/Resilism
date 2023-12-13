@@ -3848,9 +3848,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %49 = shufflevector <2 x double> %48, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3341
   %50 = fsub <2 x double> %47, %49, !llfi_index !3342
   %51 = insertelement <2 x double> poison, double %13, i32 0, !llfi_index !3343
-  call void @doProfiling(i32 62, i32 3302)
   %52 = insertelement <2 x double> %51, double %10, i32 1, !llfi_index !3344
-  call void @doProfiling(i32 62, i32 3303)
   %53 = shufflevector <2 x double> %28, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3345
   %54 = fsub <2 x double> %52, %53, !llfi_index !3346
   %55 = insertelement <2 x double> poison, double %21, i32 0, !llfi_index !3347
@@ -3885,9 +3883,7 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %84 = insertelement <2 x double> %83, double %7, i32 1, !llfi_index !3376
   %85 = fsub <2 x double> %84, %47, !llfi_index !3377
   %86 = insertelement <2 x double> poison, double %10, i32 0, !llfi_index !3378
-  call void @doProfiling(i32 62, i32 3337)
   %87 = insertelement <2 x double> %86, double %15, i32 1, !llfi_index !3379
-  call void @doProfiling(i32 62, i32 3338)
   %88 = fsub <2 x double> %87, %52, !llfi_index !3380
   call void @doProfiling(i32 16, i32 3339)
   %89 = insertelement <2 x double> poison, double %18, i32 0, !llfi_index !3381

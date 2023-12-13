@@ -1441,9 +1441,7 @@ define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocaptu
   %10 = getelementptr inbounds i32, i32* %0, i64 3, !llfi_index !1111
   %11 = load i32, i32* %10, align 4, !tbaa !404, !llfi_index !1112
   %12 = getelementptr inbounds i32, i32* %0, i64 4, !llfi_index !1113
-  call void @doProfiling(i32 34, i32 1093)
   %13 = load i32, i32* %12, align 4, !tbaa !404, !llfi_index !1114
-  call void @doProfiling(i32 32, i32 1094)
   %14 = getelementptr inbounds i32, i32* %0, i64 5, !llfi_index !1115
   %15 = load i32, i32* %14, align 4, !tbaa !404, !llfi_index !1116
   %16 = getelementptr inbounds i32, i32* %0, i64 6, !llfi_index !1117

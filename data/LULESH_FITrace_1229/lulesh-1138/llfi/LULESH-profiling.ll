@@ -1447,12 +1447,9 @@ define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocaptu
   %16 = getelementptr inbounds i32, i32* %0, i64 6, !llfi_index !1117
   %17 = load i32, i32* %16, align 4, !tbaa !404, !llfi_index !1118
   %18 = getelementptr inbounds i32, i32* %0, i64 7, !llfi_index !1119
-  call void @doProfiling(i32 34, i32 1099)
   %19 = load i32, i32* %18, align 4, !tbaa !404, !llfi_index !1120
-  call void @doProfiling(i32 32, i32 1100)
   %20 = sext i32 %5 to i64, !llfi_index !1121
   %21 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 0, i32 0, i32 0, i32 0, i32 0), align 8, !tbaa !9, !llfi_index !1122
-  call void @doProfiling(i32 32, i32 1102)
   %22 = getelementptr inbounds double, double* %21, i64 %20, !llfi_index !1123
   %23 = load double, double* %22, align 8, !tbaa !345, !llfi_index !1124
   store double %23, double* %1, align 8, !tbaa !345, !llfi_index !1125
@@ -1487,9 +1484,7 @@ define dso_local void @_Z29CollectDomainNodesToElemNodesPKiPdS1_S1_(i32* nocaptu
   %47 = getelementptr inbounds double, double* %1, i64 6, !llfi_index !1154
   store double %46, double* %47, align 8, !tbaa !345, !llfi_index !1155
   %48 = sext i32 %19 to i64, !llfi_index !1156
-  call void @doProfiling(i32 40, i32 1136)
   %49 = getelementptr inbounds double, double* %21, i64 %48, !llfi_index !1157
-  call void @doProfiling(i32 34, i32 1137)
   %50 = load double, double* %49, align 8, !tbaa !345, !llfi_index !1158
   call void @doProfiling(i32 32, i32 1138)
   %51 = getelementptr inbounds double, double* %1, i64 7, !llfi_index !1159

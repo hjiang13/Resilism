@@ -616,13 +616,11 @@ define dso_local void @_Z13TimeIncrementv() local_unnamed_addr #5 {
   %13 = fmul double %11, 5.000000e-01, !llfi_index !359
   %14 = select i1 %12, double %13, double 1.000000e+20, !llfi_index !360
   %15 = load double, double* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 73), align 8, !tbaa !345, !llfi_index !361
-  call void @doProfiling(i32 32, i32 350)
   %16 = fcmp olt double %15, %14, !llfi_index !362
   br i1 %16, label %17, label %20, !llfi_index !363
 
 17:                                               ; preds = %10
   %18 = fmul double %15, 2.000000e+00, !llfi_index !364
-  call void @doProfiling(i32 18, i32 353)
   %19 = fdiv double %18, 3.000000e+00, !llfi_index !365
   call void @doProfiling(i32 21, i32 354)
   br label %20, !llfi_index !366

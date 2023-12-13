@@ -9782,7 +9782,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 151:                                              ; preds = %146
   %152 = and i64 %2, -2, !llfi_index !8042
   %153 = and i64 %2, 1, !llfi_index !8043
-  call void @doProfiling(i32 28, i32 7842)
   %154 = insertelement <2 x double> poison, double %149, i32 0, !llfi_index !8044
   %155 = shufflevector <2 x double> %154, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !8045
   br label %156, !llfi_index !8046

@@ -3710,7 +3710,6 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %7 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 7, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3228
   %8 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 5, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3229
   %9 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 8, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3230
-  call void @doProfiling(i32 32, i32 3191)
   %10 = icmp sgt i32 %3, 0, !llfi_index !3231
   br i1 %10, label %11, label %.loopexit, !llfi_index !3232
 
@@ -3723,7 +3722,6 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
 
 13:                                               ; preds = %13, %11
   %14 = phi i64 [ 0, %11 ], [ %42, %13 ], !llfi_index !3236
-  call void @doProfiling(i32 55, i32 3197)
   %15 = getelementptr inbounds double, double* %4, i64 %14, !llfi_index !3237
   %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !3238
   %17 = getelementptr inbounds double, double* %5, i64 %14, !llfi_index !3239
@@ -3747,9 +3745,7 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %33 = getelementptr inbounds double, double* %8, i64 %14, !llfi_index !3257
   %34 = load double, double* %33, align 8, !tbaa !345, !llfi_index !3258
   %35 = getelementptr inbounds double, double* %9, i64 %14, !llfi_index !3259
-  call void @doProfiling(i32 34, i32 3220)
   %36 = load double, double* %35, align 8, !tbaa !345, !llfi_index !3260
-  call void @doProfiling(i32 32, i32 3221)
   %37 = fmul double %36, %0, !llfi_index !3261
   call void @doProfiling(i32 18, i32 3222)
   %38 = fadd double %34, %37, !llfi_index !3262
@@ -3758,7 +3754,6 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %41 = select i1 %40, double 0.000000e+00, double %38, !llfi_index !3265
   store double %41, double* %33, align 8, !tbaa !345, !llfi_index !3266
   %42 = add nuw nsw i64 %14, 1, !llfi_index !3267
-  call void @doProfiling(i32 13, i32 3228)
   %43 = icmp eq i64 %42, %12, !llfi_index !3268
   br i1 %43, label %.loopexit, label %13, !llvm.loop !3269, !llfi_index !3270
 }

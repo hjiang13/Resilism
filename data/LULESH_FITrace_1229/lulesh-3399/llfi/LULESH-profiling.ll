@@ -3948,7 +3948,6 @@ define dso_local double @_Z14CalcElemVolumePKdS0_S0_(double* nocapture readonly 
   %13 = getelementptr inbounds double, double* %0, i64 5, !llfi_index !3437
   %14 = load double, double* %13, align 8, !tbaa !345, !llfi_index !3438
   %15 = getelementptr inbounds double, double* %0, i64 6, !llfi_index !3439
-  call void @doProfiling(i32 34, i32 3398)
   %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !3440
   call void @doProfiling(i32 32, i32 3399)
   %17 = getelementptr inbounds double, double* %0, i64 7, !llfi_index !3441

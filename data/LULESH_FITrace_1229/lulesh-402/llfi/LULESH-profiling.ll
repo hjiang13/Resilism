@@ -716,7 +716,6 @@ define dso_local void @_Z23InitStressTermsForElemsiPdS_S_(i32 %0, double* nocapt
   %20 = getelementptr inbounds double, double* %1, i64 %11, !llfi_index !426
   store double %17, double* %20, align 8, !tbaa !345, !llfi_index !427
   %21 = add nuw nsw i64 %11, 1, !llfi_index !428
-  call void @doProfiling(i32 13, i32 415)
   %22 = icmp eq i64 %21, %9, !llfi_index !429
   br i1 %22, label %.loopexit, label %10, !llvm.loop !430, !llfi_index !433
 }

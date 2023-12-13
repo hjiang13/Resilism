@@ -3637,7 +3637,6 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
   %29 = getelementptr inbounds double, double* %8, i64 %13, !llfi_index !3172
   store double %28, double* %29, align 8, !tbaa !345, !llfi_index !3173
   %30 = add nuw nsw i64 %13, 1, !llfi_index !3174
-  call void @doProfiling(i32 13, i32 3139)
   %31 = icmp eq i64 %30, %11, !llfi_index !3175
   br i1 %31, label %.loopexit, label %12, !llvm.loop !3176, !llfi_index !3177
 }

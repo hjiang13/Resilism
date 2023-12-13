@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@phi_namestr = internal constant [4 x i8] c"phi\00"
 @add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
@@ -3782,32 +3781,31 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   ret void, !llfi_index !3282
 
 12:                                               ; preds = %12, %10
-  %13 = phi i64 [ 0, %10 ], [ %fi1, %12 ], !llfi_index !3283
-  %fi = call i64 @injectFault0(i64 3243, i64 %13, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !3284
-  %14 = getelementptr inbounds double, double* %3, i64 %fi, !llfi_index !3285
-  %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3286
-  %16 = fmul double %15, %0, !llfi_index !3287
-  %17 = getelementptr inbounds double, double* %4, i64 %fi, !llfi_index !3288
-  %18 = load double, double* %17, align 8, !tbaa !345, !llfi_index !3289
-  %19 = fadd double %16, %18, !llfi_index !3290
-  store double %19, double* %17, align 8, !tbaa !345, !llfi_index !3291
-  %20 = getelementptr inbounds double, double* %5, i64 %fi, !llfi_index !3292
-  %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !3293
-  %22 = fmul double %21, %0, !llfi_index !3294
-  %23 = getelementptr inbounds double, double* %6, i64 %fi, !llfi_index !3295
-  %24 = load double, double* %23, align 8, !tbaa !345, !llfi_index !3296
-  %25 = fadd double %22, %24, !llfi_index !3297
-  store double %25, double* %23, align 8, !tbaa !345, !llfi_index !3298
-  %26 = getelementptr inbounds double, double* %7, i64 %fi, !llfi_index !3299
-  %27 = load double, double* %26, align 8, !tbaa !345, !llfi_index !3300
-  %28 = fmul double %27, %0, !llfi_index !3301
-  %29 = getelementptr inbounds double, double* %8, i64 %fi, !llfi_index !3302
-  %30 = load double, double* %29, align 8, !tbaa !345, !llfi_index !3303
-  %31 = fadd double %28, %30, !llfi_index !3304
-  store double %31, double* %29, align 8, !tbaa !345, !llfi_index !3305
-  %32 = add nuw nsw i64 %fi, 1, !llfi_index !3306
-  %fi1 = call i64 @injectFault0(i64 3265, i64 %32, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !3284
-  %33 = icmp eq i64 %fi1, %11, !llfi_index !3307
+  %13 = phi i64 [ 0, %10 ], [ %fi, %12 ], !llfi_index !3283
+  %14 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3284
+  %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3285
+  %16 = fmul double %15, %0, !llfi_index !3286
+  %17 = getelementptr inbounds double, double* %4, i64 %13, !llfi_index !3287
+  %18 = load double, double* %17, align 8, !tbaa !345, !llfi_index !3288
+  %19 = fadd double %16, %18, !llfi_index !3289
+  store double %19, double* %17, align 8, !tbaa !345, !llfi_index !3290
+  %20 = getelementptr inbounds double, double* %5, i64 %13, !llfi_index !3291
+  %21 = load double, double* %20, align 8, !tbaa !345, !llfi_index !3292
+  %22 = fmul double %21, %0, !llfi_index !3293
+  %23 = getelementptr inbounds double, double* %6, i64 %13, !llfi_index !3294
+  %24 = load double, double* %23, align 8, !tbaa !345, !llfi_index !3295
+  %25 = fadd double %22, %24, !llfi_index !3296
+  store double %25, double* %23, align 8, !tbaa !345, !llfi_index !3297
+  %26 = getelementptr inbounds double, double* %7, i64 %13, !llfi_index !3298
+  %27 = load double, double* %26, align 8, !tbaa !345, !llfi_index !3299
+  %28 = fmul double %27, %0, !llfi_index !3300
+  %29 = getelementptr inbounds double, double* %8, i64 %13, !llfi_index !3301
+  %30 = load double, double* %29, align 8, !tbaa !345, !llfi_index !3302
+  %31 = fadd double %28, %30, !llfi_index !3303
+  store double %31, double* %29, align 8, !tbaa !345, !llfi_index !3304
+  %32 = add nuw nsw i64 %13, 1, !llfi_index !3305
+  %fi = call i64 @injectFault0(i64 3265, i64 %32, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !3306
+  %33 = icmp eq i64 %fi, %11, !llfi_index !3307
   br i1 %33, label %.loopexit, label %12, !llvm.loop !3308, !llfi_index !3309
 }
 
@@ -13218,29 +13216,29 @@ attributes #34 = { allocsize(0) }
 !3281 = !{i64 3241}
 !3282 = !{i64 3242}
 !3283 = !{i64 3243}
-!3284 = !{!"after"}
-!3285 = !{i64 3244}
-!3286 = !{i64 3245}
-!3287 = !{i64 3246}
-!3288 = !{i64 3247}
-!3289 = !{i64 3248}
-!3290 = !{i64 3249}
-!3291 = !{i64 3250}
-!3292 = !{i64 3251}
-!3293 = !{i64 3252}
-!3294 = !{i64 3253}
-!3295 = !{i64 3254}
-!3296 = !{i64 3255}
-!3297 = !{i64 3256}
-!3298 = !{i64 3257}
-!3299 = !{i64 3258}
-!3300 = !{i64 3259}
-!3301 = !{i64 3260}
-!3302 = !{i64 3261}
-!3303 = !{i64 3262}
-!3304 = !{i64 3263}
-!3305 = !{i64 3264}
-!3306 = !{i64 3265}
+!3284 = !{i64 3244}
+!3285 = !{i64 3245}
+!3286 = !{i64 3246}
+!3287 = !{i64 3247}
+!3288 = !{i64 3248}
+!3289 = !{i64 3249}
+!3290 = !{i64 3250}
+!3291 = !{i64 3251}
+!3292 = !{i64 3252}
+!3293 = !{i64 3253}
+!3294 = !{i64 3254}
+!3295 = !{i64 3255}
+!3296 = !{i64 3256}
+!3297 = !{i64 3257}
+!3298 = !{i64 3258}
+!3299 = !{i64 3259}
+!3300 = !{i64 3260}
+!3301 = !{i64 3261}
+!3302 = !{i64 3262}
+!3303 = !{i64 3263}
+!3304 = !{i64 3264}
+!3305 = !{i64 3265}
+!3306 = !{!"after"}
 !3307 = !{i64 3266}
 !3308 = distinct !{!3308, !431, !432}
 !3309 = !{i64 3267}

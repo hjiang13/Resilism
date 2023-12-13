@@ -51,7 +51,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
 @phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 
 ; Function Attrs: nounwind uwtable
 define internal void @_GLOBAL__sub_I_LULESH.cc() #0 section ".text.startup" {
@@ -3782,7 +3781,7 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   ret void, !llfi_index !3282
 
 12:                                               ; preds = %12, %10
-  %13 = phi i64 [ 0, %10 ], [ %fi1, %12 ], !llfi_index !3283
+  %13 = phi i64 [ 0, %10 ], [ %32, %12 ], !llfi_index !3283
   %fi = call i64 @injectFault0(i64 3243, i64 %13, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !3284
   %14 = getelementptr inbounds double, double* %3, i64 %fi, !llfi_index !3285
   %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3286
@@ -3806,8 +3805,7 @@ define dso_local void @_Z20CalcPositionForNodesd(double %0) local_unnamed_addr #
   %31 = fadd double %28, %30, !llfi_index !3304
   store double %31, double* %29, align 8, !tbaa !345, !llfi_index !3305
   %32 = add nuw nsw i64 %fi, 1, !llfi_index !3306
-  %fi1 = call i64 @injectFault0(i64 3265, i64 %32, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !3284
-  %33 = icmp eq i64 %fi1, %11, !llfi_index !3307
+  %33 = icmp eq i64 %32, %11, !llfi_index !3307
   br i1 %33, label %.loopexit, label %12, !llvm.loop !3308, !llfi_index !3309
 }
 

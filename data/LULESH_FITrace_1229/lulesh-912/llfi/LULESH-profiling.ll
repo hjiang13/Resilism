@@ -1231,7 +1231,6 @@ define dso_local void @_Z27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_([8 x dou
   %42 = load <2 x double>, <2 x double>* %41, align 8, !tbaa !345, !llfi_index !926
   %43 = fneg <2 x double> %9, !llfi_index !927
   %44 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !928
-  call void @doProfiling(i32 62, i32 911)
   %45 = shufflevector <2 x double> %44, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !929
   call void @doProfiling(i32 63, i32 912)
   %46 = fmul <2 x double> %45, %43, !llfi_index !930

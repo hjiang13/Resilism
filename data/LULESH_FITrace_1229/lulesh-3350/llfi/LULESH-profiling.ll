@@ -3852,7 +3852,6 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %53 = shufflevector <2 x double> %28, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3345
   %54 = fsub <2 x double> %52, %53, !llfi_index !3346
   %55 = insertelement <2 x double> poison, double %21, i32 0, !llfi_index !3347
-  call void @doProfiling(i32 62, i32 3306)
   %56 = insertelement <2 x double> %55, double %18, i32 1, !llfi_index !3348
   %57 = insertelement <2 x double> poison, double %16, i32 0, !llfi_index !3349
   %58 = shufflevector <2 x double> %57, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3350
@@ -3864,24 +3863,15 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %64 = fsub double %22, %20, !llfi_index !3356
   %65 = fsub double %12, %11, !llfi_index !3357
   %66 = insertelement <2 x double> poison, double %20, i32 0, !llfi_index !3358
-  call void @doProfiling(i32 62, i32 3317)
   %67 = insertelement <2 x double> %66, double %4, i32 1, !llfi_index !3359
-  call void @doProfiling(i32 62, i32 3318)
   %68 = insertelement <2 x double> poison, double %19, i32 0, !llfi_index !3360
-  call void @doProfiling(i32 62, i32 3319)
   %69 = insertelement <2 x double> %68, double %3, i32 1, !llfi_index !3361
-  call void @doProfiling(i32 62, i32 3320)
   %70 = fsub <2 x double> %67, %69, !llfi_index !3362
-  call void @doProfiling(i32 16, i32 3321)
   %71 = fsub double %13, %15, !llfi_index !3363
   %72 = insertelement <2 x double> %55, double %5, i32 1, !llfi_index !3364
-  call void @doProfiling(i32 62, i32 3323)
   %73 = insertelement <2 x double> poison, double %23, i32 0, !llfi_index !3365
-  call void @doProfiling(i32 62, i32 3324)
   %74 = insertelement <2 x double> %73, double %7, i32 1, !llfi_index !3366
-  call void @doProfiling(i32 62, i32 3325)
   %75 = fsub <2 x double> %72, %74, !llfi_index !3367
-  call void @doProfiling(i32 16, i32 3326)
   %76 = insertelement <2 x double> %61, double %1, i32 1, !llfi_index !3368
   %77 = fsub <2 x double> %34, %76, !llfi_index !3369
   %78 = insertelement <2 x double> poison, double %12, i32 0, !llfi_index !3370

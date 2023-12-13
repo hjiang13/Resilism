@@ -3616,7 +3616,6 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
 
 12:                                               ; preds = %12, %10
   %13 = phi i64 [ 0, %10 ], [ %30, %12 ], !llfi_index !3154
-  call void @doProfiling(i32 55, i32 3119)
   %14 = getelementptr inbounds double, double* %2, i64 %13, !llfi_index !3155
   %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3156
   %16 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3157

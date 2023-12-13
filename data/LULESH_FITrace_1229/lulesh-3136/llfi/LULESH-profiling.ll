@@ -3599,12 +3599,10 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
   %1 = load i32, i32* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 80), align 4, !tbaa !404, !llfi_index !3141
   %2 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 9, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3142
   %3 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 12, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3143
-  call void @doProfiling(i32 32, i32 3108)
   %4 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 6, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3144
   %5 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 10, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3145
   %6 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 7, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3146
   %7 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 11, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3147
-  call void @doProfiling(i32 32, i32 3112)
   %8 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 8, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3148
   %9 = icmp sgt i32 %1, 0, !llfi_index !3149
   br i1 %9, label %10, label %.loopexit, !llfi_index !3150
@@ -3618,11 +3616,9 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
 
 12:                                               ; preds = %12, %10
   %13 = phi i64 [ 0, %10 ], [ %30, %12 ], !llfi_index !3154
-  call void @doProfiling(i32 55, i32 3119)
   %14 = getelementptr inbounds double, double* %2, i64 %13, !llfi_index !3155
   %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3156
   %16 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3157
-  call void @doProfiling(i32 34, i32 3122)
   %17 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3158
   %18 = fdiv double %15, %17, !llfi_index !3159
   %19 = getelementptr inbounds double, double* %4, i64 %13, !llfi_index !3160
@@ -3634,17 +3630,13 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
   %24 = getelementptr inbounds double, double* %6, i64 %13, !llfi_index !3166
   store double %23, double* %24, align 8, !tbaa !345, !llfi_index !3167
   %25 = getelementptr inbounds double, double* %7, i64 %13, !llfi_index !3168
-  call void @doProfiling(i32 34, i32 3133)
   %26 = load double, double* %25, align 8, !tbaa !345, !llfi_index !3169
-  call void @doProfiling(i32 32, i32 3134)
   %27 = load double, double* %16, align 8, !tbaa !345, !llfi_index !3170
-  call void @doProfiling(i32 32, i32 3135)
   %28 = fdiv double %26, %27, !llfi_index !3171
   call void @doProfiling(i32 21, i32 3136)
   %29 = getelementptr inbounds double, double* %8, i64 %13, !llfi_index !3172
   store double %28, double* %29, align 8, !tbaa !345, !llfi_index !3173
   %30 = add nuw nsw i64 %13, 1, !llfi_index !3174
-  call void @doProfiling(i32 13, i32 3139)
   %31 = icmp eq i64 %30, %11, !llfi_index !3175
   br i1 %31, label %.loopexit, label %12, !llvm.loop !3176, !llfi_index !3177
 }

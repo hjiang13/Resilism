@@ -9782,7 +9782,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 151:                                              ; preds = %146
   %152 = and i64 %2, -2, !llfi_index !8042
   %153 = and i64 %2, 1, !llfi_index !8043
-  call void @doProfiling(i32 28, i32 7842)
   %154 = insertelement <2 x double> poison, double %149, i32 0, !llfi_index !8044
   %155 = shufflevector <2 x double> %154, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !8045
   br label %156, !llfi_index !8046
@@ -9804,7 +9803,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
 .preheader:                                       ; preds = %162, %146
   %.ph = phi i64 [ %153, %162 ], [ 1, %146 ], !llfi_index !8058
   %.ph22 = phi double* [ %163, %162 ], [ %148, %146 ], !llfi_index !8059
-  call void @doProfiling(i32 55, i32 7856)
   br label %165, !llfi_index !8060
 
 165:                                              ; preds = %165, %.preheader
@@ -9813,7 +9811,6 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   call void @doProfiling(i32 55, i32 7859)
   store double %149, double* %167, align 8, !tbaa !345, !llfi_index !8063
   %168 = add i64 %166, -1, !llfi_index !8064
-  call void @doProfiling(i32 13, i32 7862)
   %169 = getelementptr inbounds double, double* %167, i64 1, !llfi_index !8065
   %170 = icmp eq i64 %168, 0, !llfi_index !8066
   br i1 %170, label %.loopexit, label %165, !llvm.loop !8067, !llfi_index !8068

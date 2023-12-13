@@ -3880,7 +3880,6 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %81 = insertelement <2 x double> %66, double %17, i32 1, !llfi_index !3373
   %82 = fsub <2 x double> %44, %81, !llfi_index !3374
   %83 = insertelement <2 x double> poison, double %2, i32 0, !llfi_index !3375
-  call void @doProfiling(i32 62, i32 3334)
   %84 = insertelement <2 x double> %83, double %7, i32 1, !llfi_index !3376
   call void @doProfiling(i32 62, i32 3335)
   %85 = fsub <2 x double> %84, %47, !llfi_index !3377

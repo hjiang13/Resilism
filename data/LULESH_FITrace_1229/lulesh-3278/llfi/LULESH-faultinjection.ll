@@ -3824,12 +3824,11 @@ define dso_local void @_Z13LagrangeNodalv() local_unnamed_addr #10 {
 define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, double %1, double %2, double %3, double %4, double %5, double %6, double %7, double %8, double %9, double %10, double %11, double %12, double %13, double %14, double %15, double %16, double %17, double %18, double %19, double %20, double %21, double %22, double %23) local_unnamed_addr #16 {
   %25 = fsub double %7, %0, !llfi_index !3317
   %26 = insertelement <2 x double> poison, double %15, i32 0, !llfi_index !3318
-  %fi = call <2 x double> @injectFault0(i64 3277, <2 x double> %26, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3319
-  %27 = insertelement <2 x double> %fi, double %23, i32 1, !llfi_index !3320
-  %fi1 = call <2 x double> @injectFault0(i64 3278, <2 x double> %27, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3319
+  %27 = insertelement <2 x double> %26, double %23, i32 1, !llfi_index !3319
+  %fi = call <2 x double> @injectFault0(i64 3278, <2 x double> %27, i32 62, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @insertelement_namestr, i32 0, i32 0)), !llfi_injectfault !3320
   %28 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !3321
   %29 = insertelement <2 x double> %28, double %16, i32 1, !llfi_index !3322
-  %30 = fsub <2 x double> %fi1, %29, !llfi_index !3323
+  %30 = fsub <2 x double> %fi, %29, !llfi_index !3323
   %31 = insertelement <2 x double> poison, double %6, i32 0, !llfi_index !3324
   %32 = shufflevector <2 x double> %31, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !3325
   %33 = insertelement <2 x double> poison, double %1, i32 0, !llfi_index !3326
@@ -13252,8 +13251,8 @@ attributes #34 = { allocsize(0) }
 !3316 = !{i64 3275}
 !3317 = !{i64 3276}
 !3318 = !{i64 3277}
-!3319 = !{!"after"}
-!3320 = !{i64 3278}
+!3319 = !{i64 3278}
+!3320 = !{!"after"}
 !3321 = !{i64 3279}
 !3322 = !{i64 3280}
 !3323 = !{i64 3281}

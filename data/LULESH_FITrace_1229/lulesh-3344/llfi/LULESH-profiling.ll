@@ -3822,7 +3822,6 @@ define dso_local void @_Z13LagrangeNodalv() local_unnamed_addr #10 {
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind readnone uwtable willreturn
 define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, double %1, double %2, double %3, double %4, double %5, double %6, double %7, double %8, double %9, double %10, double %11, double %12, double %13, double %14, double %15, double %16, double %17, double %18, double %19, double %20, double %21, double %22, double %23) local_unnamed_addr #16 {
   %25 = fsub double %7, %0, !llfi_index !3317
-  call void @doProfiling(i32 16, i32 3276)
   %26 = insertelement <2 x double> poison, double %15, i32 0, !llfi_index !3318
   %27 = insertelement <2 x double> %26, double %23, i32 1, !llfi_index !3319
   %28 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !3320
@@ -3862,7 +3861,6 @@ define dso_local double @_Z14CalcElemVolumedddddddddddddddddddddddd(double %0, d
   %62 = insertelement <2 x double> %61, double %12, i32 1, !llfi_index !3354
   %63 = fsub <2 x double> %60, %62, !llfi_index !3355
   %64 = fsub double %22, %20, !llfi_index !3356
-  call void @doProfiling(i32 16, i32 3315)
   %65 = fsub double %12, %11, !llfi_index !3357
   %66 = insertelement <2 x double> poison, double %20, i32 0, !llfi_index !3358
   %67 = insertelement <2 x double> %66, double %4, i32 1, !llfi_index !3359

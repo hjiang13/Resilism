@@ -1826,7 +1826,6 @@ define dso_local void @_Z24CalcElemVolumeDerivativePdS_S_PKdS1_S1_(double* nocap
 define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_(double* nocapture readonly %0, double* nocapture readonly %1, double* nocapture readonly %2, double* nocapture readonly %3, double* nocapture readonly %4, double* nocapture readonly %5, double* nocapture readonly %6, double* nocapture readonly %7, double* nocapture readonly %8, double* nocapture readonly %9, double* nocapture readonly %10, double %11, double* nocapture %12, double* nocapture %13, double* nocapture %14) local_unnamed_addr #5 {
   %16 = load double, double* %3, align 8, !tbaa !345, !llfi_index !1485
   %17 = load double, double* %0, align 8, !tbaa !345, !llfi_index !1486
-  call void @doProfiling(i32 32, i32 1466)
   %18 = fmul double %16, %17, !llfi_index !1487
   %19 = load double, double* %4, align 8, !tbaa !345, !llfi_index !1488
   %20 = getelementptr inbounds double, double* %0, i64 1, !llfi_index !1489
@@ -1895,9 +1894,7 @@ define dso_local void @_Z24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_
   %83 = fmul double %51, %82, !llfi_index !1552
   %84 = fadd double %80, %83, !llfi_index !1553
   %85 = getelementptr inbounds double, double* %3, i64 2, !llfi_index !1554
-  call void @doProfiling(i32 34, i32 1534)
   %86 = load double, double* %85, align 8, !tbaa !345, !llfi_index !1555
-  call void @doProfiling(i32 32, i32 1535)
   %87 = fmul double %17, %86, !llfi_index !1556
   call void @doProfiling(i32 18, i32 1536)
   %88 = getelementptr inbounds double, double* %4, i64 2, !llfi_index !1557

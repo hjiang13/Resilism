@@ -1395,7 +1395,6 @@ define dso_local void @_Z23IntegrateStressForElemsiPdS_S_S_(i32 %0, double* noca
 
 68:                                               ; preds = %71
   %69 = add nuw nsw i64 %34, 1, !llfi_index !1076
-  call void @doProfiling(i32 13, i32 1058)
   %70 = icmp eq i64 %69, %32, !llfi_index !1077
   br i1 %70, label %.loopexit, label %33, !llvm.loop !1078, !llfi_index !1079
 

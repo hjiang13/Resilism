@@ -3707,9 +3707,7 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %4 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 3, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3225
   %5 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 6, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3226
   %6 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 4, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3227
-  call void @doProfiling(i32 32, i32 3188)
   %7 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 7, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3228
-  call void @doProfiling(i32 32, i32 3189)
   %8 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 5, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3229
   %9 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 8, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3230
   %10 = icmp sgt i32 %3, 0, !llfi_index !3231
@@ -3724,7 +3722,6 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
 
 13:                                               ; preds = %13, %11
   %14 = phi i64 [ 0, %11 ], [ %42, %13 ], !llfi_index !3236
-  call void @doProfiling(i32 55, i32 3197)
   %15 = getelementptr inbounds double, double* %4, i64 %14, !llfi_index !3237
   %16 = load double, double* %15, align 8, !tbaa !345, !llfi_index !3238
   %17 = getelementptr inbounds double, double* %5, i64 %14, !llfi_index !3239
@@ -3736,15 +3733,10 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %23 = select i1 %22, double 0.000000e+00, double %20, !llfi_index !3245
   store double %23, double* %15, align 8, !tbaa !345, !llfi_index !3246
   %24 = getelementptr inbounds double, double* %6, i64 %14, !llfi_index !3247
-  call void @doProfiling(i32 34, i32 3208)
   %25 = load double, double* %24, align 8, !tbaa !345, !llfi_index !3248
-  call void @doProfiling(i32 32, i32 3209)
   %26 = getelementptr inbounds double, double* %7, i64 %14, !llfi_index !3249
-  call void @doProfiling(i32 34, i32 3210)
   %27 = load double, double* %26, align 8, !tbaa !345, !llfi_index !3250
-  call void @doProfiling(i32 32, i32 3211)
   %28 = fmul double %27, %0, !llfi_index !3251
-  call void @doProfiling(i32 18, i32 3212)
   %29 = fadd double %25, %28, !llfi_index !3252
   call void @doProfiling(i32 14, i32 3213)
   %30 = tail call double @llvm.fabs.f64(double %29) #2, !llfi_index !3253
@@ -3762,7 +3754,6 @@ define dso_local void @_Z20CalcVelocityForNodesdd(double %0, double %1) local_un
   %41 = select i1 %40, double 0.000000e+00, double %38, !llfi_index !3265
   store double %41, double* %33, align 8, !tbaa !345, !llfi_index !3266
   %42 = add nuw nsw i64 %14, 1, !llfi_index !3267
-  call void @doProfiling(i32 13, i32 3228)
   %43 = icmp eq i64 %42, %12, !llfi_index !3268
   br i1 %43, label %.loopexit, label %13, !llvm.loop !3269, !llfi_index !3270
 }

@@ -50,10 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@zext_namestr = internal constant [5 x i8] c"zext\00"
-@and_namestr = internal constant [4 x i8] c"and\00"
-@phi_namestr = internal constant [4 x i8] c"phi\00"
-@add_namestr = internal constant [4 x i8] c"add\00"
 @icmp_namestr = internal constant [5 x i8] c"icmp\00"
 
 ; Function Attrs: nounwind uwtable
@@ -5366,58 +5362,54 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 12:                                               ; preds = %10
   %13 = zext i32 %9 to i64, !llfi_index !4683
-  %fi = call i64 @injectFault0(i64 4634, i64 %13, i32 39, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @zext_namestr, i32 0, i32 0)), !llfi_injectfault !4684
-  %14 = icmp eq i32 %9, 1, !llfi_index !4685
-  br i1 %14, label %.preheader6, label %15, !llfi_index !4686
+  %14 = icmp eq i32 %9, 1, !llfi_index !4684
+  br i1 %14, label %.preheader6, label %15, !llfi_index !4685
 
 .preheader6:                                      ; preds = %45, %15, %12
-  %.ph7 = phi i64 [ %fi1, %45 ], [ 0, %12 ], [ 0, %15 ], !llfi_index !4687
-  br label %111, !llfi_index !4688
+  %.ph7 = phi i64 [ %31, %45 ], [ 0, %12 ], [ 0, %15 ], !llfi_index !4686
+  br label %111, !llfi_index !4687
 
 15:                                               ; preds = %12
-  %16 = getelementptr double, double* %1, i64 %fi, !llfi_index !4689
-  %17 = getelementptr double, double* %2, i64 %fi, !llfi_index !4690
-  %18 = getelementptr double, double* %4, i64 %fi, !llfi_index !4691
-  %19 = icmp ugt double* %17, %1, !llfi_index !4692
-  %20 = icmp ugt double* %16, %2, !llfi_index !4693
-  %21 = and i1 %19, %20, !llfi_index !4694
-  %22 = icmp ugt double* %18, %1, !llfi_index !4695
-  %23 = icmp ugt double* %16, %4, !llfi_index !4696
-  %24 = and i1 %22, %23, !llfi_index !4697
-  %25 = or i1 %21, %24, !llfi_index !4698
-  %26 = icmp ugt double* %18, %2, !llfi_index !4699
-  %27 = icmp ugt double* %17, %4, !llfi_index !4700
-  %28 = and i1 %26, %27, !llfi_index !4701
-  %29 = or i1 %28, %25, !llfi_index !4702
-  br i1 %29, label %.preheader6, label %30, !llfi_index !4703
+  %16 = getelementptr double, double* %1, i64 %13, !llfi_index !4688
+  %17 = getelementptr double, double* %2, i64 %13, !llfi_index !4689
+  %18 = getelementptr double, double* %4, i64 %13, !llfi_index !4690
+  %19 = icmp ugt double* %17, %1, !llfi_index !4691
+  %20 = icmp ugt double* %16, %2, !llfi_index !4692
+  %21 = and i1 %19, %20, !llfi_index !4693
+  %22 = icmp ugt double* %18, %1, !llfi_index !4694
+  %23 = icmp ugt double* %16, %4, !llfi_index !4695
+  %24 = and i1 %22, %23, !llfi_index !4696
+  %25 = or i1 %21, %24, !llfi_index !4697
+  %26 = icmp ugt double* %18, %2, !llfi_index !4698
+  %27 = icmp ugt double* %17, %4, !llfi_index !4699
+  %28 = and i1 %26, %27, !llfi_index !4700
+  %29 = or i1 %28, %25, !llfi_index !4701
+  br i1 %29, label %.preheader6, label %30, !llfi_index !4702
 
 30:                                               ; preds = %15
-  %31 = and i64 %fi, 4294967294, !llfi_index !4704
-  %fi1 = call i64 @injectFault0(i64 4654, i64 %31, i32 28, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @and_namestr, i32 0, i32 0)), !llfi_injectfault !4684
-  br label %32, !llfi_index !4705
+  %31 = and i64 %13, 4294967294, !llfi_index !4703
+  br label %32, !llfi_index !4704
 
 32:                                               ; preds = %32, %30
-  %33 = phi i64 [ 0, %30 ], [ %fi3, %32 ], !llfi_index !4706
-  %fi2 = call i64 @injectFault0(i64 4656, i64 %33, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !4684
-  %34 = getelementptr inbounds double, double* %4, i64 %fi2, !llfi_index !4707
-  %35 = bitcast double* %34 to <2 x double>*, !llfi_index !4708
-  %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4709, !llfi_index !4712
-  %37 = fadd <2 x double> %36, <double 1.000000e+00, double 1.000000e+00>, !llfi_index !4713
-  %38 = fmul <2 x double> %37, <double 0x3FE5555555555555, double 0x3FE5555555555555>, !llfi_index !4714
-  %39 = getelementptr inbounds double, double* %1, i64 %fi2, !llfi_index !4715
-  %40 = bitcast double* %39 to <2 x double>*, !llfi_index !4716
-  store <2 x double> %38, <2 x double>* %40, align 8, !tbaa !345, !alias.scope !4717, !noalias !4719, !llfi_index !4721
-  %41 = getelementptr inbounds double, double* %2, i64 %fi2, !llfi_index !4722
-  %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4723
-  store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4724, !noalias !4709, !llfi_index !4725
-  %43 = add nuw i64 %fi2, 2, !llfi_index !4726
-  %fi3 = call i64 @injectFault0(i64 4668, i64 %43, i32 13, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !4684
-  %44 = icmp eq i64 %fi3, %fi1, !llfi_index !4727
-  %fi4 = call i1 @injectFault1(i64 4669, i1 %44, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !4684
-  br i1 %fi4, label %45, label %32, !llvm.loop !4728, !llfi_index !4729
+  %33 = phi i64 [ 0, %30 ], [ %43, %32 ], !llfi_index !4705
+  %34 = getelementptr inbounds double, double* %4, i64 %33, !llfi_index !4706
+  %35 = bitcast double* %34 to <2 x double>*, !llfi_index !4707
+  %36 = load <2 x double>, <2 x double>* %35, align 8, !tbaa !345, !alias.scope !4708, !llfi_index !4711
+  %37 = fadd <2 x double> %36, <double 1.000000e+00, double 1.000000e+00>, !llfi_index !4712
+  %38 = fmul <2 x double> %37, <double 0x3FE5555555555555, double 0x3FE5555555555555>, !llfi_index !4713
+  %39 = getelementptr inbounds double, double* %1, i64 %33, !llfi_index !4714
+  %40 = bitcast double* %39 to <2 x double>*, !llfi_index !4715
+  store <2 x double> %38, <2 x double>* %40, align 8, !tbaa !345, !alias.scope !4716, !noalias !4718, !llfi_index !4720
+  %41 = getelementptr inbounds double, double* %2, i64 %33, !llfi_index !4721
+  %42 = bitcast double* %41 to <2 x double>*, !llfi_index !4722
+  store <2 x double> <double 0x3FE5555555555555, double 0x3FE5555555555555>, <2 x double>* %42, align 8, !tbaa !345, !alias.scope !4723, !noalias !4708, !llfi_index !4724
+  %43 = add nuw i64 %33, 2, !llfi_index !4725
+  %44 = icmp eq i64 %43, %31, !llfi_index !4726
+  %fi = call i1 @injectFault0(i64 4669, i1 %44, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !4727
+  br i1 %fi, label %45, label %32, !llvm.loop !4728, !llfi_index !4729
 
 45:                                               ; preds = %32
-  %46 = icmp eq i64 %fi1, %fi, !llfi_index !4730
+  %46 = icmp eq i64 %31, %13, !llfi_index !4730
   br i1 %46, label %.loopexit5, label %.preheader6, !llfi_index !4731
 
 .loopexit5:                                       ; preds = %111, %45
@@ -5428,10 +5420,10 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br label %121, !llfi_index !4734
 
 47:                                               ; preds = %.loopexit5
-  %48 = getelementptr double, double* %0, i64 %fi, !llfi_index !4735
-  %49 = getelementptr double, double* %1, i64 %fi, !llfi_index !4736
-  %50 = getelementptr double, double* %3, i64 %fi, !llfi_index !4737
-  %51 = getelementptr double, double* %5, i64 %fi, !llfi_index !4738
+  %48 = getelementptr double, double* %0, i64 %13, !llfi_index !4735
+  %49 = getelementptr double, double* %1, i64 %13, !llfi_index !4736
+  %50 = getelementptr double, double* %3, i64 %13, !llfi_index !4737
+  %51 = getelementptr double, double* %5, i64 %13, !llfi_index !4738
   %52 = icmp ugt double* %49, %0, !llfi_index !4739
   %53 = icmp ugt double* %48, %1, !llfi_index !4740
   %54 = and i1 %52, %53, !llfi_index !4741
@@ -5446,7 +5438,7 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br i1 %62, label %.preheader, label %63, !llfi_index !4750
 
 63:                                               ; preds = %47
-  %64 = and i64 %fi, 4294967294, !llfi_index !4751
+  %64 = and i64 %13, 4294967294, !llfi_index !4751
   %65 = insertelement <2 x double> poison, double %7, i32 0, !llfi_index !4752
   %66 = shufflevector <2 x double> %65, <2 x double> poison, <2 x i32> zeroinitializer, !llfi_index !4753
   %67 = insertelement <2 x double> poison, double %8, i32 0, !llfi_index !4754
@@ -5507,7 +5499,7 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   br i1 %108, label %109, label %71, !llvm.loop !4809, !llfi_index !4810
 
 109:                                              ; preds = %106
-  %110 = icmp eq i64 %64, %fi, !llfi_index !4811
+  %110 = icmp eq i64 %64, %13, !llfi_index !4811
   br i1 %110, label %.loopexit, label %.preheader, !llfi_index !4812
 
 111:                                              ; preds = %111, %.preheader6
@@ -5521,7 +5513,7 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
   %118 = getelementptr inbounds double, double* %2, i64 %112, !llfi_index !4820
   store double 0x3FE5555555555555, double* %118, align 8, !tbaa !345, !llfi_index !4821
   %119 = add nuw nsw i64 %112, 1, !llfi_index !4822
-  %120 = icmp eq i64 %119, %fi, !llfi_index !4823
+  %120 = icmp eq i64 %119, %13, !llfi_index !4823
   br i1 %120, label %.loopexit5, label %111, !llvm.loop !4824, !llfi_index !4825
 
 .loopexit:                                        ; preds = %141, %109, %10
@@ -5555,7 +5547,7 @@ define dso_local void @_Z20CalcPressureForElemsPdS_S_S_S_S_dddi(double* nocaptur
 
 141:                                              ; preds = %139, %121
   %142 = add nuw nsw i64 %122, 1, !llfi_index !4849
-  %143 = icmp eq i64 %142, %fi, !llfi_index !4850
+  %143 = icmp eq i64 %142, %13, !llfi_index !4850
   br i1 %143, label %.loopexit, label %121, !llvm.loop !4851, !llfi_index !4852
 }
 
@@ -9876,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define i64 @injectFault0(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca i64, align 8
-  store i64 %1, i64* %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast i64* %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load i64, i64* %tmploc, align 8
-  ret i64 %updateval
-}
-
-define i1 @injectFault1(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define i1 @injectFault0(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca i1, align 1
   store i1 %1, i1* %tmploc, align 1
@@ -14641,50 +14616,50 @@ attributes #34 = { allocsize(0) }
 !4681 = !{i64 4632}
 !4682 = !{i64 4633}
 !4683 = !{i64 4634}
-!4684 = !{!"after"}
-!4685 = !{i64 4635}
-!4686 = !{i64 4636}
-!4687 = !{i64 4637}
-!4688 = !{i64 4638}
-!4689 = !{i64 4639}
-!4690 = !{i64 4640}
-!4691 = !{i64 4641}
-!4692 = !{i64 4642}
-!4693 = !{i64 4643}
-!4694 = !{i64 4644}
-!4695 = !{i64 4645}
-!4696 = !{i64 4646}
-!4697 = !{i64 4647}
-!4698 = !{i64 4648}
-!4699 = !{i64 4649}
-!4700 = !{i64 4650}
-!4701 = !{i64 4651}
-!4702 = !{i64 4652}
-!4703 = !{i64 4653}
-!4704 = !{i64 4654}
-!4705 = !{i64 4655}
-!4706 = !{i64 4656}
-!4707 = !{i64 4657}
-!4708 = !{i64 4658}
-!4709 = !{!4710}
-!4710 = distinct !{!4710, !4711}
-!4711 = distinct !{!4711, !"LVerDomain"}
-!4712 = !{i64 4659}
-!4713 = !{i64 4660}
-!4714 = !{i64 4661}
-!4715 = !{i64 4662}
-!4716 = !{i64 4663}
-!4717 = !{!4718}
-!4718 = distinct !{!4718, !4711}
-!4719 = !{!4720, !4710}
-!4720 = distinct !{!4720, !4711}
-!4721 = !{i64 4664}
-!4722 = !{i64 4665}
-!4723 = !{i64 4666}
-!4724 = !{!4720}
-!4725 = !{i64 4667}
-!4726 = !{i64 4668}
-!4727 = !{i64 4669}
+!4684 = !{i64 4635}
+!4685 = !{i64 4636}
+!4686 = !{i64 4637}
+!4687 = !{i64 4638}
+!4688 = !{i64 4639}
+!4689 = !{i64 4640}
+!4690 = !{i64 4641}
+!4691 = !{i64 4642}
+!4692 = !{i64 4643}
+!4693 = !{i64 4644}
+!4694 = !{i64 4645}
+!4695 = !{i64 4646}
+!4696 = !{i64 4647}
+!4697 = !{i64 4648}
+!4698 = !{i64 4649}
+!4699 = !{i64 4650}
+!4700 = !{i64 4651}
+!4701 = !{i64 4652}
+!4702 = !{i64 4653}
+!4703 = !{i64 4654}
+!4704 = !{i64 4655}
+!4705 = !{i64 4656}
+!4706 = !{i64 4657}
+!4707 = !{i64 4658}
+!4708 = !{!4709}
+!4709 = distinct !{!4709, !4710}
+!4710 = distinct !{!4710, !"LVerDomain"}
+!4711 = !{i64 4659}
+!4712 = !{i64 4660}
+!4713 = !{i64 4661}
+!4714 = !{i64 4662}
+!4715 = !{i64 4663}
+!4716 = !{!4717}
+!4717 = distinct !{!4717, !4710}
+!4718 = !{!4719, !4709}
+!4719 = distinct !{!4719, !4710}
+!4720 = !{i64 4664}
+!4721 = !{i64 4665}
+!4722 = !{i64 4666}
+!4723 = !{!4719}
+!4724 = !{i64 4667}
+!4725 = !{i64 4668}
+!4726 = !{i64 4669}
+!4727 = !{!"after"}
 !4728 = distinct !{!4728, !431, !432, !2670}
 !4729 = !{i64 4670}
 !4730 = !{i64 4671}

@@ -3597,7 +3597,6 @@ define dso_local void @_Z17CalcForceForNodesv() local_unnamed_addr #10 {
 ; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind uwtable
 define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
   %1 = load i32, i32* getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 80), align 4, !tbaa !404, !llfi_index !3141
-  call void @doProfiling(i32 32, i32 3106)
   %2 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 9, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3142
   %3 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 12, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3143
   %4 = load double*, double** getelementptr inbounds (%struct.Mesh, %struct.Mesh* @mesh, i64 0, i32 6, i32 0, i32 0, i32 0, i32 0), align 8, !llfi_index !3144
@@ -3610,7 +3609,6 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
 
 10:                                               ; preds = %0
   %11 = zext i32 %1 to i64, !llfi_index !3151
-  call void @doProfiling(i32 39, i32 3116)
   br label %12, !llfi_index !3152
 
 .loopexit:                                        ; preds = %12, %0
@@ -3618,7 +3616,6 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
 
 12:                                               ; preds = %12, %10
   %13 = phi i64 [ 0, %10 ], [ %30, %12 ], !llfi_index !3154
-  call void @doProfiling(i32 55, i32 3119)
   %14 = getelementptr inbounds double, double* %2, i64 %13, !llfi_index !3155
   %15 = load double, double* %14, align 8, !tbaa !345, !llfi_index !3156
   %16 = getelementptr inbounds double, double* %3, i64 %13, !llfi_index !3157
@@ -3639,7 +3636,6 @@ define dso_local void @_Z24CalcAccelerationForNodesv() local_unnamed_addr #6 {
   %29 = getelementptr inbounds double, double* %8, i64 %13, !llfi_index !3172
   store double %28, double* %29, align 8, !tbaa !345, !llfi_index !3173
   %30 = add nuw nsw i64 %13, 1, !llfi_index !3174
-  call void @doProfiling(i32 13, i32 3139)
   %31 = icmp eq i64 %30, %11, !llfi_index !3175
   call void @doProfiling(i32 53, i32 3140)
   br i1 %31, label %.loopexit, label %12, !llvm.loop !3176, !llfi_index !3177

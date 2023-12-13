@@ -50,7 +50,6 @@ $_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd
 @.str.13 = private unnamed_addr constant [23 x i8] c"vector::_M_fill_insert\00", align 1
 @str = private unnamed_addr constant [17 x i8] c"Run completed:  \00", align 1
 @str.14 = private unnamed_addr constant [36 x i8] c"   Testing Plane 0 of Energy Array:\00", align 1
-@getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
 @load_namestr = internal constant [5 x i8] c"load\00"
 
 ; Function Attrs: nounwind uwtable
@@ -1128,14 +1127,13 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
   %72 = load double, double* %71, align 8, !tbaa !345, !llfi_index !826
   %73 = getelementptr inbounds double, double* %4, i64 6, !llfi_index !827
   %74 = load double, double* %73, align 8, !tbaa !345, !llfi_index !828
-  %75 = getelementptr double, double* %5, i64 6, !llfi_index !829
-  %fi = call double* @injectFault0(i64 813, double* %75, i32 34, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !830
-  %76 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !831
-  %fi1 = call double @injectFault1(i64 814, double %76, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !830
+  %75 = getelementptr inbounds double, double* %5, i64 6, !llfi_index !829
+  %76 = load double, double* %75, align 8, !tbaa !345, !llfi_index !830
+  %fi = call double @injectFault0(i64 814, double %76, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !831
   %77 = load double, double* %26, align 8, !tbaa !345, !llfi_index !832
   %78 = load double, double* %28, align 8, !tbaa !345, !llfi_index !833
   %79 = load double, double* %30, align 8, !tbaa !345, !llfi_index !834
-  tail call void @_Z17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd(double* nonnull %8, double* nonnull %9, double* nonnull %10, double* nonnull %41, double* nonnull %42, double* nonnull %43, double* nonnull %62, double* nonnull %63, double* nonnull %64, double* nonnull %11, double* nonnull %12, double* nonnull %13, double %65, double %66, double %67, double %68, double %69, double %70, double %72, double %74, double %fi1, double %77, double %78, double %79), !llfi_index !835
+  tail call void @_Z17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd(double* nonnull %8, double* nonnull %9, double* nonnull %10, double* nonnull %41, double* nonnull %42, double* nonnull %43, double* nonnull %62, double* nonnull %63, double* nonnull %64, double* nonnull %11, double* nonnull %12, double* nonnull %13, double %65, double %66, double %67, double %68, double %69, double %70, double %72, double %74, double %fi, double %77, double %78, double %79), !llfi_index !835
   %80 = getelementptr inbounds double, double* %0, i64 7, !llfi_index !836
   %81 = getelementptr inbounds double, double* %1, i64 7, !llfi_index !837
   %82 = getelementptr inbounds double, double* %2, i64 7, !llfi_index !838
@@ -1144,7 +1142,7 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
   %85 = load double, double* %30, align 8, !tbaa !345, !llfi_index !841
   %86 = load double, double* %71, align 8, !tbaa !345, !llfi_index !842
   %87 = load double, double* %73, align 8, !tbaa !345, !llfi_index !843
-  %88 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !844
+  %88 = load double, double* %75, align 8, !tbaa !345, !llfi_index !844
   %89 = getelementptr inbounds double, double* %3, i64 7, !llfi_index !845
   %90 = load double, double* %89, align 8, !tbaa !345, !llfi_index !846
   %91 = getelementptr inbounds double, double* %4, i64 7, !llfi_index !847
@@ -1176,7 +1174,7 @@ define dso_local void @_Z19CalcElemNodeNormalsPdS_S_PKdS1_S1_(double* nocapture 
   %115 = load double, double* %93, align 8, !tbaa !345, !llfi_index !873
   %116 = load double, double* %71, align 8, !tbaa !345, !llfi_index !874
   %117 = load double, double* %73, align 8, !tbaa !345, !llfi_index !875
-  %118 = load double, double* %fi, align 8, !tbaa !345, !llfi_index !876
+  %118 = load double, double* %75, align 8, !tbaa !345, !llfi_index !876
   %119 = load double, double* %53, align 8, !tbaa !345, !llfi_index !877
   %120 = load double, double* %55, align 8, !tbaa !345, !llfi_index !878
   %121 = load double, double* %57, align 8, !tbaa !345, !llfi_index !879
@@ -9870,24 +9868,7 @@ define linkonce_odr dso_local void @_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu
   ret void, !llfi_index !8103
 }
 
-define double* @injectFault0(i64 %0, double* %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca double*, align 8
-  store double* %1, double** %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast double** %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 64, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load double*, double** %tmploc, align 8
-  ret double* %updateval
-}
-
-define double @injectFault1(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define double @injectFault0(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca double, align 8
   store double %1, double* %tmploc, align 8
@@ -10781,8 +10762,8 @@ attributes #34 = { allocsize(0) }
 !827 = !{i64 811}
 !828 = !{i64 812}
 !829 = !{i64 813}
-!830 = !{!"after"}
-!831 = !{i64 814}
+!830 = !{i64 814}
+!831 = !{!"after"}
 !832 = !{i64 815}
 !833 = !{i64 816}
 !834 = !{i64 817}
