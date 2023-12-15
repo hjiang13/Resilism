@@ -4,12 +4,14 @@ import sys
 import json
 import os
 import difflib
-
+import csv
+from pathlib import Path
 # Load data from /home/hjiang/Resilism/experiments/LULESH_FITrace_1229/topInst.txt
 
 topInstFile = '/home/hjiang/Resilism/experiments/LULESH_FITrace_1229/topInst.txt'
 
 #Store infomation into json format
+FIInfo = []
 errorInfo = {}
 with open(topInstFile, 'r') as ifile:
     mylist = ifile.read().splitlines() 
@@ -17,16 +19,44 @@ with open(topInstFile, 'r') as ifile:
         fiindex = line
         resultPath = "/home/hjiang/Resilism/data/LULESH_FITrace_1229/lulesh-" + fiindex
         goldenFile = resultPath + "/llfi/baseline/element.prof.dat"
-        llfiStatInfo = resultPath + "/llfi/llfi_stat_output/llfi.stat.fi.injectedfaults.0-0.txt"
         progOutputPath = resultPath + "/llfi/prog_output/"
-        #parse llfiStatInfo
-        with open(llfiStatInfo, 'r') as sf:
-            for line_ in sf:
-                fi_cycle = ''.join(line_.split("fi_cycle=")[1].split(',')[0])
-                fi_opcode = ''.join(line_.split("opcode=")[1].split('\n')[0])
-        
         errorInfo[fiindex] = {}
-        errorInfo[fiindex]['fi_cycle'] = fi_cycle
+        # To parse all 30 FI instances to a list, listing [fiidex, fi_cycle, fi_bit, opcode, error_type]
+        for i in range(0,30):
+            FIInfoInstance = []
+            FIInfoInstance.append(fiindex)
+            llfiStatInfo = resultPath + "/llfi/llfi_stat_output/llfi.stat.fi.injectedfaults.0-" + str(i) + ".txt"
+            #parse llfiStatInfo and error type
+            with open(llfiStatInfo, 'r') as sf:
+                for line_ in sf:
+                    fi_cycle = ''.join(line_.split("fi_cycle=")[1].split(',')[0])
+                    fi_bit = ''.join(line_.split("fi_bit=")[1].split(',')[0])
+                    fi_opcode = ''.join(line_.split("opcode=")[1].split('\n')[0])
+                    FIInfoInstance.append(fi_cycle)
+                    FIInfoInstance.append(fi_bit)
+                    FIInfoInstance.append(fi_opcode)
+            progOutputFile = progOutputPath + "element.0-" + str(i) + ".dat"
+            progOutputFilePath = Path(progOutputFile )
+            if progOutputFilePath.is_file():
+                with open(goldenFile, 'r') as file1, open(progOutputFile, 'r') as file2:
+                    file1_contents = file1.readlines()
+                    file2_contents = file2.readlines()
+                # compute the differences using the unified_diff method from difflib
+                    differences = list(difflib.unified_diff(file1_contents, file2_contents))
+                # print the differences 
+                    if differences:
+                        FIInfoInstance.append('SDC')
+                    else:
+                        FIInfoInstance.append('benign')
+
+            else:
+                FIInfoInstance.append('crash') 
+            FIInfo.append(FIInfoInstance)
+
+        
+
+
+
         errorInfo[fiindex]['fi_opcode'] = fi_opcode
 
         #Count error rate:
@@ -50,11 +80,20 @@ with open(topInstFile, 'r') as ifile:
         errorInfo[fiindex]['SDC'] = 1- number_benign /30 - number_crash/30 
 
 
-
+field_name = ['fiindex', 'fi_cycle', 'fi_opcode', 'crash', 'benign', 'SDC']
 
     
 
 #convert to json
 #errorInfo = json.dump(errorInfo)
-
-print(errorInfo)
+print(*FIInfo,sep='\n')
+# to save a list to csv
+fields = ['fiidex', 'fi_cycle', 'fi_bit', 'opcode', 'error_type']
+with open('/home/hjiang/Resilism/processed_data/FIInfoInstance.csv', 'w') as f:
+     
+    # using csv.writer method from CSV package
+    write = csv.writer(f)
+     
+    write.writerow(fields)
+    write.writerows(FIInfo)
+#print(errorInfo)
