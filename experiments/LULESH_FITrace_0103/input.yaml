@@ -1,0 +1,20 @@
+compileOption:
+  includeInjectionTrace:
+  - backward
+  instSelMethod:
+  - customInstselector:
+      include:
+      - llfiindex
+      options:
+      - -injecttoindex=1630
+  regSelMethod: regloc
+  regloc: dstreg
+  tracingPropagation: 'true'
+  tracingPropagationOption:
+    debugTrace: 'false'
+    generateCDFG: 'false'
+    maxTrace: 250
+runOption:
+- run:
+    fi_type: bitflip
+    numOfRuns: 30

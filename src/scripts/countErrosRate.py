@@ -12,7 +12,7 @@ topInstFile = '/home/hjiang/Resilism/experiments/LULESH_FITrace_1229/topInst.txt
 
 #Store infomation into json format
 FIInfo = []
-errorInfo = {}
+errorStat = []
 with open(topInstFile, 'r') as ifile:
     mylist = ifile.read().splitlines() 
     for line in mylist:
@@ -20,8 +20,10 @@ with open(topInstFile, 'r') as ifile:
         resultPath = "/home/hjiang/Resilism/data/LULESH_FITrace_1229/lulesh-" + fiindex
         goldenFile = resultPath + "/llfi/baseline/element.prof.dat"
         progOutputPath = resultPath + "/llfi/prog_output/"
-        errorInfo[fiindex] = {}
+        
         # To parse all 30 FI instances to a list, listing [fiidex, fi_cycle, fi_bit, opcode, error_type]
+        errorInfo = []
+        errorInfo.append(fiindex) 
         for i in range(0,30):
             FIInfoInstance = []
             FIInfoInstance.append(fiindex)
@@ -57,7 +59,7 @@ with open(topInstFile, 'r') as ifile:
 
 
 
-        errorInfo[fiindex]['fi_opcode'] = fi_opcode
+        errorInfo.append(fi_opcode)
 
         #Count error rate:
         lst = os.listdir(progOutputPath)
@@ -75,18 +77,25 @@ with open(topInstFile, 'r') as ifile:
                 if differences:
                     number_benign = number_benign - 1   
         
-        errorInfo[fiindex]['crash'] = number_crash/30
-        errorInfo[fiindex]['benign'] = number_benign /30
-        errorInfo[fiindex]['SDC'] = 1- number_benign /30 - number_crash/30 
+        errorInfo.append(number_crash/30)
+        errorInfo.append(number_benign /30)
+        errorInfo.append(1- number_benign /30 - number_crash/30 )
+        errorStat.append(errorInfo)
 
-
-field_name = ['fiindex', 'fi_cycle', 'fi_opcode', 'crash', 'benign', 'SDC']
-
+print(*errorStat,sep='\n')
+field_name = ['fiindex', 'fi_opcode', 'crash', 'benign', 'SDC']
+with open('/home/hjiang/Resilism/processed_data/FIInfo.csv', 'w') as f:
+     
+    # using csv.writer method from CSV package
+    write = csv.writer(f)
+     
+    write.writerow(field_name)
+    write.writerows(errorStat)
     
 
 #convert to json
 #errorInfo = json.dump(errorInfo)
-print(*FIInfo,sep='\n')
+#print(*FIInfo,sep='\n')
 # to save a list to csv
 fields = ['fiidex', 'fi_cycle', 'fi_bit', 'opcode', 'error_type']
 with open('/home/hjiang/Resilism/processed_data/FIInfoInstance.csv', 'w') as f:
@@ -96,4 +105,3 @@ with open('/home/hjiang/Resilism/processed_data/FIInfoInstance.csv', 'w') as f:
      
     write.writerow(fields)
     write.writerows(FIInfo)
-#print(errorInfo)
